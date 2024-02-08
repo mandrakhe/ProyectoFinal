@@ -3,7 +3,7 @@ import Nav from './nav'
 const App = () => {
   return (
     <>
-    <Nav/>
+      <Nav/>
     </>
   )
 }
