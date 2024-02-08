@@ -2,10 +2,15 @@ import React from 'react'
 import {BiAccessibility  } from 'react-icons/bi';
 import {CiHeart   } from 'react-icons/ci';
 import {IoBag    } from 'react-icons/io5';
+import {CiLogin     } from 'react-icons/ci';
+import {CiLogout     } from 'react-icons/ci';
 import { FaRegUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 import './nav.css'
 const nav = () => {
+    const { loginWithRedirect } = useAuth0();
+    
   return (
     <>
       <div className='free'>
@@ -39,21 +44,28 @@ const nav = () => {
         </div>
     </div>
     <div className='header'>
-        <div className='contact'>
+        <div className='container'>
+            <div className='nav'>
             <ul>
                 <li>
-                    <Link to='/' className=''>Home</Link>
+                    <Link to='/' className='link'>Home</Link>
                 </li>
                 <li>
-                    <Link to='/product' className=''>Productos</Link>
+                    <Link to='/product' className='link'>Productos</Link>
                 </li>
                 <li>
-                    <Link to='/about' className=''>Acerca de</Link>
+                    <Link to='/about' className='link'>Acerca de</Link>
                 </li>
                 <li>
-                    <Link to='/contact' className=''>Contacto</Link>
+                    <Link to='/contact' className='link'>Contacto</Link>
                 </li>
             </ul>
+            </div>
+            
+            <div className='auth'>
+             <button onClick={() => loginWithRedirect()}><CiLogin /></button>
+             <button><CiLogout /></button>
+            </div>
         </div>
     </div>  
     </>
