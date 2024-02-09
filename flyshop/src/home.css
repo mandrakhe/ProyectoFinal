@@ -188,7 +188,6 @@ background-color: white ;
 
 .product .container .box:hover
 {
-
     box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
 }
 
@@ -203,5 +202,131 @@ background-color: white ;
 {
  width: 300px;
  height: 250px;
-margin-right:50px ;
+ margin-right:50px ;
+}
+
+.product .container .box .img_box .icon
+{   
+    z-index: 1;
+    position: relative;
+    right: -80px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    transition: .5s;
+}
+
+.product .container .box .img_box:hover .icon
+{
+  transform: translateX(-70px);
+}
+
+.product .container .box .img_box .icon li
+{
+    list-style: none;
+    padding: 10px;
+    color: #010f1c ;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
+    background: white;
+    transition: .5s;
+    font-size: 18px;
+}
+.product .container .box .img_box .icon li:hover
+{
+    background-color: #0989ff;
+    color: white ;
+
+}
+.product .container .box .detail
+{
+    margin-top: 10px;
+}
+.product .container .box .details  p
+{
+    color: #9a9a9a;
+    font-family: 14px;
+}
+
+.product .container .box .detail h3
+{
+    font-family: 16px;
+    margin-top: 5px;
+    color: #010f1c;
+    transition: .5s;
+}
+
+.product .container .box:hover .detail h3
+{
+    color: #0989ff;
+}
+
+.product .container .box .detail h4
+{
+    margin-top: 5px;
+    font-family: 14px;
+    color: #0989ff;
+    letter-spacing: 1px;
+}
+
+.banner{
+    padding: 20px 30px;
+    width: 100%;
+}
+
+.banner .container
+{
+    padding: 30px 40px;
+    background-color: #0989ff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner .container .detail 
+{
+    margin-top: 10%;
+    margin-left: 20px;
+}
+
+.banner .container .detail h4
+{
+    color: #e3edf6;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.banner .container .detail h3
+{
+    margin-top: 10px;
+    font-size: 42px;
+    margin-right: 20%;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.banner .container .detail p
+{
+    margin-top: 30px;
+    color: #fff;
+    font-size: 32px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.banner .container .detail .link
+{
+    padding: 10px 30px;
+    color: #e8f4ff;
+    background: #010f1c;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.banner .container .detail .link:hover
+{
+    color: #010f1c;
+    background: #e8f4ff;
 }

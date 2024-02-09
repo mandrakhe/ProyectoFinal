@@ -130,6 +130,21 @@ const Home = () => {
         }
       </div>
     </div>
+    <div className='banneer'>
+      <div className='container'>
+      <div className='detail'>
+        <h4>LATEST PRODUCT ADDED</h4>
+        <h3>Apple ipad  10.2</h3>
+        <p>$986</p>
+        <Link to='/product' className='link'>Shop Now    <MdArrowRightAlt/></Link>
+        <p><BsCurrencyDollar/></p>
+      </div>
+      <div className='img_box'>
+        <img src='' alt=''></img>
+      </div>
+    </div>
+      </div>
+     
     </>
   )
 }
