@@ -1,15 +1,17 @@
 import React from 'react'
-import {BiAccessibility  } from 'react-icons/bi';
-import {CiHeart   } from 'react-icons/ci';
-import {IoBag    } from 'react-icons/io5';
-import {CiLogin     } from 'react-icons/ci';
-import {CiLogout     } from 'react-icons/ci';
+import { BiAccessibility } from 'react-icons/bi';
+import { CiHeart } from 'react-icons/ci';
+import { IoBag } from 'react-icons/io5';
+import { CiLogin } from 'react-icons/ci';
+import { CiLogout } from 'react-icons/ci';
 import { FaRegUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
+/* import { logo } from '../public/images/logos/logo_flyshop.png'; */
 import './nav.css'
-const nav = () => {
-    const { loginWithRedirect } = useAuth0();
+const Nav = () => {
+   
+    const { loginWithRedirect, logout,user, isAuthenticated} = useAuth0();
     
   return (
     <>
@@ -23,19 +25,25 @@ const nav = () => {
     <div className='main_header' >
         <div className='container' >
             <div  className='logo'  >
-                <img src='./' alt='Logo de la empresa' ></img>
+                <img src="#" alt='Logo de la empresa' />
             </div>
             <div className='search_box'>
                 <input type='text' value='' placeholder='Buscar' autoComplete='off' ></input>
                 <button>Buscar</button>
             </div>
             <div className='icon' >
-                <div className='account'>
+                {
+                    isAuthenticated &&
+                    (
+                    <div className='account'>
                     <div className='user_icon'>
                         <FaRegUserCircle />
                     </div>
-                    <p>Hello, User</p>
+                    <p>Hola, {user.name} :D</p>
                 </div>
+                    )
+                }
+                
                 <div className='second_icon'>
                     <Link to='/' className='link'><CiHeart/></Link>
                     <Link to='/cart' className='link'><IoBag/></Link>
@@ -61,10 +69,13 @@ const nav = () => {
                 </li>
             </ul>
             </div>
-            
             <div className='auth'>
-             <button onClick={() => loginWithRedirect()}><CiLogin /></button>
-             <button><CiLogout /></button>
+                {
+                    isAuthenticated ?
+                    <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><CiLogout /></button>
+                        :
+                    <button onClick={() => loginWithRedirect()}><CiLogin /></button>
+                }
             </div>
         </div>
     </div>  
@@ -72,4 +83,4 @@ const nav = () => {
   )
 }
 
-export default nav
+export default Nav
