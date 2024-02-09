@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { MdArrowRightAlt } from "react-icons/md";
 import './home.css'
 import { FiTruck } from "react-icons/fi";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { CiPercent } from "react-icons/ci";
+import { CiShoppingCart  } from "react-icons/ci";
+import { GoEye    } from "react-icons/go";
 import { ImHeadphones } from "react-icons/im";
+import { IoMdHeartEmpty  } from "react-icons/io";
 import Homeproduct from './homeproduct';
 const Home = () => {
-  const [homeproduct, setHomeProduct] = useState(Homeproduct)
+
   return (
     <>
     <div className='top_banner'>
@@ -99,13 +102,22 @@ const Home = () => {
       </div>
     </div>
     <div className='product'>
+      <h2>Top produt</h2>
       <div className='container'>
         {
-          homeproduct.map((curElm)=>{
+          Homeproduct.map((curElm)=>{
             return(
               <div className='box' key={curElm.id}>
                 <div className='img_box'>
                   <img src={curElm.Img} alt={curElm.Name}></img>
+                  <div className='icon'>
+                    <li> <CiShoppingCart /></li>
+                    <li><GoEye /></li>
+                    <li><IoMdHeartEmpty /></li>
+                   
+                    
+                    
+                  </div>
                 </div>
                 <div className='detail'>
                   <h3>{curElm.Name}</h3>

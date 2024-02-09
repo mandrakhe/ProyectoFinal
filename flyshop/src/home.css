@@ -154,3 +154,54 @@ background-color: white ;
 {
     color: #9a9a9a;
 }
+.product
+{
+    padding: 30px 40px;
+    width: 100%;
+}
+.product h2
+{
+    font-size: 32px;
+    color : #010f1c;
+    margin-bottom: 20px;
+}
+.product .container 
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product .container .box
+
+{
+    margin-left: 1px;  /*esto no funciona como deberia pero funciona*/
+    padding: 10px 20px;
+    overflow: hidden;
+    width: 280px;
+    height: 380px;
+    border: 1px solid  #e2e2e2;
+    margin-top: 20px;
+    transition: .5s;
+    border-radius: 5px;
+}
+
+.product .container .box:hover
+{
+
+    box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
+}
+
+.product .container .box .img_box
+{
+   display: flex; 
+   justify-content: space-between;
+   border-bottom: 1px solid #e2e2e2;
+}
+
+.product .container .box .img_box img
+{
+ width: 300px;
+ height: 250px;
+margin-right:50px ;
+}
