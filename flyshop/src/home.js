@@ -10,6 +10,7 @@ import { GoEye    } from "react-icons/go";
 import { ImHeadphones } from "react-icons/im";
 import { IoMdHeartEmpty  } from "react-icons/io";
 import Homeproduct from './homeproduct';
+import Zapato from './images/4.jpg';
 const Home = () => {
 
   return (
@@ -21,7 +22,7 @@ const Home = () => {
                 <Link className='link' to='/product'>shop now <MdArrowRightAlt/></Link>   
             </div>
             <div className='img_box'>
-                <img src='../public/images/1.jpg' alt='banner(deberia aparecer pero no aparece)'></img>
+                <img src={Zapato} alt='banner(deberia aparecer pero no aparece)'/>
             </div>
         </div>
     </div>

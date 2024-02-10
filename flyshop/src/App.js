@@ -10,7 +10,7 @@ const App = () => {
   {
     const  change =Productdetail.filter((x) =>
     {
-      return x.Cat === product
+      return x.Brand === product
     })
     setProduct(change)
   }

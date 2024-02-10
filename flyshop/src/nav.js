@@ -10,8 +10,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 /* import { logo } from '../public/images/logos/logo_flyshop.png'; */
 import './nav.css'
 const Nav = ({searchbtn}) => {
-    const [search,setSearch] = useState()
-    const { loginWithRedirect, logout,user, isAuthenticated} = useAuth0();
+    const [search, setSearch] = useState()
+    const { loginWithRedirect, logout, user, isAuthenticated} = useAuth0();
     
   return (
     <>
@@ -28,8 +28,8 @@ const Nav = ({searchbtn}) => {
                 <img src="#" alt='Logo de la empresa' />
             </div>
             <div className='search_box'>
-                <input type='text' value={search} placeholder='Buscar' autoComplete='off'onChange={(e)=>setSearch(e.target.value)} ></input>
-                <button onClick={()=>searchbtn(search)}>Buscar</button>
+                <input type='text' value={search} placeholder='Buscar' autoComplete='off' onChange={(e)=>setSearch(e.target.value)} ></input>
+                <button onClick={() => searchbtn (search)}>Buscar</button>
             </div>
             <div className='icon' >
                 {

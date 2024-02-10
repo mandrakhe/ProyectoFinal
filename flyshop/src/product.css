@@ -20,15 +20,18 @@
     font-weight: 300;
     color: #010f1c;
 }
+
 .products p
 {
 margin-top: 10px;
 color: #9a9a9a;
 }
-.products .container{
+
+.products .container
+{
     margin-top: 20px;
     max-width: 100%;
-    display: flex ;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -76,7 +79,6 @@ padding:  20px 30px;
 
 .products .container .productbox .contant .box
 {
-    margin-left: 1px;  /*esto no funciona como deberia pero funciona*/
     padding: 10px 20px;
     overflow: hidden;
     width: 280px;
@@ -86,7 +88,7 @@ padding:  20px 30px;
     transition: .5s;
     border-radius: 5px;
 }
-.products .container .productbox .contant .box :hover
+.products .container .productbox .contant .box:hover
 {
     box-shadow: rgba(0, 0  , 0,0.24)0px 3px 8px;
 }
@@ -125,7 +127,7 @@ list-style: none;
 padding: 10px ;
 color: #010f1c;
 cursor: pointer;
-box-shadow: rgba(0, 0  , 0,0.24)0px 3px 8px;
+box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
 background-color: white;
 transition: .5s;
 font-size: 18px;

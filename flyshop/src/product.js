@@ -10,7 +10,7 @@ const Product = ({product,setProduct}) => {
     {
         const update = Productdetail.filter((x) =>
         {
-            return x.Cat===product;
+            return x.Brand===product;
         }
         )
         setProduct(update)
@@ -22,20 +22,21 @@ const Product = ({product,setProduct}) => {
   return (
     <> 
         <div className='products'>
-        <h2># Products</h2>
-        <p>Home . products</p> 
+            <h2># Products</h2>
+            <p>Home . products</p> 
             <div className='container'>
                 <div className='filter'>
                     <div className='categories'>
                         <h3>Categories</h3>
                         <ul>
                             <li onClick={()=>AllProducts()} > All products</li>
-                            <li onClick={()=>filtterproduct("Tablet")} > Tablet</li>
+                            <li onClick={()=>filtterproduct("Jordan")} > Jordan</li>
                             <li onClick={()=>filtterproduct("Smart watch")} > Smart watch </li>
                             <li onClick={()=>filtterproduct("Headphne")} > Headphne</li>
                             <li onClick={()=>filtterproduct("Camera")} > Camera</li>
                             <li onClick={()=>filtterproduct("Gaming")} > Gaming </li>
                         </ul>
+                    </div>
                     </div>
                     <div className='container'>
                         <div className='productbox'>
@@ -50,11 +51,9 @@ const Product = ({product,setProduct}) => {
                                               <div className='img_box'>
                                                   <img src={curElm.Img} alt={curElm.Name}></img>
                                                  <div className='icon'>
-                                                    <li> <CiShoppingCart /></li>
-                                                   <li><GoEye /></li>
-                                                  <li><IoMdHeartEmpty /></li>
-
-                    
+                                                    <li><CiShoppingCart /></li>
+                                                    <li><GoEye /></li>
+                                                    <li><IoMdHeartEmpty /></li>
                                                  </div>
                                                </div>
                                                <div className='detail'>
@@ -70,7 +69,6 @@ const Product = ({product,setProduct}) => {
                                 }
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
