@@ -22,7 +22,7 @@ const Product = ({product,setProduct}) => {
   return (
     <> 
         <div className='products'>
-            <h2># Products</h2>
+            <h2># Zapatos</h2>
             <p>Home . products</p> 
             <div className='container'>
                 <div className='filter'>

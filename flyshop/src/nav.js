@@ -56,16 +56,16 @@ const Nav = ({searchbtn}) => {
             <div className='nav'>
             <ul>
                 <li>
-                    <Link to='/' className='link'>Home</Link>
+                    <Link to='/' className='link'>Inicio</Link>
                 </li>
                 <li>
-                    <Link to='/product' className='link'>Productos</Link>
+                    <Link to='/product' className='link'>Tienda</Link>
                 </li>
                 <li>
                     <Link to='/about' className='link'>Acerca de</Link>
                 </li>
                 <li>
-                    <Link to='/contact' className='link'>Contacto</Link>
+                    <Link to='/contact' className='link'>Contactanos</Link>
                 </li>
             </ul>
             </div>
