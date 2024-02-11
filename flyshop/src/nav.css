@@ -23,12 +23,14 @@
 }
 
 .header{ width: 100%; height: 80px; background-color: #000; }
+
 .logo img 
 {
     width: 95px; 
     height: 80px; 
     float: left; 
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .nav 
@@ -64,7 +66,7 @@
 
 .search_container
 { 
-    width: 180px; 
+    width: 250px; 
     margin: 50px auto; 
     position: relative; 
 }  
@@ -87,11 +89,6 @@
     transform: translateY(-50%); 
 }
 
-.search_icon img 
-{
-    width: 40px;
-}
-
 .search_input
 { 
     width: calc(100% - 30px); 
@@ -104,30 +101,47 @@
     color: #fff; 
 }
 
-.nav .link img 
-{
-    width: 30px; 
-    height: 28px;
-}
-
-.nav .link img[alt="Profile_Icon"] 
-{ 
-    filter: invert(); 
-    margin-left: 15px; 
-}
-
 .nav .link
 {
     color: #fff;
     font-size: 20px;
 }
 
-.nav .heart
+.nav .car
 {
-    margin-right: 15px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.account .user_icon
+{
+    margin-right: 10px;
 }
 
 .account p
 {
     color: #fff;
+    font-size: 15px;
+}
+
+.icon .account
+{
+    color: #fff;
+    margin-right: 15px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav .auth button
+{
+    font-size: 20px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -4,11 +4,11 @@ import { CiHeart } from 'react-icons/ci';
 import { IoBag } from 'react-icons/io5';
 import { CiLogin } from 'react-icons/ci';
 import { CiLogout } from 'react-icons/ci';
-import { FaRegUserCircle } from "react-icons/fa";
+import { CiUser } from "react-icons/ci";
 import { Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import { IoSearchOutline } from "react-icons/io5";
-/* import { logo } from '../public/images/logos/logo_flyshop.png'; */
+import Logo from './images/logos/logo_flyshop.png'
 import './nav.css'
 const Nav = ({ searchbtn }) => {
     const [search, setSearch] = useState()
@@ -27,7 +27,7 @@ const Nav = ({ searchbtn }) => {
                 <div className='container'>
                     <div className='nav'>
                         <div className='logo'  >
-                            <img src="#" alt='Logo de la empresa' />
+                            <Link to='/'><img src={Logo} alt='Logo de la empresa' /></Link>
                         </div>
                         <ul>
                             <li>
@@ -43,36 +43,36 @@ const Nav = ({ searchbtn }) => {
                                 <Link className='link' to='/about'>¿Quiénes somos?</Link>
                             </li>
                         </ul>
-                            <Link to='/' className='link heart'><CiHeart /></Link>
-                            <Link to='/cart' className='link'><IoBag /></Link>
                         <div class="search_container">
                             <div class="search_icon">
                             <button onClick={() => searchbtn(search)}><IoSearchOutline /></button>
                             </div>
                         <input className='search_input' type='search' value={search} placeholder='Buscar' autoComplete='off' onChange={(e) => setSearch(e.target.value)} ></input>
-                        <div className='icon' >
+                    </div>
+                <Link to='/' className='link'><CiHeart /></Link>
+                <Link to='/cart' className='link car'><IoBag /></Link>
+                <div className='icon' >
                         {
                             isAuthenticated &&
                             (
                                 <div className='account'>
                                     <div className='user_icon'>
-                                        <FaRegUserCircle />
+                                        <CiUser />
                                     </div>
                                     <p>Hola, {user.name} :D</p>
                                 </div>
                             )
                         }
-                    </div>
                 </div>
-            </div>
-                    </div>
-                    <div className='auth'>
+                <div className='auth'>
                         {
                             isAuthenticated ?
                                 <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><CiLogout /></button>
                                 :
                                 <button onClick={() => loginWithRedirect()}><CiLogin /></button>
                         }
+                </div>
+                        </div>
                     </div>
             </div>
         </>

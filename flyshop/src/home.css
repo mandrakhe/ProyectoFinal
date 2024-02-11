@@ -1,8 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
+}
+
+.Title
+{ 
+    text-align: center; 
+    font-size: 22px; 
+    margin-top: 30px; 
+    margin-bottom: 10px; 
+    font-family: 'Archivo Black', sans-serif; 
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    line-height: 52px;
 }
 
 .top_banner {
@@ -58,20 +71,21 @@
 .shoe_brand .container .box {
     padding: 10px 20px;
     margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .shoe_brand .container .box .img_box {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    background: #e8f4ff;
     overflow: hidden;
     cursor: pointer;
 }
 
 .shoe_brand .container .box .img_box img {
-    height: 80px;
-    width: 80px;
+    object-fit: cover;
+    height: 100px;
+    width: 200px;
     align-items: center;
     max-width: 100%;
     justify-content: center;
@@ -90,53 +104,23 @@
     align-items: center;
 }
 
-.shoe_brand .container .box .detail p {
+.shoe_brand .container .box .detail button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
-    color: #9a9a9a;
-}
-
-.about {
-    padding: 40px 50px;
-    width: 100%;
-}
-
-.about .container {
-    max-width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.about .container .box {
-    padding: 10px 20px;
-    display: flex;
-    background: #ecf2f7;
-    width: 270px;
-    height: 90px;
-    border-radius: 5px;
+    font-size: 20px;
+    color: #ffffff;
+    background: #010f1c;
+    width: 200px;
+    height: 36px;
+    padding: 10px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
-.about .container .box .icon {
-    color: #e44c8c;
-    font-size: 32px;
-    margin-top: 10px;
-}
-
-.about .container .box .detail {
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-.about .container .box .detail h3 {
-    color: #010f1c;
-}
-
-.about .container .box .detail p {
-    color: #9a9a9a;
-}
-
 .product {
-    padding: 30px 40px;
+    padding: 20px 50px;
     width: 100%;
 }
 
@@ -144,22 +128,24 @@
     font-size: 32px;
     color: #010f1c;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .product .container {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .product .container .box {
-    padding: 20px 20px;
     overflow: hidden;
-    width: 280px;
+    width: 240px;
     height: 350px;
     border: 1px solid #e2e2e2;
     margin-top: 20px;
-    margin-right: 8px;
+    margin-right: 50px;
+    margin-bottom: 10px;
     transition: .5s;
     border-radius: 5px;
 }
@@ -170,8 +156,11 @@
 
 .product .container .box .img_box {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     border-bottom: 1px solid #e2e2e2;
+    background: #ebebeb;
+    padding: 0;
 }
 
 .product .container .box .img_box img {
@@ -191,7 +180,7 @@
 }
 
 .product .container .box .img_box:hover .icon {
-    transform: translateX(-70px);
+    transform: translateX(-90px);
 }
 
 .product .container .box .img_box .icon li {
@@ -212,6 +201,7 @@
 }
 
 .product .container .box .detail {
+    padding: 5px 10px;
     margin-top: 10px;
 }
 
@@ -238,57 +228,33 @@
     letter-spacing: 1px;
 }
 
-.banner {
-    padding: 20px 30px;
-    width: 100%;
-}
-
-.banner .container {
-    padding: 30px 40px;
-    background-color: #0989ff;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.banner .container .detail {
-    margin-top: 10%;
-    margin-left: 20px;
-}
-
-.banner .container .detail h4 {
-    color: #e3edf6;
-    font-size: 16px;
-    letter-spacing: 1px;
-}
-
-.banner .container .detail h3 {
-    margin-top: 10px;
-    font-size: 42px;
-    margin-right: 20%;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
-.banner .container .detail p {
-    margin-top: 30px;
-    color: #fff;
+.product h4
+{
+    margin-top: 40px;
     font-size: 32px;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-    margin-bottom: 30px;
 }
 
-.banner .container .detail .link {
-    padding: 10px 30px;
-    color: #e8f4ff;
+.see
+{
     background: #010f1c;
-    text-decoration: none;
+    width: 150px;
+    height: 31px;
+    border: 0.5px solid #FFF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
-    transition: 0.5s;
 }
 
-.banner .container .detail .link:hover {
-    color: #010f1c;
-    background: #e8f4ff;
+.see .see_button
+{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
