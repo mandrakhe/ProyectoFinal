@@ -5,7 +5,7 @@ import { GoEye } from "react-icons/go";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 import './product.css'
-const Product = ({ product, setProduct, detail, view, close, setClose }) => {
+const Product = ({ product, setProduct, detail, view, close, setClose, addtocart}) => {
 
 
     const filtterproduct = (product) => {
@@ -78,7 +78,7 @@ const Product = ({ product, setProduct, detail, view, close, setClose }) => {
                                                     <div className='img_box'>
                                                         <img src={curElm.Img} alt={curElm.Name}></img>
                                                         <div className='icon'>
-                                                            <li><CiShoppingCart /></li>
+                                                            <li onClick={() => addtocart(curElm)}> <CiShoppingCart /></li>
                                                             <li onClick={() => view(curElm)}><GoEye /></li>
                                                             <li><IoMdHeartEmpty /></li>
                                                         </div>
@@ -86,7 +86,7 @@ const Product = ({ product, setProduct, detail, view, close, setClose }) => {
                                                     <div className='detail'>
                                                         <h3>{curElm.Name}</h3>
                                                         <p>{curElm.Brand}</p>
-                                                        <p>{curElm.Price}</p>
+                                                        <p>COP {curElm.Price}</p>
                                                     </div>
                                                 </div>
                                             </>

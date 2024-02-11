@@ -13,7 +13,7 @@ import Adidas from './images/zapatos/campus.png';
 import Nike from './images/zapatos/nike.png';
 import Jordan from './images/zapatos/jordan3.png';
 import NB from './images/zapatos/nb.png';
-const Home = ({detail, view, close, setClose}) => {
+const Home = ({detail, view, close, setClose, addtocart}) => {
 
   return (
     <>
@@ -103,7 +103,7 @@ const Home = ({detail, view, close, setClose}) => {
                 <div className='img_box'>
                   <img src={curElm.Img} alt={curElm.Name}></img>
                   <div className='icon'>
-                    <li> <CiShoppingCart /></li>
+                    <li onClick={() => addtocart(curElm)}> <CiShoppingCart /></li>
                     <li onClick={() => view(curElm)}><GoEye /></li>
                     <li><IoMdHeartEmpty /></li>
                   </div>
