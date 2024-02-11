@@ -1,11 +1,3 @@
-*
-{
- margin: 0;
- padding: 0;
- font-family: sans-serif;
- box-sizing: border-box;  
-}
-
 .free
 {
     padding: 10px 10px;
@@ -30,127 +22,112 @@
     font-weight: 600;
 }
 
-.main_header
+.header{ width: 100%; height: 80px; background-color: #000; }
+.logo img 
 {
-    padding: 30px 40px;
-    width: 100%;
-    border-bottom: 1px solid #010f1c;
+    width: 95px; 
+    height: 80px; 
+    float: left; 
+    box-sizing: border-box;
 }
 
-.main_header .container
-{
-    display: flex;
-    justify-content: space-between;
+.nav 
+{ 
+    align-items: center; 
+    display: flex; 
+    width: 90%;
+    height: 80px; 
+    margin: auto; 
+    background: #000;
 }
 
-.main_header .container .search_box
-{
-    margin-right: 30px;
+.nav ul 
+{ 
+    display: flex; 
+    align-items: center; 
 }
 
-.main_header .container .search_box input
-{
-    outline: none;
-    padding: 10px 30px;
-    border: 3px solid #0989ff;
-    width: 300px;
-    color: #9a9a9a;
-}
-
-.main_header .container .search_box button
-{
-    border: 3px solid #0989ff;
-    outline: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    background: #0989ff;
-    color: #ecf2f7;
-}
-
-.main_header .container .icon
-{
-    display: flex;
-    margin-right: 50px;
-}
-
-.main_header .container .icon .account
-{
-    display: flex;
-    margin-right: 30px;
-}
-
-.main_header .container .icon .account .user_icon
-{
-    margin-right: 10px;
-    font-size: 22px;
-    color: #010f1c;
-    cursor: pointer;
-}
-
-.main_header .container .icon .account p
-{
-    margin-right: 5px;
-    margin-top: 2px;
-}
-
-.main_header .container .icon .second_icon
-{
-    display: flex;
-}
-
-.main_header .container .icon .second_icon .link
-{
-    margin-right: 5px;
-    font-size: 22px;
-    cursor: pointer;
-    color: #0989ff;
-}
-.header 
-{
- width: 100%;
- padding: 20px 30px;
- box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
- 
-}
-
-.header .container {
-    display: flex;
-max-width: 100%;
-justify-content: space-between;
-}
-.header .container  .nav ul
-{
-    display: flex;
-}
-.header .container  .nav ul li
-{
-    margin-left: 20px;
-    list-style: none;
-
-}
-.header .container  .nav ul li .link
-{
-    text-decoration: none;
-    color: #010f1c;
-    transition: .5s;
-}
-.header .container  .nav ul li .link:hover
-{
-color: blue;
-}
-.header .container .auth
-{
+.nav ul li 
+{ 
+    list-style: none; 
+    display: flex; 
     margin-right: 20px;
-    font-size: 22px;
-    cursor: pointer;
 }
-.header .container .auth button 
+
+.nav ul li .link
 {
-    margin-right: 20px;
-    font-size: 22px;
-    cursor: pointer;
+    color: #fff; 
+    font-size: 13px; 
+    text-decoration: none ; 
+    text-transform: uppercase; 
+}
+
+.search_container
+{ 
+    width: 180px; 
+    margin: 50px auto; 
+    position: relative; 
+}  
+
+.search_container button
+{
+    background: transparent;
     outline: none;
+    color: #fff;
     border: none;
-    background: none;
+    cursor: pointer;
+    font-size: 20px;
+}
 
+.search_icon 
+{
+    position: absolute;
+    top: 50%; 
+    right: 20px;
+    transform: translateY(-50%); 
+}
+
+.search_icon img 
+{
+    width: 40px;
+}
+
+.search_input
+{ 
+    width: calc(100% - 30px); 
+    padding: 3px; 
+    padding-right: 30px; 
+    border: none; 
+    border-bottom: .6px solid #fff;
+    background-color: transparent; 
+    outline: none;
+    color: #fff; 
+}
+
+.nav .link img 
+{
+    width: 30px; 
+    height: 28px;
+}
+
+.nav .link img[alt="Profile_Icon"] 
+{ 
+    filter: invert(); 
+    margin-left: 15px; 
+}
+
+.nav .link
+{
+    color: #fff;
+    font-size: 20px;
+}
+
+.nav .heart
+{
+    margin-right: 15px;
+}
+
+.account p
+{
+    color: #fff;
 }

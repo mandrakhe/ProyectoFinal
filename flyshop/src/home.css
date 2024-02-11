@@ -1,75 +1,66 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
 }
 
-.top_banner 
-{
-    padding:30px 40px;
+.top_banner {
+    padding: 30px 40px;
     width: 100%;
-background-color: white ;
+    background-color: white;
 }
-.top_banner .container
-{
+
+.top_banner .container {
     max-width: 100%;
-    display: flex ;
+    display: flex;
     justify-content: space-between;
 }
-.top_banner .container .detail
-{
+
+.top_banner .container .detail {
     margin-top: 8%;
     margin-left: 30px;
 }
 
-.top_banner .container .detail h2
-{
+.top_banner .container .detail h2 {
     font-size: 52px;
     color: #010f1c;
     margin-right: 50%;
     margin-bottom: 40px;
 }
 
-.top_banner .container .detail .link
-{
+.top_banner .container .detail .link {
     padding: 10px 20px;
     text-decoration: none;
-    border-radius:5px;
+    border-radius: 5px;
     color: #010f1c;
-    background-color: #fff ;
+    background-color: #fff;
     transition: 0.5s;
 }
 
-.top_banner .container .detail .link:hover
-{
+.top_banner .container .detail .link:hover {
     background-color: #0989ff;
     color: #fff;
 }
 
-.shoe_brand
-{
+.shoe_brand {
     padding: 20px 30px;
     width: 100%;
     background-color: #f5f5f5;
 }
 
-.shoe_brand .container
-{
+.shoe_brand .container {
     max-width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.shoe_brand .container .box
-{
+.shoe_brand .container .box {
     padding: 10px 20px;
     margin-left: 10px;
 }
 
-.shoe_brand .container .box .img_box
-{
+.shoe_brand .container .box .img_box {
     height: 200px;
     width: 200px;
     border-radius: 50%;
@@ -78,8 +69,7 @@ background-color: white ;
     cursor: pointer;
 }
 
-.shoe_brand .container .box .img_box img
-{
+.shoe_brand .container .box .img_box img {
     height: 80px;
     width: 80px;
     align-items: center;
@@ -90,39 +80,33 @@ background-color: white ;
     transition: 0.5s;
 }
 
-.shoe_brand .container .box .img_box:hover img
-{
+.shoe_brand .container .box .img_box:hover img {
     transform: scale(1.3);
 }
 
-.shoe_brand .container .box .detail
-{
+.shoe_brand .container .box .detail {
     max-width: 100%;
     text-align: center;
     align-items: center;
 }
 
-.shoe_brand .container .box .detail p
-{
+.shoe_brand .container .box .detail p {
     margin-top: 10px;
     color: #9a9a9a;
 }
 
-.about
-{
+.about {
     padding: 40px 50px;
     width: 100%;
 }
 
-.about .container
-{
+.about .container {
     max-width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.about .container .box
-{
+.about .container .box {
     padding: 10px 20px;
     display: flex;
     background: #ecf2f7;
@@ -132,81 +116,71 @@ background-color: white ;
     cursor: pointer;
 }
 
-.about .container .box .icon
-{
+.about .container .box .icon {
     color: #e44c8c;
     font-size: 32px;
     margin-top: 10px;
 }
 
-.about .container .box .detail
-{
+.about .container .box .detail {
     margin-top: 10px;
     margin-left: 10px;
 }
 
-.about .container .box .detail h3
-{
+.about .container .box .detail h3 {
     color: #010f1c;
 }
 
-.about .container .box .detail p 
-{
+.about .container .box .detail p {
     color: #9a9a9a;
 }
-.product
-{
+
+.product {
     padding: 30px 40px;
     width: 100%;
 }
-.product h2
-{
+
+.product h2 {
     font-size: 32px;
-    color : #010f1c;
+    color: #010f1c;
     margin-bottom: 20px;
 }
-.product .container 
-{
+
+.product .container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.product .container .box
-
-{
-    margin-left: 1px;  /*esto no funciona como deberia pero funciona*/
-    padding: 10px 20px;
+.product .container .box {
+    padding: 20px 20px;
     overflow: hidden;
     width: 280px;
-    height: 380px;
-    border: 1px solid  #e2e2e2;
+    height: 350px;
+    border: 1px solid #e2e2e2;
     margin-top: 20px;
+    margin-right: 8px;
     transition: .5s;
     border-radius: 5px;
 }
 
-.product .container .box:hover
-{
+.product .container .box:hover {
     box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
 }
 
-.product .container .box .img_box
-{
-   display: flex; 
-   justify-content: space-between;
-   border-bottom: 1px solid #e2e2e2;
+.product .container .box .img_box {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e2e2;
 }
 
-.product .container .box .img_box img
-{
- width: 300px;
- height: 250px;
- margin-right:50px ;
+.product .container .box .img_box img {
+    width: 300px;
+    height: 250px;
+    margin-right: 50px;
 }
 
-.product .container .box .img_box .icon
-{   
+.product .container .box .img_box .icon {
     z-index: 1;
     position: relative;
     right: -80px;
@@ -216,66 +190,60 @@ background-color: white ;
     transition: .5s;
 }
 
-.product .container .box .img_box:hover .icon
-{
-  transform: translateX(-70px);
+.product .container .box .img_box:hover .icon {
+    transform: translateX(-70px);
 }
 
-.product .container .box .img_box .icon li
-{
+.product .container .box .img_box .icon li {
     list-style: none;
     padding: 10px;
-    color: #010f1c ;
+    color: #010f1c;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
     background: white;
     transition: .5s;
     font-size: 18px;
 }
-.product .container .box .img_box .icon li:hover
-{
+
+.product .container .box .img_box .icon li:hover {
     background-color: #0989ff;
-    color: white ;
+    color: white;
 
 }
-.product .container .box .detail
-{
+
+.product .container .box .detail {
     margin-top: 10px;
 }
-.product .container .box .details  p
-{
+
+.product .container .box .details p {
     color: #9a9a9a;
     font-family: 14px;
 }
 
-.product .container .box .detail h3
-{
+.product .container .box .detail h3 {
     font-family: 16px;
     margin-top: 5px;
     color: #010f1c;
     transition: .5s;
 }
 
-.product .container .box:hover .detail h3
-{
+.product .container .box:hover .detail h3 {
     color: #0989ff;
 }
 
-.product .container .box .detail h4
-{
+.product .container .box .detail h4 {
     margin-top: 5px;
     font-family: 14px;
     color: #0989ff;
     letter-spacing: 1px;
 }
 
-.banner{
+.banner {
     padding: 20px 30px;
     width: 100%;
 }
 
-.banner .container
-{
+.banner .container {
     padding: 30px 40px;
     background-color: #0989ff;
     border-radius: 10px;
@@ -283,21 +251,18 @@ background-color: white ;
     justify-content: space-between;
 }
 
-.banner .container .detail 
-{
+.banner .container .detail {
     margin-top: 10%;
     margin-left: 20px;
 }
 
-.banner .container .detail h4
-{
+.banner .container .detail h4 {
     color: #e3edf6;
     font-size: 16px;
     letter-spacing: 1px;
 }
 
-.banner .container .detail h3
-{
+.banner .container .detail h3 {
     margin-top: 10px;
     font-size: 42px;
     margin-right: 20%;
@@ -305,8 +270,7 @@ background-color: white ;
     color: #fff;
 }
 
-.banner .container .detail p
-{
+.banner .container .detail p {
     margin-top: 30px;
     color: #fff;
     font-size: 32px;
@@ -315,8 +279,7 @@ background-color: white ;
     margin-bottom: 30px;
 }
 
-.banner .container .detail .link
-{
+.banner .container .detail .link {
     padding: 10px 30px;
     color: #e8f4ff;
     background: #010f1c;
@@ -325,8 +288,7 @@ background-color: white ;
     transition: 0.5s;
 }
 
-.banner .container .detail .link:hover
-{
+.banner .container .detail .link:hover {
     color: #010f1c;
     background: #e8f4ff;
 }

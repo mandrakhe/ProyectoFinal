@@ -115,7 +115,7 @@ const Home = () => {
                     <li> <CiShoppingCart /></li>
                     <li><GoEye /></li>
                     <li><IoMdHeartEmpty /></li>
-                   
+                  
                     
                     
                   </div>
@@ -131,7 +131,7 @@ const Home = () => {
         }
       </div>
     </div>
-    <div className='banneer'>
+    <div className='banner'>
       <div className='container'>
       <div className='detail'>
         <h4>LATEST PRODUCT ADDED</h4>
@@ -145,7 +145,6 @@ const Home = () => {
       </div>
     </div>
       </div>
-     
     </>
   )
 }
