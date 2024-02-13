@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { IoMdClose } from "react-icons/io";
+import { GiPadlock } from "react-icons/gi";
 import './cart.css'
 
 const Cart = ({cart, setCart}) => {
@@ -42,8 +43,10 @@ const Cart = ({cart, setCart}) => {
             }))
         }
     }
+    const Totalprice = cart.reduce((price, item) => price + item.qty * item.Price, 0)
     return (
         <>
+        <h1 className='title'>Carrito de compras</h1>
         <div className='cartcontainer'>
             {cart.length === 0 && 
             <div className='emptycart'>
@@ -60,6 +63,7 @@ const Cart = ({cart, setCart}) => {
                                     <img src={curElm.Img} alt={curElm.Name}></img>
                                 </div>
                                 <div className='detail'>
+                                    <div className='info'>
                                     <h4>{curElm.Brand}</h4>
                                     <h3>{curElm.Name}</h3>
                                     <p>Precio COP {curElm.Price}</p>
@@ -68,15 +72,25 @@ const Cart = ({cart, setCart}) => {
                                         <input type='text' value={curElm.qty}></input>
                                         <button className=' incqty' onClick={() => incqty(curElm)}>+</button>
                                     </div>
-                                    <h4>sub total: ${curElm.Price * curElm.qty}</h4>
+                                    <h4 className='subtotal'>sub total: ${curElm.Price * curElm.qty}</h4>
+                                    </div>
+                                    <div className='close'>
                                     <button onClick={()=> removeproduct(curElm)}><IoMdClose /></button>
+                                    </div>
                                 </div>
                             </div>
                         )
                     })
                 }
             </div>
-        </div>
+            {
+                cart.length > 0 &&
+                <>
+                    <h2 className='totalprice'>Total: COP {Totalprice}</h2>
+                    <button className='checkout'>Pago seguro <i><GiPadlock /></i></button>
+                </>
+            }
+            </div>
         </>
     )
 }

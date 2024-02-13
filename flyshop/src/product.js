@@ -4,9 +4,10 @@ import { CiShoppingCart } from "react-icons/ci";
 import { GoEye } from "react-icons/go";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
+import { useAuth0 } from "@auth0/auth0-react";
 import './product.css'
 const Product = ({ product, setProduct, detail, view, close, setClose, addtocart}) => {
-
+    const { loginWithRedirect, isAuthenticated } = useAuth0();
 
     const filtterproduct = (product) => {
         const update = Productdetail.filter((x) => {
@@ -38,7 +39,7 @@ const Product = ({ product, setProduct, detail, view, close, setClose, addtocart
                                         <h2>{curElm.Name}</h2>
                                         <p>Texto pero una cantidad exagerada de texto o sea en plan mucho pero mucho texto sin el más minimo sentido aparente pero igual ya veremos</p>
                                         <h3>{curElm.Price}</h3>
-                                        <button>Add To Cart</button>
+                                        <button onClick={() => addtocart(curElm)}>Add To Cart</button>
                                     </div>
                                 </div>
                             )
@@ -78,7 +79,12 @@ const Product = ({ product, setProduct, detail, view, close, setClose, addtocart
                                                     <div className='img_box'>
                                                         <img src={curElm.Img} alt={curElm.Name}></img>
                                                         <div className='icon'>
-                                                            <li onClick={() => addtocart(curElm)}> <CiShoppingCart /></li>
+                                                            {
+                                                                isAuthenticated ?
+                                                                <li onClick={() => addtocart(curElm)}> <CiShoppingCart /></li>
+                                                                :
+                                                                <li onClick={() => loginWithRedirect()}> <CiShoppingCart /></li>
+                                                            }
                                                             <li onClick={() => view(curElm)}><GoEye /></li>
                                                             <li><IoMdHeartEmpty /></li>
                                                         </div>

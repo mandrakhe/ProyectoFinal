@@ -13,7 +13,9 @@ import Adidas from './images/zapatos/campus.png';
 import Nike from './images/zapatos/nike.png';
 import Jordan from './images/zapatos/jordan3.png';
 import NB from './images/zapatos/nb.png';
+import { useAuth0 } from "@auth0/auth0-react";
 const Home = ({detail, view, close, setClose, addtocart}) => {
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (
     <>
@@ -35,7 +37,7 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                                         <h2>{curElm.Name}</h2>
                                         <p>Texto pero una cantidad exagerada de texto o sea en plan mucho pero mucho texto sin el más minimo sentido aparente pero igual ya veremos</p>
                                         <h3>{curElm.Price}</h3>
-                                        <button>Add To Cart</button>
+                                        <button onClick={() => addtocart(curElm)}>Add To Cart</button>
                                     </div>
                                 </div>
                             )
@@ -45,7 +47,7 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                 </div>
             </div> : null
         }
-    <div className='Title'><h1>BIENVENIDOS A FLYSHOP</h1></div>
+    <div className='title'><h1>BIENVENIDOS A FLYSHOP</h1></div>
     <div className='top_banner'>
         <div className='container'>
             <div className='detail'>
@@ -103,7 +105,13 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                 <div className='img_box'>
                   <img src={curElm.Img} alt={curElm.Name}></img>
                   <div className='icon'>
-                    <li onClick={() => addtocart(curElm)}> <CiShoppingCart /></li>
+                    {
+                        isAuthenticated ?
+
+                        <li onClick={() => addtocart(curElm)}> <CiShoppingCart /></li>
+                        :
+                        <li onClick={() => loginWithRedirect()}> <CiShoppingCart /></li>
+                      }
                     <li onClick={() => view(curElm)}><GoEye /></li>
                     <li><IoMdHeartEmpty /></li>
                   </div>
@@ -123,6 +131,7 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
       </div>
       <h4>LO MEJOR DE FLYSHOP</h4>
     </div>
+
     </>
   )
 }

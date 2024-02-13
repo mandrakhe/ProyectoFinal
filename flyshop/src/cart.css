@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 *
 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+}
+
+.title
+{ 
+    text-align: center; 
+    font-size: 30px; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    font-family: 'Archivo Black', sans-serif; 
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    line-height: 52px;
 }
 
 .cartcontainer
@@ -17,7 +29,6 @@
 .cartcontainer .emptycart
 {
     margin-top: 30px;
-    margin-left: 40%;
 }
 
 .cartcontainer .emptycart h2
@@ -25,6 +36,7 @@
     font-size: 32px;
     color: #010f1c;
     text-transform: uppercase;
+    text-align: center;
     font-weight: 300;
     margin-bottom: 30px;
 }
@@ -32,8 +44,158 @@
 .cartcontainer .emptycart .emptycartbtn
 {
     text-decoration: none;
-    margin-left: 90px;
+    margin-left: 44.5%;
     color: #fff;
     padding: 10px 20px;
     background: #010f1c;
+}
+
+.cartcontainer .contant
+{
+    max-width: 100%;
+    padding: 20px 30px;
+}
+
+.cartcontainer .contant .cart_item
+{
+    padding: 20px 30px;
+    display: flex;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cartcontainer .contant .cart_item .img_box
+{
+    padding: 20px 20px;
+    background: #f1f1f1;
+}
+
+.cartcontainer .contant .cart_item .img_box  img
+{
+    width: 250px;
+    height: 250px;
+}
+
+.cartcontainer .contant .cart_item .detail
+{
+    margin-left: 60px;
+    display: flex;
+    margin-top: 30px;
+    padding: 20px 30px;
+}
+
+.cartcontainer .contant .cart_item .detail .info h4
+{
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #9a9a9a;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+}
+
+.cartcontainer .contant .cart_item .detail .info h3
+{
+    margin-top: 20px;
+    color: #010f1c;
+    font-size: 22px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.cartcontainer .contant .cart_item .detail .info p
+{
+    margin-top: 10px;
+    color: #010f1c;
+    letter-spacing: 1px;
+}
+
+.cartcontainer .contant .cart_item .detail .info .qty
+{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    width: 150px;
+    height: 44px;
+}
+
+.cartcontainer .contant .cart_item .detail .info .qty button
+{
+    background: none;
+    outline: none;
+    border: none;
+    color: #808080;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.cartcontainer .contant .cart_item .detail .info .qty input
+{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 22px;
+    color: #010f1c;
+    width: 50px;
+    margin-left: 40px;
+    cursor: default;
+}
+
+.cartcontainer .contant .cart_item .detail .info .subtotal
+{
+    color: #010f1c;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.cartcontainer .contant .cart_item .detail .close
+{
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.cartcontainer .contant .cart_item .detail button
+{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 22px;
+    color: #db0045;
+    cursor: pointer;
+}
+
+.cartcontainer .totalprice
+{
+    margin-top: 30px;
+    margin-left: 43%;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cartcontainer .checkout
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    height: 60px;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 40px;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #484848;
+}
+
+.cartcontainer .checkout i
+{
+    margin-left: 10px;
+    font-size: 20px;
 }
