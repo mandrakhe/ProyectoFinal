@@ -1,11 +1,11 @@
 import React from 'react'
-import Productdetail from './productdetail'
+import Productdetail from '../../productdetail'
 import { CiShoppingCart } from "react-icons/ci";
 import { GoEye } from "react-icons/go";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 import { useAuth0 } from "@auth0/auth0-react";
-import './product.css'
+import '../../css/product.css'
 const Product = ({ product, setProduct, detail, view, close, setClose, addtocart}) => {
     const { loginWithRedirect, isAuthenticated } = useAuth0();
 

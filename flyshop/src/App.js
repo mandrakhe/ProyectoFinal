@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Nav from './nav'
-import Footer from './footer'
-import Rout from './rout'
+import Nav from './components/common/nav.js'
+import Footer from './components/common/footer.js'
+import Rout from './rout.js'
 import {BrowserRouter} from 'react-router-dom';
 import Productdetail from './productdetail';
 const App = () => {

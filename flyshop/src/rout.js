@@ -1,8 +1,8 @@
 import React from 'react'
 import {Routes,Route} from 'react-router-dom';
-import Home from './home';
-import Product from './product';
-import Cart from './cart';
+import Home from './components/pages/home';
+import Product from './components/pages/product';
+import Cart from './components/pages/cart';
 const Rout = ({product, setProduct, detail, view, close, setClose, cart, setCart, addtocart}) => {
   return (
     <>

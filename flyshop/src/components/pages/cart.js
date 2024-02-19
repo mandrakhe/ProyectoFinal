@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { IoMdClose } from "react-icons/io";
 import { GiPadlock } from "react-icons/gi";
-import './cart.css'
+import '../../css/cart.css';
 
 const Cart = ({cart, setCart}) => {
     const incqty = (product) =>

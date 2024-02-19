@@ -1,18 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { MdArrowRightAlt } from "react-icons/md";
-import './home.css'
-import './product.css'
+import '../../css/home.css'
+import '../../css/product.css'
 import { CiShoppingCart  } from "react-icons/ci";
 import { GoEye    } from "react-icons/go";
 import { IoMdHeartEmpty  } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
-import Homeproduct from './homeproduct';
-import Zapato from './images/4.jpg';
-import Adidas from './images/zapatos/campus.png';
-import Nike from './images/zapatos/nike.png';
-import Jordan from './images/zapatos/jordan3.png';
-import NB from './images/zapatos/nb.png';
+import Homeproduct from '../../homeproduct';
+import Zapato from '../../images/4.jpg';
+import Adidas from '../../images/zapatos/campus.png';
+import Nike from '../../images/zapatos/nike.png';
+import Jordan from '../../images/zapatos/jordan3.png';
+import NB from '../../images/zapatos/nb.png';
 import { useAuth0 } from "@auth0/auth0-react";
 const Home = ({detail, view, close, setClose, addtocart}) => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
