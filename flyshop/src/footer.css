@@ -27,12 +27,12 @@
     color: #010f1c;
 }
 
-.footer .container .about .detail .icon {
+ .icon {
     margin-top: 20px;
     display: flex;
 }
 
-.footer .container .about .detail .icon li {
+ .icon li {
     margin-left: 20px;
     list-style: none;
     padding: 10px 10px;
@@ -41,7 +41,7 @@
     transition: 0.5s;
 }
 
-.footer .container .about .detail .icon li:hover {
+.icon li:hover {
     background: #000000;
     color: #fff;
     border-radius: 5px;
@@ -63,7 +63,7 @@
     margin-left: 20px;
 }
 
-.footer .container .page ul li {
+.footer .container ul li {
     margin-top: 5px;
     color: #010f1c;
     font-size: 14px;
@@ -71,6 +71,10 @@
     cursor: pointer;
 }
 
-.footer .container .page ul li:hover {
+.footer .container ul li:hover {
     color: #0989ff;
+}
+
+.footer .container ul li{
+    list-style: none;
 }
