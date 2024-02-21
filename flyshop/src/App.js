@@ -4,6 +4,7 @@ import Footer from './components/common/footer.js'
 import Rout from './rout.js'
 import {BrowserRouter} from 'react-router-dom';
 import Productdetail from './productdetail';
+import addProduct from './components/pages/addProduct.js';
 const App = () => {
 
   const[cart, setCart] = useState([])
@@ -56,7 +57,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Nav searchbtn={searchbtn}/>
-        <Rout product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addtocart={addtocart} />
+        <Rout addProduct={addProduct} product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addtocart={addtocart} />
         <Footer />
       </BrowserRouter>
     </>
