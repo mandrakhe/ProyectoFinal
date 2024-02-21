@@ -16,13 +16,6 @@ const Nav = ({ searchbtn }) => {
 
     return (
         <>
-            <div className='free'>
-                <div className='icon' >
-                    <BiAccessibility />
-                </div>
-                <p>  Free Shipping on All Orders</p>
-            </div>
-
             <div className='header'>
                 <div className='container'>
                     <div className='nav'>
