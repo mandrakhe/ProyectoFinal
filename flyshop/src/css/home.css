@@ -6,6 +6,10 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
+.container #X-top_banner{
+    text-align: center;
+    margin-left: 40%;
+}
 
 .title
 { 
@@ -232,27 +236,15 @@
     font-size: 32px;
 }
 
-.see
+img[alt='zapato del banner']
 {
-    background: #010f1c;
-    width: 150px;
-    height: 31px;
-    border: 0.5px solid #FFF;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
+    height: 85%;
+    position: relative;
+    left: 15%;
 }
 
-.see .see_button
+.top_banner .container .detail
 {
-    text-decoration: none;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    left: 10%;
 }

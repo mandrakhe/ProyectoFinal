@@ -8,7 +8,7 @@ import { GoEye    } from "react-icons/go";
 import { IoMdHeartEmpty  } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 import Homeproduct from '../../homeproduct';
-import Zapato from '../../images/4.jpg';
+import Zapato from '../../images/zapatos/jodanretro3.png';
 import Adidas from '../../images/zapatos/campus.png';
 import Nike from '../../images/zapatos/nike.png';
 import Jordan from '../../images/zapatos/jordan3.png';
@@ -47,15 +47,17 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                 </div>
             </div> : null
         }
-    <div className='title'><h1>BIENVENIDOS A FLYSHOP</h1></div>
+   
     <div className='top_banner'>
         <div className='container'>
             <div className='detail'>
-                <h2>The latest collection</h2>      
-                <Link className='link' to='/product'>shop now <MdArrowRightAlt/></Link>   
+                <h2>FLYSHOP</h2>  
+                {/* <h2 id='X-top_banner'>X</h2> */}
+                {/* <h2>JORDAN</h2> */}
+                <Link className='link' to='/product'>Compra ya! <MdArrowRightAlt/></Link>   
             </div>
             <div className='img_box'>
-                <img src={Zapato} alt='banner(deberia aparecer pero no aparece)'/>
+                <img src={Zapato} alt='zapato del banner'/>
             </div>
         </div>
     </div>
