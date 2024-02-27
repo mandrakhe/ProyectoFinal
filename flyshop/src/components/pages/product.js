@@ -52,7 +52,7 @@ const Product = ({ product, setProduct, detail, view, close, setClose, addtocart
 
 
             <div className='products'>
-                <h2># Zapatos</h2>
+                <h2>Zapatos</h2>
                 <p>Home . products</p>
                 <div className='container'>
                     <div className='filter'>
@@ -61,10 +61,8 @@ const Product = ({ product, setProduct, detail, view, close, setClose, addtocart
                             <ul>
                                 <li onClick={() => AllProducts()} > All products</li>
                                 <li onClick={() => filtterproduct("Jordan")} > Jordan</li>
-                                <li onClick={() => filtterproduct("Smart watch")} > Smart watch </li>
-                                <li onClick={() => filtterproduct("Headphne")} > Headphne</li>
-                                <li onClick={() => filtterproduct("Camera")} > Camera</li>
-                                <li onClick={() => filtterproduct("Gaming")} > Gaming </li>
+                                <li onClick={() => filtterproduct("Smart watch")} > Adidas </li>
+                                <li onClick={() => filtterproduct("Headphne")} > New balanse</li>
                             </ul>
                         </div>
                     </div>
