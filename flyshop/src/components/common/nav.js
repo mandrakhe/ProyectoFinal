@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { BiAccessibility } from 'react-icons/bi';
 import { CiHeart } from 'react-icons/ci';
 import { IoBag } from 'react-icons/io5';
 import { CiLogin } from 'react-icons/ci';
@@ -8,7 +7,7 @@ import { CiUser } from "react-icons/ci";
 import { Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import { IoSearchOutline } from "react-icons/io5";
-import Logo from '../../images/logos/logo_flyshop.png'
+import Logo from '../../assets/images/logos/logo_flyshop.png'
 import '../../css/nav.css'
 const Nav = ({ searchbtn }) => {
     const [search, setSearch] = useState()
@@ -36,8 +35,8 @@ const Nav = ({ searchbtn }) => {
                                 <Link className='link' to='/about'>¿Quiénes somos?</Link>
                             </li>
                         </ul>
-                        <div class="search_container">
-                            <div class="search_icon">
+                        <div className="search_container">
+                            <div className="search_icon">
                             <button onClick={() => searchbtn(search)}><IoSearchOutline /></button>
                             </div>
                         <input className='search_input' type='search' value={search} placeholder='Buscar' autoComplete='off' onChange={(e) => setSearch(e.target.value)} ></input>

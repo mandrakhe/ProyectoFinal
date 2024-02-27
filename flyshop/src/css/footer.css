@@ -1,10 +1,11 @@
+@import url('../css/variables.css');
 * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
 }
-
+/*footer */
 .footer {
     padding: 30px 40px;
     width: 100%;
@@ -14,67 +15,43 @@
 .footer .container {
     max-width: 100%;
     display: flex;
-    justify-content: space-between;
 }
 
-.footer .container .about {
-    max-width: 30%;
+
+/*icon */
+
+.icon {
+    margin:  0 20px ;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
 }
 
-.footer .container .about .detail p {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #010f1c;
-}
-
- .icon {
-    margin-top: 20px;
-    display: flex;
-}
-
- .icon li {
-    margin-left: 20px;
-    list-style: none;
-    padding: 10px 10px;
-    box-shadow: rgba(0, 0, 0, 0.15)1.95px 1.95px 2.6px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.icon li:hover {
-    background: #000000;
-    color: #fff;
+.icon:hover {
+    background: var(--color-secundario);
+    color: var(--color-primario);
     border-radius: 5px;
     font-size: 16px;
 }
+/*page & account*/
 
-.footer .container .page {
-    margin-right: 100px;
-    margin-top: 30px;
+.contact
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:3rem ;
 }
-
-.footer .container .page h3 {
-    font-size: 32px;
-    color: #010f1c;
+.contact ul {
+    display: inline-block;
+    margin-right: 10px;
 }
-
-.footer .container .page ul {
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-.footer .container ul li {
-    margin-top: 5px;
-    color: #010f1c;
-    font-size: 14px;
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-.footer .container ul li:hover {
-    color: #0989ff;
-}
-
-.footer .container ul li{
+.contact ul li
+{
     list-style: none;
+    
+}
+.contact .page
+{
+    margin-left: 5rem;
 }

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@700&display=swap');
+@import url('../css/variables.css');
 
 /* VISTA PREVIA PRODUCTO */
 
@@ -11,11 +12,11 @@
     font-style: normal;
     font-size: 30px;
     text-align: center;
-    color: #000;
+    color: var(--color-secundario);
 }
 /* PUBLICAR ARTICULO */
 .agregar-imagenes .imagen{
-    border: 0.5px solid #bfbfbf;
+    border: 0.5px solid var(--color-gris);
     width: 240px;
     height: 300px;  
     margin: 0 0 0 49px;
@@ -32,7 +33,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
-    color: #000;
+    color: var(--color-secundario);
 }
 .agregar-producto .agregar-imagenes h2{
     font-family: 'Inter';
@@ -41,7 +42,7 @@
 
 }
 .agregar-producto .descripciones h1{
-    border: 1px solid #bfbfbf;
+    border: 1px solid var(--color-gris);
     width: 240px;
     height: 40px;
     margin: 0  0 5px;
@@ -61,7 +62,7 @@
     width: 600px;
     height: 500px;
     text-align: center;
-    background-color: #E3E3E3;
+    background-color: var(--color-gris);
 }
 .vista-previa .vista-publicacion h2{
     font-family: 'Anek Devanagari';
@@ -75,5 +76,5 @@
     text-transform: initial;
     font-size: 12px;
     font-weight: 500;
-    color: #6B6B6B;
+    color: var(--color-gris);
 }

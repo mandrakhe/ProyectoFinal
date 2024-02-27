@@ -1,19 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { MdArrowRightAlt } from "react-icons/md";
+import { MdArrowRightAlt } from "react-icons/md"
 import '../../css/home.css'
 import '../../css/product.css'
-import { CiShoppingCart  } from "react-icons/ci";
-import { GoEye    } from "react-icons/go";
-import { IoMdHeartEmpty  } from "react-icons/io";
-import { IoMdClose } from "react-icons/io";
-import Homeproduct from '../../homeproduct';
-import Zapato from '../../images/zapatos/jodanretro3.png';
-import Adidas from '../../images/zapatos/campus.png';
-import Nike from '../../images/zapatos/nike.png';
-import Jordan from '../../images/zapatos/jordan3.png';
-import NB from '../../images/zapatos/nb.png';
-import { useAuth0 } from "@auth0/auth0-react";
+import { CiShoppingCart  } from "react-icons/ci"
+import { GoEye    } from "react-icons/go"
+import { IoMdHeartEmpty  } from "react-icons/io"
+import { IoMdClose } from "react-icons/io"
+import Homeproduct from '../../homeproduct'
+import Zapato from '../../assets/images/zapatos/jodanretro3.png'
+import Adidas from '../../assets/images/zapatos/campus.png'
+import Nike from '../../assets/images/zapatos/nike.png'
+import Jordan from '../../assets/images/zapatos/jordan3.png'
+import NB from '../../assets/images/zapatos/nb.png'
+import { useAuth0 } from "@auth0/auth0-react"
 const Home = ({detail, view, close, setClose, addtocart}) => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
@@ -30,7 +30,7 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                             return(
                                 <div className='productbox'>
                                     <div className='img-box'>
-                                        <img src={curElm.Img} alt={curElm.Name}></img>
+                                        <img src={(curElm.Img)} alt={curElm.Name}></img>
                                     </div>
                                     <div className='detail'>
                                         <h4>{curElm.Brand}</h4>
@@ -54,8 +54,7 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                 <h2>FLYSHOP</h2>  
                 {/* <h2 id='X-top_banner'>X</h2> */}
                 {/* <h2>JORDAN</h2> */}
-                <Link className='link' to='/product'>Compra ya! <MdArrowRightAlt/></Link>   
-            </div>
+                <Link className='link' to='/product'>Compra ya! <MdArrowRightAlt/></Link>            </div>
             <div className='img_box'>
                 <img src={Zapato} alt='zapato del banner'/>
             </div>
@@ -104,8 +103,10 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
           Homeproduct.map((curElm)=>{
             return(
               <div className='box' key={curElm.id}>
+                <img src='./assets/images/zapatos/campus.png' alt='prueba' />
                 <div className='img_box'>
-                  <img src={curElm.Img} alt={curElm.Name}></img>
+                  
+                  <img src={require(`${curElm.Img}`)} alt={curElm.Name}/>
                   <div className='icon'>
                     {
                         isAuthenticated ?
@@ -127,9 +128,7 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
             )
           })
         }
-{/*       <div className='see'>
-          <Link to='/product' className='see_button'>VER TODO<MdArrowRightAlt/></Link>
-      </div> */}
+
       </div>
       <h4>LO MEJOR DE FLYSHOP</h4>
     </div>
