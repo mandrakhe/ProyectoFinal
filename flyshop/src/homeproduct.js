@@ -5,7 +5,7 @@ const Homeproduct =
         Name: "Jordan 3 high",
         Brand: 'Jordan',
         Price: '1000',
-        Img: './assets/images/zapatos/campus.png',
+        Img: './assets/images/1.jpg',
     },
     {
         id: 2,

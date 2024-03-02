@@ -24,10 +24,11 @@
 }
 
 .top_banner {
-    padding: 30px 40px;
+    padding: 0px 40px 30px;
     width: 100%;
-    background-color: var(--color-primario);
+    background-color:#090909;
 }
+
 
 .top_banner .container {
     max-width: 100%;
@@ -39,10 +40,22 @@
     margin-top: 8%;
     margin-left: 30px;
 }
+img[alt='zapato del banner']
+{
+    height: 30em;
+    position: relative;
+    width: 60vw;
 
-.top_banner .container .detail h2 {
+    margin: auto;
+    display: block;
+    background-image: u;
+
+}
+
+
+.top_banner .container .detail h2,h4 {
     font-size: 52px;
-    color: var(--color-secundario);
+    color: var(--color-primario);
     margin-right: 50%;
     margin-bottom: 40px;
 }
@@ -183,12 +196,13 @@
 }
 
 .product .container .box .img_box:hover .icon {
-    transform: translateX(-90px);
+    transform: translateX(-4em);
 }
 
 .product .container .box .img_box .icon li {
     list-style: none;
     padding: 10px;
+    display: flex;
     color: var(--color-secundario);
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
@@ -202,6 +216,7 @@
     color: var(--color-primario);
 
 }
+
 
 .product .container .box .detail {
     padding: 5px 10px;
@@ -237,12 +252,7 @@
     font-size: 32px;
 }
 
-img[alt='zapato del banner']
-{
-    height: 85%;
-    position: relative;
-    left: 15%;
-}
+
 
 .top_banner .container .detail
 {
