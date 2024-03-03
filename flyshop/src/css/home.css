@@ -188,16 +188,16 @@ img[alt='zapato del banner']
 .product .container .box .img_box .icon {
     z-index: 1;
     position: relative;
-    right: -80px;
+    right: 100px;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     transition: .5s;
 }
 
-.product .container .box .img_box:hover .icon {
+/* .product .container .box .img_box:hover .icon {
     transform: translateX(-4em);
-}
+} */
 
 .product .container .box .img_box .icon li {
     list-style: none;
@@ -205,11 +205,39 @@ img[alt='zapato del banner']
     display: flex;
     color: var(--color-secundario);
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
-    background: var(--color-primario);
     transition: .5s;
     font-size: 18px;
 }
+
+.product .container .box .img_box .icon li:nth-child(1) {
+    position: absolute;
+    top: -15px;
+    left: 60px;
+  }
+  
+  .product .container .box .img_box .icon li:nth-child(2) { 
+    position: absolute;
+    top: -15px;
+    right: 100px;
+  }
+  
+  .detail button {
+    width: 12em;
+    padding: 5px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .detail button:hover {
+    background-color: #222;
+    cursor: pointer;
+  }
 
 .product .container .box .img_box .icon li:hover {
     background-color: var(--color-azul);
@@ -219,7 +247,7 @@ img[alt='zapato del banner']
 
 
 .product .container .box .detail {
-    padding: 5px 10px;
+    padding: 0 10px;
     margin-top: 10px;
 }
 

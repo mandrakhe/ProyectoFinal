@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { MdArrowRightAlt } from "react-icons/md"
 import '../../css/home.css'
 import '../../css/product.css'
-import { CiShoppingCart  } from "react-icons/ci"
 import { GoEye    } from "react-icons/go"
 import { IoMdHeartEmpty  } from "react-icons/io"
 import { IoMdClose } from "react-icons/io"
@@ -108,13 +107,6 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                   
                   <img src={curElm.Img} alt={curElm.Name}/>
                   <div className='icon'>
-                    {
-                        isAuthenticated ?
-
-                        <li onClick={() => addtocart(curElm)}> <CiShoppingCart /></li>
-                        :
-                        <li onClick={() => loginWithRedirect()}> <CiShoppingCart /></li>
-                      }
                     <li onClick={() => view(curElm)}><GoEye /></li>
                     <li><IoMdHeartEmpty /></li>
                   </div>
@@ -123,6 +115,15 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                   <h3>{curElm.Name}</h3>
                   <p>{curElm.Brand}</p>
                   <p>{curElm.Price}</p>
+                  <button
+                      onClick={
+                        isAuthenticated
+                          ? () => addtocart(curElm)
+                          : () => loginWithRedirect()
+                      }
+                    >
+                     Añadir al carrito
+                    </button>
                 </div>
               </div>
             )

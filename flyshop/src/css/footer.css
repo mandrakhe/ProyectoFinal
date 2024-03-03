@@ -20,14 +20,14 @@
 
 /*icon */
 
-.icon {
+.icon-footer {
     margin:  0 20px ;
     width: 2rem;
     height: 2rem;
     text-align: center;
 }
 
-.icon:hover {
+.icon-footer:hover {
     background: var(--color-secundario);
     color: var(--color-primario);
     border-radius: 5px;
