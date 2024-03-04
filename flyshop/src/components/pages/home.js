@@ -7,7 +7,7 @@ import { GoEye    } from "react-icons/go"
 import { IoMdHeartEmpty  } from "react-icons/io"
 import { IoMdClose } from "react-icons/io"
 import Homeproduct from '../../homeproduct'
-import Zapato from '../../assets/images/imagen-fondo.jpg'
+import Zapato from '../../assets/images/logos/logo_banner.png'
 import Adidas from '../../assets/images/zapatos/campus.png'
 import Nike from '../../assets/images/zapatos/nike.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
