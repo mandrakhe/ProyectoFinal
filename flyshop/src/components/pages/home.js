@@ -7,7 +7,7 @@ import { GoEye    } from "react-icons/go"
 import { IoMdHeartEmpty  } from "react-icons/io"
 import { IoMdClose } from "react-icons/io"
 import Homeproduct from '../../homeproduct'
-import Zapato from '../../assets/images/imagen-fondo.jpg'
+import Zapato from '../../assets/images/logos/logo_banner.png'
 import Adidas from '../../assets/images/zapatos/campus.png'
 import Nike from '../../assets/images/zapatos/nike.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
@@ -52,8 +52,7 @@ const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
         <div className='container'>
             <div className='detail'>
                 <h2>FLYSHOP</h2>  
-               <h4>Be bold. Be you.</h4>
-               
+                <h4>Be bold. Be you.</h4>
                 <Link className='link' to='/product'>Compra ya! <MdArrowRightAlt/></Link></div>
             <div className='img_box'>
                 <img src={Zapato} alt='zapato del banner'/>
@@ -130,7 +129,7 @@ const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
                           : () => loginWithRedirect()
                       }
                     >
-                     Añadir al carrito
+                      Añadir al carrito
                     </button>
                 </div>
               </div>

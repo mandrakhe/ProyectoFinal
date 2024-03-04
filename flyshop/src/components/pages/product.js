@@ -6,6 +6,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../../css/product.css";
+
 const Product = ({
     product,
     setProduct,
@@ -63,50 +64,54 @@ const Product = ({
             ) : null}
 
             <div className="products">
-                <h2>Zapatos</h2>
-  
-                <div className="container">
-
+                <h2>(Resultados)</h2>
                 <div className="filters">
-    <div className="filter">
-        <label htmlFor="filterSelect">Filtro</label>
-        <select id="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-            <option value="all">Todos los Productos</option>
-            <option value="Jordan">Jordan</option>
-            <option value="Adidas">Adidas</option>
-            <option value="New Balanse">New balanse</option>
-        </select>
-    </div>
-    <div className="filter">
-        <label htmlFor="filterSelect">Precios</label>
-        <select id="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-            <option value="all">Todos los precios</option>
-            <option value="Jordan">De 99.000 - 199.999</option>
-            <option value="Adidas">De 200.000 - 900.000</option>
-            <option value="New Balanse">De 1.000.000  +</option>
-        </select>
-    </div>
-    <div className="filter">
-        <label htmlFor="filterSelect">Hombre</label>
-        <select id="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-            <option value="all">Todos los productos</option>
-            <option value="Jordan">Altos</option>
-            <option value="Jordan">Enanos</option>
-            <option value="Adidas">Gordos</option>
-            <option value="New Balanse">Bajitos</option>
-        </select>
-    </div>
-    <div className="filter">
-        <label htmlFor="filterSelect">Mujer</label>
-        <select id="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-            <option value="all">Todos los productos</option>
-            <option value="Jordan">Altas</option>
-            <option value="Adidas">Enanas</option>
-            <option value="New Balanse">Gordas</option>
-            <option value="New Balanse">Flacas</option>
-        </select>
-    </div>
-</div>
+                    <h1>Filtrar: </h1>
+                        <div className="filter">
+                            <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
+                                <option value="all">Marcas</option>
+                                <option value="Jordan">Jordan</option>
+                                <option value="Adidas">Adidas</option>
+                                <option value="New Balanse">New balanse</option>
+                            </select>
+                        </div>
+                        <div className="filter">
+                            <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
+                                <option value="all">Precio</option>
+                                <option value="Jordan">Menor a mayor</option>
+                                <option value="Adidas">Mayor a menor</option>
+                                <option value="New Balanse">De 1.000.000  +</option>
+                            </select>
+                        </div>
+                        <div className="filter">
+                            <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
+                                <option value="all">Hombre</option>
+                                <option value="Jordan">Altos</option>
+                                <option value="Jordan">Enanos</option>
+                                <option value="Adidas">Gordos</option>
+                                <option value="New Balanse">Bajitos</option>
+                            </select>
+                        </div>
+                        <div className="filter">
+                            <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
+                                <option value="all">Mujer</option>
+                                <option value="Jordan">Altas</option>
+                                <option value="Adidas">Enanas</option>
+                                <option value="New Balanse">Gordas</option>
+                                <option value="New Balanse">Flacas</option>
+                            </select>
+                        </div>
+                        <div className="filter">
+                            <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
+                                <option value="all">Niños</option>
+                                <option value="Jordan">Altas</option>
+                                <option value="Adidas">Enanas</option>
+                                <option value="New Balanse">Gordas</option>
+                                <option value="New Balanse">Flacas</option>
+                            </select>
+                        </div>
+                    </div>
+                <div className="container">
                     <div className="container">
                         <div className="productbox">
                             <div className="contant">
