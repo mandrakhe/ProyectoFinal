@@ -13,7 +13,7 @@ import Nike from '../../assets/images/zapatos/nike.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
 import NB from '../../assets/images/zapatos/nb.png'
 import { useAuth0 } from "@auth0/auth0-react"
-const Home = ({detail, view, close, setClose, addtocart}) => {
+const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (
@@ -36,13 +36,14 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                                         <h2>{curElm.Name}</h2>
                                         <p>Texto pero una cantidad exagerada de texto o sea en plan mucho pero mucho texto sin el más minimo sentido aparente pero igual ya veremos</p>
                                         <h3>{curElm.Price}</h3>
+                                        <h3>Tallas</h3>
                                         <button onClick={() => addtocart(curElm)}>Add To Cart</button>
                                     </div>
                                 </div>
                             )
                         })
                     }
-                <div className='productbox'></div>
+                {/* <div className='productbox'></div> */}
                 </div>
             </div> : null
         }
@@ -53,7 +54,7 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                 <h2>FLYSHOP</h2>  
                <h4>Be bold. Be you.</h4>
                
-                <Link className='link' to='/product'>Compra ya! <MdArrowRightAlt/></Link>            </div>
+                <Link className='link' to='/product'>Compra ya! <MdArrowRightAlt/></Link></div>
             <div className='img_box'>
                 <img src={Zapato} alt='zapato del banner'/>
             </div>
@@ -108,7 +109,14 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                   <img src={curElm.Img} alt={curElm.Name}/>
                   <div className='icon'>
                     <li onClick={() => view(curElm)}><GoEye /></li>
-                    <li><IoMdHeartEmpty /></li>
+                    <li 
+                     onClick={
+                      isAuthenticated
+                        ? () => addtocart(curElm)
+                        : () => loginWithRedirect()
+                    }
+                  
+                    ><IoMdHeartEmpty /></li>
                   </div>
                 </div>
                 <div className='detail'>
@@ -118,7 +126,7 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                   <button
                       onClick={
                         isAuthenticated
-                          ? () => addtocart(curElm)
+                          ? () => addfavorite(curElm)
                           : () => loginWithRedirect()
                       }
                     >

@@ -7,6 +7,8 @@ import Home from './components/pages/home';
 import Product from './components/pages/product';
 import Cart from './components/pages/cart';
 import AddProduct from './components/pages/addProduct';
+import Addfavorite from './components/pages/addFavorite';
+
 const Rout = ({product, setProduct, detail, view, close, setClose, cart, setCart, addtocart}) => {
   return (
     <>
@@ -17,6 +19,7 @@ const Rout = ({product, setProduct, detail, view, close, setClose, cart, setCart
         <Route path='/product' element={<Product product= {product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart} />}/>
         <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
         <Route path='/addProduct' element={<AddProduct/>}/>
+        <Route path='/addFavorite' element={<Addfavorite/>}/>
       </Routes>
     </>
   )

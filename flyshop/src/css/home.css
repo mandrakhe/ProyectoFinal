@@ -157,8 +157,8 @@ img[alt='zapato del banner']
 .product .container .box {
     overflow: hidden;
     width: 240px;
-    height: 350px;
-    border: 1px solid #e2e2e2;
+    height: 380px;
+    border: 1px solid #000;
     margin-top: 20px;
     margin-right: 50px;
     margin-bottom: 10px;
@@ -186,7 +186,6 @@ img[alt='zapato del banner']
 }
 
 .product .container .box .img_box .icon {
-    z-index: 1;
     position: relative;
     right: 100px;
     display: flex;
@@ -195,18 +194,23 @@ img[alt='zapato del banner']
     transition: .5s;
 }
 
-/* .product .container .box .img_box:hover .icon {
-    transform: translateX(-4em);
-} */
 
-.product .container .box .img_box .icon li {
+
+.product .container .box .img_box .icon li  {
     list-style: none;
     padding: 10px;
+    font-size: 40px;
     display: flex;
     color: var(--color-secundario);
     cursor: pointer;
     transition: .5s;
     font-size: 18px;
+}
+
+.product .container .box .img_box .icon li:hover {
+    color: var(--color-azul);
+    border-radius: 10px;
+
 }
 
 .product .container .box .img_box .icon li:nth-child(1) {
@@ -222,16 +226,14 @@ img[alt='zapato del banner']
   }
   
   .detail button {
-    width: 12em;
+    width: 10em;
     padding: 5px;
     border: none;
     background-color: #000;
     color: #fff;
     font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    margin: 10px 30px  ;
+    transition: all 0.1s ease;
   }
   
   .detail button:hover {
@@ -239,11 +241,6 @@ img[alt='zapato del banner']
     cursor: pointer;
   }
 
-.product .container .box .img_box .icon li:hover {
-    background-color: var(--color-azul);
-    color: var(--color-primario);
-
-}
 
 
 .product .container .box .detail {
