@@ -110,29 +110,28 @@ const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
                   <div className='icon'>
                     <li onClick={() => view(curElm)}><GoEye /></li>
                     <li 
-                     onClick={
-                      isAuthenticated
-                        ? () => addtocart(curElm)
-                        : () => loginWithRedirect()
-                    }
+                    //  onClick={
+                    //   isAuthenticated
+                    //  funcion para añadir a favoritos
+                    // }
                   
                     ><IoMdHeartEmpty /></li>
                   </div>
                 </div>
                 <div className='detail'>
-                  <h3>{curElm.Name}</h3>
-                  <p>{curElm.Brand}</p>
-                  <p>{curElm.Price}</p>
-                  <button
-                      onClick={
-                        isAuthenticated
-                          ? () => addfavorite(curElm)
-                          : () => loginWithRedirect()
-                      }
-                    >
-                     Añadir al carrito
-                    </button>
-                </div>
+                                                <h3>{curElm.Name}</h3>
+                                                <p>{curElm.Brand}</p>
+                                                <p>{curElm.Price}</p>
+                                                <button className="button"
+                                                    onClick={
+                                                        isAuthenticated
+                                                            ? () => addtocart(curElm)
+                                                            : () => loginWithRedirect()
+                                                    }
+                                                >
+                                                    Añadir al carrito
+                                                </button>
+                                            </div>
               </div>
             )
           })
