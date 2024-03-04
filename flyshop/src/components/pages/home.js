@@ -13,7 +13,7 @@ import Nike from '../../assets/images/zapatos/nike.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
 import NB from '../../assets/images/zapatos/nb.png'
 import { useAuth0 } from "@auth0/auth0-react"
-const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
+const Home = ({detail, view, close, setClose, addtocart,addToFavorites}) => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (
@@ -109,13 +109,12 @@ const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
                   <img src={curElm.Img} alt={curElm.Name}/>
                   <div className='icon'>
                     <li onClick={() => view(curElm)}><GoEye /></li>
-                    <li 
-                    //  onClick={
-                    //   isAuthenticated
-                    //  funcion para añadir a favoritos
+                    <li             
+                    ><IoMdHeartEmpty className="button"
+                    // onClick={
+                    //     isAuthenticated ? () => addToFavorites(curElm, 'favorite.js') : () => loginWithRedirect()
                     // }
-                  
-                    ><IoMdHeartEmpty /></li>
+                     /></li>
                   </div>
                 </div>
                 <div className='detail'>

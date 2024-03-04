@@ -23,9 +23,9 @@ const Product = ({
         });
         setProduct(update);
     };
-    // const AllProducts = () => {
-    //     setProduct(Productdetail);
-    // };
+    const AllProducts = () => {
+        setProduct(Productdetail);
+    };
     return (
         <>
             {close ? (
@@ -70,7 +70,13 @@ const Product = ({
                 <div className="filters">
     <div className="filter">
         <label htmlFor="filterSelect">Filtro</label>
-        <select id="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
+        <select id="filterSelect" onChange={(e) => {
+  if (e.target.value === 'all') {
+    AllProducts();
+  } else {
+    filtterproduct(e.target.value);
+  }
+}}>
             <option value="all">Todos los Productos</option>
             <option value="Jordan">Jordan</option>
             <option value="Adidas">Adidas</option>
@@ -89,7 +95,7 @@ const Product = ({
     <div className="filter">
         <label htmlFor="filterSelect">Hombre</label>
         <select id="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-            <option value="all">Todos los productos</option>
+            <option value="all"  >Todos los productos</option>
             <option value="Jordan">Altos</option>
             <option value="Jordan">Enanos</option>
             <option value="Adidas">Gordos</option>
