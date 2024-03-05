@@ -109,7 +109,7 @@ const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
                   <div className='icon'>
                     <li onClick={() => view(curElm)}><GoEye /></li>
                     <li 
-                     onClick={
+                      onClick={
                       isAuthenticated
                         ? () => addtocart(curElm)
                         : () => loginWithRedirect()

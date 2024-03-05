@@ -1,22 +1,32 @@
+import { useForm } from "react-hook-form"
+import { useAuth } from "../../context/AuthContext"
 import { Link } from 'react-router-dom'
 import '../../css/login.css'
 import logoBanner from '../../assets/images/logos/logo_banner.png'
 
 function Login() {
+    const { register, handleSubmit } = useForm();
+    const { signin } = useAuth();
+
+    const onSubmited = handleSubmit(async (data) => {
+        signin(data);
+    })
     return (
         <>
             <img src={logoBanner} alt="Imagen principal" />
             <div className='login'>
                 <div className='contenedor-login' >
                     <h2 className='tittle'>Iniciar sesión</h2>
-                    <form >
+                    <form onSubmit={onSubmited}>
                         <div className="inputs">
                             <label htmlFor="password"></label>
-                            <input type="text" placeholder='Ingresa tu Gmail' autoCapitalize='off' name='email' />
+                            <input type="email" placeholder='ingresa tu email' 
+                            {...register("email", { required: true })}  />
                         </div>
                         <div className="inputs">
                             <label htmlFor="email"></label>
-                            <input type="password" placeholder='Ingresa tu contraseña' name='password' />
+                            <input type="password" placeholder='Ingresa tu contraseña'
+                            {...register("password", { required: true })}/>
                         </div>
                         <button type="submit" >Aceptar</button>
                     </form>
