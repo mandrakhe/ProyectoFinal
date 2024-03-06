@@ -33,12 +33,12 @@
     border-radius:10px;
 }
 
-.register img 
+.register img[ alt="Imagen-principal-signup"] 
 {
     position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1000;
+    right: 6em;
+    top: 5em;
+    height: 50em;
 }
 
 .contenedor-signup h2

@@ -23,7 +23,7 @@ function Signup() {
     return (
         <>
             <div className="register">
-                <img src={logoBanner} alt="Imagen principal" />
+                <img src={logoBanner} alt="Imagen-principal-signup" />
                 <div className="contenedor-signup">
                     <h2 className="tittle">Registrate</h2>
                     <form  onSubmit={onSubmited}>
