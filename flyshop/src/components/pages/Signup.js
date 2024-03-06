@@ -12,7 +12,7 @@ function Signup() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (isAuthenticathed) navigate('/tasks');
+        if (isAuthenticathed) navigate('/');
 
     }, [isAuthenticathed, navigate])
 
