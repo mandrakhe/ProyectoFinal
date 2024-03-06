@@ -12,12 +12,12 @@ function Signup() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (isAuthenticathed) navigate('/');
+        // if (isAuthenticathed) navigate('/');
 
     }, [isAuthenticathed, navigate])
 
 
-    const onSubmited = handleSubmit(async (values) => {
+    const onSubmited = handleSubmit((values) => {
         signup(values);
     })
     return (

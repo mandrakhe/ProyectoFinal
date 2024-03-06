@@ -35,8 +35,8 @@ const Nav = ({ searchbtn }) => {
                                 <Link className='link' to='/about'>¿Quiénes somos?</Link>
                             </li>
                         </ul>
-                        <div class="search_container">
-                            <div class="search_icon">
+                        <div className="search_container">
+                            <div className="search_icon">
                             <button onClick={() => searchbtn(search)}><IoSearchOutline /></button>
                             </div>
                         <input className='search_input' type='search' value={search} placeholder='Buscar' autoComplete='off' onChange={(e) => setSearch(e.target.value)} ></input>

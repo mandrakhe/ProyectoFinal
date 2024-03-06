@@ -20,6 +20,12 @@ export const AuthProvider = ({ children }) => {
     const [errors, setErrors] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    /*
+    1, imprimir por consola la response de la api
+    2, ver las respuestas de los errores y como sale la respuesta cuando hace la accion determiana (correcto)
+    3, asignar los errores a el useState de erres
+    4, asignar la response a el useState correspondiente
+    */ 
 
     const signup = async (user) => {
         try {
@@ -28,8 +34,15 @@ export const AuthProvider = ({ children }) => {
             setUser(res.data);
             setIsAuthenticated(true);
         } catch (error) {
-            setErrors(error.response.data);
             console.log(error);
+            error.response.data.map((error) => {
+                setErrors((ant) => {
+                    return [
+                        ...ant,
+                        error
+                    ]
+                })
+            })
         }
     }
 

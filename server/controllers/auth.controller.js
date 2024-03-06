@@ -80,7 +80,7 @@ export const verifyToken = async (req, res) =>{
     jwt.verify(token, TOKEN_SECRET, async (err, user) =>{
         if(err) return res.status(401).json({ message: "Unauthorized" })
 
-        const userFound = await user.findById(user.id)
+        const userFound = await User.findById(user.id)
         if(!userFound) return res.status(401).json({ message: "Unauthorized" })
 
         return res.json({
