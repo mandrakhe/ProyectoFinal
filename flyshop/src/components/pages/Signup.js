@@ -8,13 +8,13 @@ import { useNavigate } from 'react-router-dom';
 
 function Signup() {
     const { register, handleSubmit } = useForm();
-    const { signup, isAuthenticathed, } = useAuth();
+    const { signup, isAuthenticated, } = useAuth();
     const navigate = useNavigate();
 
     useEffect(() => {
-        // if (isAuthenticathed) navigate('/');
+        if (isAuthenticated) navigate('/');
 
-    }, [isAuthenticathed, navigate])
+    }, [isAuthenticated, navigate])
 
 
     const onSubmited = handleSubmit((values) => {
@@ -23,7 +23,7 @@ function Signup() {
     return (
         <>
             <div className="register">
-                <img src={logoBanner} alt="Imagen principal" />
+                <img src={logoBanner} alt="Imagen-principal-signup" />
                 <div className="contenedor-signup">
                     <h2 className="tittle">Registrate</h2>
                     <form  onSubmit={onSubmited}>

@@ -5,13 +5,16 @@ import { CiLogin } from 'react-icons/ci';
 import { CiLogout } from 'react-icons/ci';
 import { CiUser } from "react-icons/ci";
 import { Link } from 'react-router-dom';
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth } from '../../context/AuthContext';
 import { IoSearchOutline } from "react-icons/io5";
+import { Navigate } from 'react-router-dom';
 import Logo from '../../assets/images/logos/logo_flyshop.png'
 import '../../css/nav.css'
+
 const Nav = ({ searchbtn }) => {
     const [search, setSearch] = useState()
-    const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+    const { setLogout, user, isAuthenticated } = useAuth();
+
 
     return (
         <>
@@ -51,7 +54,7 @@ const Nav = ({ searchbtn }) => {
                                     <div className='user_icon'>
                                         <CiUser />
                                     </div>
-                                    <p>Hola, {user.name} :D</p>
+                                    <p>Hola, {user.username } :D</p>
                                 </div>
                             )
                         }
@@ -59,11 +62,12 @@ const Nav = ({ searchbtn }) => {
                 <div className='auth'>
                         {
                             isAuthenticated ?
-                                <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><CiLogout /></button>
+                                <button onClick={() => setLogout()}><CiLogout /></button>
                                 :
-                                <button onClick={() => loginWithRedirect()}><CiLogin /></button>
+                                <button onClick={!isAuthenticated && (() => <Navigate to='/login' replace />)}><CiLogin /></button>
                         }
                 </div>
+                
                         </div>
                     </div>
             </div>

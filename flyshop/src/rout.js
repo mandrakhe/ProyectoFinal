@@ -7,6 +7,7 @@ import Login from './components/pages/login';
 import Signup from './components/pages/Signup';
 import Home from './components/pages/home';
 
+
 import Product from './components/pages/product';
 import Cart from './components/pages/cart';
 import AddProduct from './components/pages/addProduct';

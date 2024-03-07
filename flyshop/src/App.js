@@ -5,6 +5,7 @@ import Rout from './rout.js'
 import {BrowserRouter} from 'react-router-dom';
 import Productdetail from './productdetail';
 import addProduct from './components/pages/addProduct.js';
+import { AuthProvider } from './context/AuthContext';
 const App = () => {
 
   const[cart, setCart] = useState([])
@@ -56,7 +57,9 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Nav searchbtn={searchbtn}/>
+        <AuthProvider>
+          <Nav searchbtn={searchbtn}/>
+        </AuthProvider>
         <Rout addProduct={addProduct} product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addtocart={addtocart} />
         <Footer />
       </BrowserRouter>

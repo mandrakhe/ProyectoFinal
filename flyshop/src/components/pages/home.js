@@ -12,9 +12,9 @@ import Adidas from '../../assets/images/zapatos/campus.png'
 import Nike from '../../assets/images/zapatos/nike.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
 import NB from '../../assets/images/zapatos/nb.png'
-import { useAuth0 } from "@auth0/auth0-react"
-const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+import { useAuth } from "../../context/AuthContext"
+const Home = ({detail, view, close, setClose, addtocart}) => {
+const { loginWithRedirect, isAuthenticated } = useAuth();
 
   return (
     <>
@@ -110,7 +110,7 @@ const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
                     <li onClick={() => view(curElm)}><GoEye /></li>
                     <li 
                       onClick={
-                      isAuthenticated
+                        isAuthenticated
                         ? () => addtocart(curElm)
                         : () => loginWithRedirect()
                     }
@@ -125,7 +125,7 @@ const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
                   <button
                       onClick={
                         isAuthenticated
-                          ? () => addfavorite(curElm)
+                          ? () => addtocart(curElm)
                           : () => loginWithRedirect()
                       }
                     >

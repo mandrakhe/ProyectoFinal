@@ -4,9 +4,20 @@ import { Link } from 'react-router-dom'
 import '../../css/login.css'
 import logoBanner from '../../assets/images/logos/logo_banner.png'
 
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 function Login() {
     const { register, handleSubmit } = useForm();
-    const { signin } = useAuth();
+
+    const { signin, isAuthenticated } = useAuth();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (isAuthenticated) navigate('/');
+    }, [isAuthenticated, navigate])
+
+
 
     const onSubmited = handleSubmit(async (data) => {
         signin(data);
@@ -14,7 +25,7 @@ function Login() {
     return (
         <>
             <img src={logoBanner} alt="Imagen principal" />
-            <div className='login'>
+            <div className='login'>     
                 <div className='contenedor-login' >
                     <h2 className='tittle'>Iniciar sesión</h2>
                     <form onSubmit={onSubmited}>

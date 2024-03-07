@@ -1,5 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { loginRequest, registerRequest, verifyTokenRequest } from "../api/auth";
+import { loginRequest, registerRequest, verifyTokenRequest, logoutRequest  } from "../api/auth";
 import Cookies from 'js-cookie';
 
 export const AuthContext = createContext();
@@ -16,7 +16,7 @@ export const useAuth = () => {
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [isAuthenticathed, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [errors, setErrors] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -59,6 +59,18 @@ export const AuthProvider = ({ children }) => {
                 setErrors(error.response.data)
             }
             setErrors([error.response.data.message]);
+        }
+    }
+
+    const setLogout = async (user) =>
+    {
+        try{
+            const res = await logoutRequest(user);
+            setIsAuthenticated(false);
+            setUser(res);
+        }
+        catch (error){
+            console.log(error);
         }
     }
 
@@ -107,7 +119,8 @@ export const AuthProvider = ({ children }) => {
             signup,
             user,
             signin,
-            isAuthenticathed,
+            setLogout,
+            isAuthenticated,
             errors,
             loading
         }}>

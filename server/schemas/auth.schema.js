@@ -1,4 +1,4 @@
-import { z } from 'zod';
+/* import { z } from 'zod';
 
 export const registerSchema = z.object({
     username : z.string({
@@ -27,4 +27,4 @@ export const loginSchema = z.object({
     }).min(6, {
         message: 'Password must be at least 6 characters long.'
     })
-});
+}); */
