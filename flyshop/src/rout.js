@@ -11,9 +11,9 @@ import Home from './components/pages/home';
 import Product from './components/pages/product';
 import Cart from './components/pages/cart';
 import AddProduct from './components/pages/addProduct';
-import Addfavorite from './components/pages/favorite';
+import Addfavorite from './components/pages/addFavorite';
 
-const Rout = ({product, setProduct, detail, view, close, setClose, cart, setCart, addtocart}) => {
+const Rout = ({product, setProduct, detail, view, close, setClose, cart, setCart, addtocart,setFavorite,Favorite}) => {
   return (
     <>
     <AuthProvider>
@@ -22,12 +22,12 @@ const Rout = ({product, setProduct, detail, view, close, setClose, cart, setCart
         <Route path='/login' element={<Login/>} />
         <Route path='/' element={<Home detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart}/>}/>
         <Route path='/product' element={<Product product= {product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart} />}/>
-        <Route path='/addFavorite' element={<Addfavorite/>}/>
+        <Route path='/addFavorite' element={<Addfavorite Favorite={Favorite} setFavorite={setFavorite} />}/>
+          <Route path='/addProduct' element={<AddProduct/>}/>
+          <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
 
         
         <Route element={<ProtectedRoute />}>
-          <Route path='/addProduct' element={<AddProduct/>}/>
-          <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
         </Route>
       </Routes>
       </AuthProvider>

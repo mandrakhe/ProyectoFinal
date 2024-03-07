@@ -116,6 +116,7 @@ const Product = ({
                         <div className="productbox">
                             <div className="contant">
                                 {product.map((curElm) => {
+                                    
                                     return (
 
                                         <div className='box' key={curElm.id}>
@@ -125,7 +126,7 @@ const Product = ({
                                                 <img src={curElm.Img} alt={curElm.Name} />
                                                 <div className='icon'>
                                                     <li onClick={() => view(curElm)}><GoEye /></li>
-                                                    <li><IoMdHeartEmpty /></li>
+                                                    <li ><IoMdHeartEmpty /></li>
                                                 </div>
                                             </div>
                                             <div className='detail'>
