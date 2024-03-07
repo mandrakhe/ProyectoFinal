@@ -13,6 +13,7 @@ import Nike from '../../assets/images/zapatos/nike.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
 import NB from '../../assets/images/zapatos/nb.png'
 import { useAuth0 } from "@auth0/auth0-react"
+import addFavorite from './addFavorite';
 const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
@@ -109,12 +110,11 @@ const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
                   <div className='icon'>
                     <li onClick={() => view(curElm)}><GoEye /></li>
                     <li 
-                      onClick={
+                     onClick={
                       isAuthenticated
-                        ? () => addtocart(curElm)
+                        ? () => addFavorite(curElm)
                         : () => loginWithRedirect()
                     }
-                  
                     ><IoMdHeartEmpty /></li>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ const Home = ({detail, view, close, setClose, addtocart,addfavorite}) => {
                   <button
                       onClick={
                         isAuthenticated
-                          ? () => addfavorite(curElm)
+                          ? () => addtocart(curElm)
                           : () => loginWithRedirect()
                       }
                     >
