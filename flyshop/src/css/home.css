@@ -8,15 +8,17 @@
     box-sizing: border-box;
 }
 
+.container #X-top_banner {
+    text-align: center;
+    margin-left: 40%;
+}
 
-
-.title
-{ 
-    text-align: center; 
-    font-size: 22px; 
-    margin-top: 30px; 
-    margin-bottom: 10px; 
-    font-family: 'Archivo Black', sans-serif; 
+.title {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: 'Archivo Black', sans-serif;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     line-height: 52px;
 }
@@ -24,7 +26,7 @@
 .top_banner {
     padding: 0px 40px 31px;
     width: 100%;
-    background-color:#fff;
+    background-color: #fff;
 }
 
 
@@ -35,34 +37,28 @@
     height: 88vh;
 }
 
-
-img[alt='zapato del banner']
-{
-    height: 38em;
-    position: relative;
-    width: 60em;
-    margin: auto;
-    display: block;
-
-}
 .top_banner .container .detail {
-    margin-top: 10em;
-    height: 14em;
+    margin-top: 8%;
     margin-left: 30px;
 }
 
-.top_banner .container .detail h2{
+img[alt='zapato del banner'] {
+    height: 30em;
+    position: relative;
+    width: 55vw;
+    margin: auto;
+    display: block;
+    background-image: u;
+
+}
+
+
+.top_banner .container .detail h2,
+h4 {
     font-size: 52px;
     color: #000;
+    margin-right: 50%;
     margin-bottom: 40px;
-}
-.top_banner .container .detail h4
-{
-    font-size: 30px;
-    text-align: center;
-    color: #000;
-    margin-bottom: 40px;
-
 }
 
 .top_banner .container .detail .link {
@@ -142,7 +138,6 @@ img[alt='zapato del banner']
 
 .product {
     padding: 20px 50px;
-    margin: 0 2em;
     width: 100%;
 }
 
@@ -155,7 +150,6 @@ img[alt='zapato del banner']
 
 .product .container {
     display: flex;
-    flex-direction:row-reverse;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -203,7 +197,7 @@ img[alt='zapato del banner']
 
 
 
-.product .container .box .img_box .icon li  {
+.product .container .box .img_box .icon li {
     list-style: none;
     padding: 10px;
     font-size: 40px;
@@ -224,30 +218,29 @@ img[alt='zapato del banner']
     position: absolute;
     top: -15px;
     left: 60px;
-  }
-  
-  .product .container .box .img_box .icon li:nth-child(2) { 
+}
+
+.product .container .box .img_box .icon li:nth-child(2) {
     position: absolute;
     top: -15px;
     right: 100px;
-  }
-  
-  .detail button {
+}
+
+.detail button {
     width: 10em;
     padding: 5px;
     border: none;
     background-color: #000;
     color: #fff;
     font-size: 1em;
-    margin: 10px 30px  ;
+    margin: 10px 30px;
     transition: all 0.1s ease;
-  }
-  
-  .detail button:hover {
+}
+
+.detail button:hover {
     background-color: #222;
     cursor: pointer;
-  }
-
+}
 
 .product .container .box .detail {
     padding: 0 10px;
@@ -277,16 +270,14 @@ img[alt='zapato del banner']
     letter-spacing: 1px;
 }
 
-.product h4
-{
+.product h4 {
     margin-top: 40px;
     font-size: 32px;
 }
 
 
 
-.top_banner .container .detail
-{
+.top_banner .container .detail {
     position: relative;
     left: 10%;
 }

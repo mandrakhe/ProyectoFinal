@@ -14,7 +14,7 @@ import Jordan from '../../assets/images/zapatos/jordan3.png'
 import NB from '../../assets/images/zapatos/nb.png'
 import { useAuth } from "../../context/AuthContext"
 const Home = ({detail, view, close, setClose, addtocart}) => {
-const { loginWithRedirect, isAuthenticated } = useAuth();
+  const { loginWithRedirect, isAuthenticated } = useAuth();
 
   return (
     <>
