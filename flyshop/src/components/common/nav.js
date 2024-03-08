@@ -43,7 +43,7 @@ const Nav = ({ searchbtn }) => {
                             </div>
                         <input className='search_input' type='search' value={search} placeholder='Buscar' autoComplete='off' onChange={(e) => setSearch(e.target.value)} ></input>
                     </div>
-                <Link to='/' className='link'><CiHeart /></Link>
+                <Link to='/favorite' className='link'><CiHeart /></Link>
                 <Link to='/cart' className='link car'><IoBag /></Link>
                 <div className='icon' >
                         {

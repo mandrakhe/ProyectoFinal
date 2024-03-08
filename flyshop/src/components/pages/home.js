@@ -13,7 +13,7 @@ import Nike from '../../assets/images/zapatos/nike.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
 import NB from '../../assets/images/zapatos/nb.png'
 import { useAuth } from "../../context/AuthContext"
-const Home = ({detail, view, close, setClose, addtocart}) => {
+const Home = ({detail, view, close, setClose, addtocart, addtofavorite }) => {
   const { loginWithRedirect, isAuthenticated } = useAuth();
 
   return (
@@ -111,7 +111,7 @@ const Home = ({detail, view, close, setClose, addtocart}) => {
                     <li 
                       onClick={
                         isAuthenticated
-                        ? () => addtocart(curElm)
+                        ? () => addtofavorite(curElm)
                         : () => loginWithRedirect()
                     }
                   
