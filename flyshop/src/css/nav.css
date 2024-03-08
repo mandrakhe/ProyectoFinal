@@ -111,6 +111,12 @@
     cursor: pointer;
 }
 
+.nav .link-login
+{
+    color: #fff;
+    font-size: 20px;
+}
+
 .nav .auth button
 {
     font-size: 20px;
