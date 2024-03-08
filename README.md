@@ -5,13 +5,13 @@ FLYSHOP es un proyecto de comercio electrónico desarrollado en React JS (FRONT 
 Instalación
 Sigue estos pasos para instalar y ejecutar FLYSHOP en tu entorno local:
 1.	Clona este repositorio en tu máquina local utilizando Git:
-git clone https://github.com/mandrakhe/ProyectoFinal.git
+```git clone https://github.com/mandrakhe/ProyectoFinal.git```
 2.	Navega hasta el directorio del proyecto:
-cd flyshop 
+```cd flyshop ```
 3.	Instala las dependencias del proyecto utilizando npm:
-npm install o npm i
+```npm install o npm i```
 4.	Inicia la aplicación:
-npm start 
+```npm start ```
 5.	Abre tu navegador web y ve a http://localhost:3000 o al puerto que tengas habilitado para ver FLYSHOP en acción.
 Uso
 Una vez que hayas iniciado la aplicación, puedes navegar por las diferentes secciones, buscar productos utilizando el campo de búsqueda y agregarlos al carrito de compras y al apartado de favoritos. También puedes realizar el proceso de pago y hacer un seguimiento del estado de tus pedidos.
