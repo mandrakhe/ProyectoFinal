@@ -7,7 +7,6 @@ import { CiUser } from "react-icons/ci";
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { IoSearchOutline } from "react-icons/io5";
-import { Navigate } from 'react-router-dom';
 import Logo from '../../assets/images/logos/logo_flyshop.png'
 import '../../css/nav.css'
 
@@ -64,10 +63,9 @@ const Nav = ({ searchbtn }) => {
                             isAuthenticated ?
                                 <button onClick={() => setLogout()}><CiLogout /></button>
                                 :
-                                <button onClick={!isAuthenticated && (() => <Navigate to='/login' replace />)}><CiLogin /></button>
+                                <Link to='/login'><CiLogin /></Link>
                         }
                 </div>
-                
                         </div>
                     </div>
             </div>
