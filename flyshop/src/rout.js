@@ -6,6 +6,7 @@ import ProtectedRoute from "./ProtectedRoute"
 import Login from './components/pages/login';
 import Signup from './components/pages/Signup';
 import Home from './components/pages/home';
+import Admin from './components/pages/admin';
 
 
 import Product from './components/pages/product';
@@ -27,6 +28,7 @@ const Rout = ({product, setProduct, detail, view, close, setClose, cart, setCart
         <Route path='/favorite' element={<Favorite  favorite={favorite} setFavorite={setFavorite}  />}  />
         <Route path='/addProduct' element={<AddProduct/>}/>
         <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
+        <Route path='/admin' element={<Admin/>}/>
 
         
         <Route element={<ProtectedRoute />}>

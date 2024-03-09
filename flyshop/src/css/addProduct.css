@@ -41,6 +41,10 @@
     padding: 16px;
     box-sizing: border-box;
 }
+.tittle
+{
+    margin-top: 1em;
+}
 
 .imagen h3 {
     font-size: 48px;
@@ -49,6 +53,7 @@
 
 .imagen h1 {
     font-size: 24px;
+    
     font-weight: bold;
 }
 
@@ -79,6 +84,7 @@
 .detail-product {
     display: flex;
     width: 30em;
+    margin: .5em 1em;
     flex-direction: column;
 }
 
@@ -98,4 +104,37 @@
 
 .detail-product textarea {
     height: 100px;
+  }
+
+  .detail-product input,textarea 
+  {
+    margin-top: .5em;
+  }
+.results
+{
+    display: flex;
+    flex-direction: column;
+    width: 10em;
+}
+  .results h3{
+    background-color:#ebebeb;
+    padding: 2px;
+    border-radius: 5px;
+  }
+
+  .results button 
+  {
+    margin-top: 1em;
+    border: none;
+    color:#fff;
+    padding: .5em 3em;
+    border-radius: 5px;
+    background-color: gray;
+    cursor: pointer;
+  }
+
+  .results button:hover{
+    background-color: #bcbcbc;
+    color: #000;
+    cursor: pointer;
   }

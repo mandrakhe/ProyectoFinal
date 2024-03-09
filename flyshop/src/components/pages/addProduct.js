@@ -26,7 +26,7 @@ function AddProduct() {
   return (
     <>
       <div className="addproduct-container">
-          <h1>Agregar producto</h1>
+          <h1 className='tittle' >Agregar producto</h1>
         <div className="addproduct">
           <div className='imagen'>
             <h3><MdOutlineUploadFile /></h3>
@@ -43,8 +43,18 @@ function AddProduct() {
             <h3><MdOutlineUploadFile /></h3>
             <h1>Previsualización de la imagen</h1>
             <div className='image-preview'>
+            <img src={Image}  alt='preview'/>
             </div>
           </div>
+
+<div className='results'>
+<p>Título</p> <h3 className='result'>{product.title}</h3>
+<p>Precio</p> <h3 className='result'>{product.price}</h3>
+<p>Talla</p> <h3 className='result'>{product.sizes}</h3>
+<p>Marca</p> <h3 className='result'>{product.brand}</h3>
+<p>Descripción</p> <h3 className='result'>{product.description}</h3>
+<button type='submmit'>Subir</button>
+</div>
         </div>
         <div className='detail-product'>
             <input type="text" id="title" name="title" value={product.title} onChange={handleInputChange} placeholder='Título del producto' />

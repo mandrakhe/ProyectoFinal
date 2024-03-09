@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { MdArrowRightAlt } from "react-icons/md"
 import '../../css/home.css'
-import '../../css/product.css'
+// import '../../css/product.css'  esto es lo que daba el conflicto con e css
 import { GoEye    } from "react-icons/go"
 import { IoMdHeartEmpty  } from "react-icons/io"
 import { IoMdClose } from "react-icons/io"
@@ -112,7 +112,7 @@ const Home = ({detail, view, close, setClose, addtocart, addtofavorite }) => {
                       onClick={
                         isAuthenticated
                         ? () => addtofavorite(curElm)
-                        : () => loginWithRedirect()
+                        : () => alert('Authenticated')
                     }
                   
                     ><IoMdHeartEmpty /></li>
@@ -126,7 +126,7 @@ const Home = ({detail, view, close, setClose, addtocart, addtofavorite }) => {
                       onClick={
                         isAuthenticated
                           ? () => addtocart(curElm)
-                          : () => loginWithRedirect()
+                          : () => alert('Authenticated')
                       }
                     >
                       Añadir al carrito
