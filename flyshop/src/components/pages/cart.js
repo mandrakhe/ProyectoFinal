@@ -57,7 +57,6 @@ const Cart = ({ cart, setCart }) => {
                                     </div>
                                     <div className='detail'>
                                         <div className='info'>
-                                            <h4>{curElm.Brand}</h4>
                                             <h3>{curElm.Name}</h3>
                                             <p>Precio COP {curElm.Price}</p>
                                             <div className='qty'>

@@ -4,6 +4,7 @@ import Productdetail from "../../productdetail";
 import { GoEye } from "react-icons/go";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
+import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../../css/product.css";
 import Footer from './../common/footer';
@@ -18,8 +19,10 @@ const Product = ({
     addtocart,
 }) => {
     const { loginWithRedirect, isAuthenticated } = useAuth0();
+    const [selectedValue, setSelectedValue] = useState('');
 
     const filtterproduct = (product) => {
+        setSelectedValue(product);
         const update = Productdetail.filter((x) => {
             return x.Brand === product;
         });
@@ -65,12 +68,12 @@ const Product = ({
             ) : null}
 
             <div className="products">
-                <h2>(Resultados)</h2>
+                <h2>{selectedValue}(Resultados)</h2>
                 <div className="filters">
                     <h1>Filtrar: </h1>
                     <div className="filter">
                         <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-                            <option value="all">Marcas</option>
+                            <option value="Todos">Marcas</option>
                             <option value="Jordan">Jordan</option>
                             <option value="Adidas">Adidas</option>
                             <option value="New Balanse">New balanse</option>
