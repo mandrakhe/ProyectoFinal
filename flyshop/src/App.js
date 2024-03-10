@@ -8,6 +8,8 @@ import addProduct from './components/pages/addProduct.js';
 import { AuthProvider } from './context/AuthContext';
 const App = () => {
 
+  /* funciones */
+
   const[favorite, setFavorite] = useState([])
   const[cart, setCart] = useState([])
 
