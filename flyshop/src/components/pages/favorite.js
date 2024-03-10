@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { IoMdClose } from "react-icons/io";
+import Footer from './../common/footer';
 
 const Favorite = ({favorite, setFavorite}) => {
   const removeproduct = (product) =>
@@ -49,6 +50,7 @@ const Favorite = ({favorite, setFavorite}) => {
                 }
               </div>
             </div>
+            <Footer/>
     </>
   )
 }

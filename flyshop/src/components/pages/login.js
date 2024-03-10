@@ -26,7 +26,7 @@ function Login() {
         <>
             <img src={logoBanner} alt="Imagen principal" />
             <div className='login'>     
-                <div className='contenedor-login' >
+                <div className='container-login' >
                     <h2 className='tittle'>Iniciar sesión</h2>
                     <form onSubmit={onSubmited}>
                         <div className="inputs">

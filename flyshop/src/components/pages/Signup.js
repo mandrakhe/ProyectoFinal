@@ -24,7 +24,7 @@ function Signup() {
         <>
             <div className="register">
                 <img src={logoBanner} alt="Imagen-principal-signup" />
-                <div className="contenedor-signup">
+                <div className="container-signup">
                     <h2 className="tittle">Registrate</h2>
                     <form  onSubmit={onSubmited}>
                         <div className="inputs">

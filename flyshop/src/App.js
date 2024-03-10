@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Nav from './components/common/nav.js'
-import Footer from './components/common/footer.js'
 import Rout from './rout.js'
 import {BrowserRouter} from 'react-router-dom';
 import Productdetail from './productdetail';
@@ -83,7 +82,6 @@ const App = () => {
           <Nav searchbtn={searchbtn}/>
         </AuthProvider>
         <Rout addProduct={addProduct} product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addtocart={addtocart} favorite={favorite} setFavorite={setFavorite} addtofavorite={addFavorite} />
-        <Footer />
       </BrowserRouter>
     </>
   )

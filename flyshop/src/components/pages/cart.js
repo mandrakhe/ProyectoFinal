@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Footer from '../common/footer'
 import { IoMdClose } from "react-icons/io";
 import { GiPadlock } from "react-icons/gi";
 import '../../css/cart.css';
@@ -91,6 +92,7 @@ const Cart = ({cart, setCart}) => {
                 </>
             }
             </div>
+            <Footer />
         </>
     )
 }

@@ -6,6 +6,7 @@
     padding: 0;
 }
 
+
 .login 
 {
     display: flex;
@@ -16,7 +17,7 @@
     clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
 }
 
-.contenedor-login 
+.container-login 
 {
     margin-right: 3rem;
     display: flex;
@@ -35,14 +36,14 @@ img[alt="Imagen principal"]
     transform: scaleX(-1);
 }
 
-.contenedor-login h2 
+.container-login h2 
 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 30px;
 }
 
-.contenedor-login form 
+.container-login form 
 {
     display: flex;
     flex-direction: column;
@@ -50,7 +51,7 @@ img[alt="Imagen principal"]
     width: 100%;
 }
 
-.contenedor-login .inputs 
+.container-login .inputs 
 {
     display: flex;
     flex-direction: column;
@@ -58,13 +59,13 @@ img[alt="Imagen principal"]
     width: 100%;
 }
 
-.contenedor-login .inputs label 
+.container-login .inputs label 
 {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.contenedor-login .inputs input 
+.container-login .inputs input 
 {
     border-radius: 3px;
     color: #fff ;
@@ -73,12 +74,12 @@ img[alt="Imagen principal"]
     width: 100%;
 }
 
-.contenedor-login .inputs input::placeholder
+.container-login .inputs input::placeholder
 {
     color: #838584;
 }
 
-.contenedor-login button 
+.container-login button 
 {
     padding: 10px 20px;
     background-color: #fff ;
@@ -90,7 +91,7 @@ img[alt="Imagen principal"]
     width: 100%;
 }
 
-.contenedor-login button:hover 
+.container-login button:hover 
 {
     background-color: #D3D3D3;
 }
@@ -102,21 +103,54 @@ img[alt="Imagen principal"]
     width: 24rem;
 }
 
-.contenedor-login p 
+.container-login p 
 {
     font-weight: bold;
     margin-top: 20px;
 }
 
-.contenedor-login a 
+.container-login a 
 {
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
 }
 
-.contenedor-login a:hover
+.container-login a:hover
 {
     text-decoration: underline;
     font-weight: bold;
+}
+
+/* media queries */
+
+@media (max-width:1235px )
+{
+.login
+{
+    clip-path:none;
+    justify-content: center;
+    height: 80%;
+
+}
+.container-login
+{
+    border:var(--color-gris) 1px solid;
+    height: auto;
+    
+}
+.container-login .title 
+{
+    color: #007bff;
+}
+    img[alt="Imagen principal"] 
+    {
+        opacity: 0;
+        z-index: -4;
+    }
+
+    .divider 
+    {
+        width: 90%;
+    }
 }

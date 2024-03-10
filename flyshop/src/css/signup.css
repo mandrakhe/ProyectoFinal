@@ -21,7 +21,7 @@
     background-position: right top;
 }
 
-.contenedor-signup 
+.container-signup 
 {
     margin-left: 3rem;
     display: flex;
@@ -34,23 +34,7 @@
 }
 
 
-.register img[alt="Imagen-principal-signup"] 
-{
-    position: absolute;
-    right: 2%;
-    top: 10%;
-    height: 80vh;
-}
-
-.contenedor-signup h2
-{
-    font-size: 2rem;
-    color: #000;
-    font-weight: bold;
-    margin-bottom: 45px;
-}
-
-.contenedor-signup form
+.container-signup form
 {
     display: flex;
     flex-direction: column;
@@ -58,7 +42,7 @@
     width: 100%;
 }
 
-.contenedor-signup .inputs
+.container-signup .inputs
 {
     display: flex;
     flex-direction: column;
@@ -66,13 +50,13 @@
     width: 100%;
 }
 
-.contenedor-signup .inputs label
+.container-signup .inputs label
 {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.contenedor-signup .inputs input
+.container-signup .inputs input
 {
     color:#000;
     padding: 10px;
@@ -81,7 +65,7 @@
     border-bottom: 1px solid #000;
 }
 
-.contenedor-signup .inputs input:focus
+.container-signup .inputs input:focus
 {
     padding: 10px;
     width: 100%;
@@ -90,7 +74,7 @@
     outline: 0px;
 }
 
-.contenedor-signup .inputs input::placeholder
+.container-signup .inputs input::placeholder
 {   
     font-family: "Inter", sans-serif;
     color: #838584;
@@ -105,7 +89,7 @@ input
     transition: box-shadow 0.3s, border-color 0.3s; 
 }
 
-.contenedor-signup form  button 
+.container-signup form  button 
 {
     font-family: "Inter", sans-serif;
     font-size: 1.2em;
@@ -120,24 +104,19 @@ input
     padding: 10px 20px;
 }
 
-.contenedor-signup form button:hover 
+.container-signup form button:hover 
 {
     background-color: #D3D3D3;
 }
 
-.divider 
-{
-    border: 1px solid #c9c9c9;
-}
-
-.contenedor-signup p 
+.container-signup p 
 {
     margin-top: 20px;
     font-family: "Inter", sans-serif;
     font-size: 1.12em;
 }
 
-.contenedor-signup a 
+.container-signup a 
 {
     font-family: "Inter", sans-serif;
     text-decoration: none;
@@ -146,8 +125,30 @@ input
     color: #007bff;
 }
 
-.contenedor-signup a:hover 
+.container-signup a:hover 
 {
     font-family: "Inter", sans-serif;
     text-decoration: underline;
 }
+
+.register img[alt="Imagen-principal-signup"] 
+{
+    position: absolute;
+    right: 2%;
+    top: 10%;
+    height: 80vh;
+}
+
+.container-signup h2
+{
+    font-size: 2rem;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+
+.divider 
+{
+    border: 1px solid #c9c9c9;
+}
+
