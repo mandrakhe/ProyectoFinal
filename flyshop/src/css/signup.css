@@ -1,28 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-*
-{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 
-.register 
-{
+.register {
     display: flex;
     color: #000;
     background-color: #000;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(420deg, #fff 50%, #000 50% ) ;
+    background: linear-gradient(420deg, #fff 50%, #000 50%);
     background-size: 100% 100%;
     background-position: right top;
 }
 
-.container-signup 
-{
+.container-signup {
     margin-left: 3rem;
     display: flex;
     flex-direction: column;
@@ -30,43 +27,38 @@
     padding: 20px;
     width: 26vw;
     color: #000;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
 
-.container-signup form
-{
+.container-signup form {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.container-signup .inputs
-{
+.container-signup .inputs {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
     width: 100%;
 }
 
-.container-signup .inputs label
-{
+.container-signup .inputs label {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.container-signup .inputs input
-{
-    color:#000;
+.container-signup .inputs input {
+    color: #000;
     padding: 10px;
     width: 100%;
     border: none;
     border-bottom: 1px solid #000;
 }
 
-.container-signup .inputs input:focus
-{
+.container-signup .inputs input:focus {
     padding: 10px;
     width: 100%;
     border: none;
@@ -74,23 +66,20 @@
     outline: 0px;
 }
 
-.container-signup .inputs input::placeholder
-{   
+.container-signup .inputs input::placeholder {
     font-family: "Inter", sans-serif;
     color: #838584;
     background-color: #fff;
     font-size: 1.25em;
 }
 
-input 
-{
-    border: 1px solid #ccc; 
-    padding: 5px; 
-    transition: box-shadow 0.3s, border-color 0.3s; 
+input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    transition: box-shadow 0.3s, border-color 0.3s;
 }
 
-.container-signup form  button 
-{
+.container-signup form button {
     font-family: "Inter", sans-serif;
     font-size: 1.2em;
     font-weight: bolder;
@@ -104,20 +93,17 @@ input
     padding: 10px 20px;
 }
 
-.container-signup form button:hover 
-{
+.container-signup form button:hover {
     background-color: #D3D3D3;
 }
 
-.container-signup p 
-{
+.container-signup p {
     margin-top: 20px;
     font-family: "Inter", sans-serif;
     font-size: 1.12em;
 }
 
-.container-signup a 
-{
+.container-signup a {
     font-family: "Inter", sans-serif;
     text-decoration: none;
     font-weight: bold;
@@ -125,30 +111,25 @@ input
     color: #007bff;
 }
 
-.container-signup a:hover 
-{
+.container-signup a:hover {
     font-family: "Inter", sans-serif;
     text-decoration: underline;
 }
 
-.register img[alt="Imagen-principal-signup"] 
-{
+.register img[alt="Imagen-principal-signup"] {
     position: absolute;
     right: 2%;
     top: 10%;
     height: 80vh;
 }
 
-.container-signup h2
-{
+.container-signup h2 {
     font-size: 2rem;
     color: #000;
     font-weight: bold;
     margin-bottom: 45px;
 }
 
-.divider 
-{
+.divider {
     border: 1px solid #c9c9c9;
 }
-

@@ -8,13 +8,13 @@
 .addproduct {
     display: flex;
     flex-wrap: wrap;
-    flex-direction:row-start;
+    flex-direction: row-start;
     gap: 16px;
-    margin-left:1em ;
+    margin-left: 1em;
     margin-top: 32px;
 }
-.addproduct-container h1 
-{
+
+.addproduct-container h1 {
     text-align: center;
 }
 
@@ -30,8 +30,7 @@
 }
 
 
-.imagen-view
-{
+.imagen-view {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,7 +85,7 @@
     font-size: 16px;
     font-weight: bold;
 }
-  
+
 .detail-product input[type="text"],
 .detail-product input[type="number"],
 .detail-product textarea {
@@ -98,4 +97,4 @@
 
 .detail-product textarea {
     height: 100px;
-  }
+}

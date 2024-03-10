@@ -26,21 +26,21 @@ function Signup() {
                 <img src={logoBanner} alt="Imagen-principal-signup" />
                 <div className="container-signup">
                     <h2 className="tittle">Registrate</h2>
-                    <form  onSubmit={onSubmited}>
+                    <form onSubmit={onSubmited}>
                         <div className="inputs">
                             <label htmlFor="name">Nombre</label>
                             <input type="text" autoCapitalize="off" className="betita"
-                            {...register("username", { required: true })} placeholder='Nombre' />
+                                {...register("username", { required: true })} placeholder='Nombre' />
                         </div>
                         <div className="inputs">
                             <label htmlFor="password">Email</label>
                             <input type="email" autoCapitalize="off"
-                            {...register("email", { required: true })} placeholder='email' />
+                                {...register("email", { required: true })} placeholder='email' />
                         </div>
                         <div className="inputs">
                             <label htmlFor="email">Contraseña</label>
-                            <input type="password" 
-                            {...register("password", { required: true })} placeholder='password' />
+                            <input type="password"
+                                {...register("password", { required: true })} placeholder='password' />
                         </div>
                         <button type="submit">Registrarse</button>
                     </form>

@@ -68,56 +68,56 @@ const Product = ({
                 <h2>(Resultados)</h2>
                 <div className="filters">
                     <h1>Filtrar: </h1>
-                        <div className="filter">
-                            <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-                                <option value="all">Marcas</option>
-                                <option value="Jordan">Jordan</option>
-                                <option value="Adidas">Adidas</option>
-                                <option value="New Balanse">New balanse</option>
-                            </select>
-                        </div>
-                        <div className="filter">
-                            <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-                                <option value="all">Precio</option>
-                                <option value="Jordan">Menor a mayor</option>
-                                <option value="Adidas">Mayor a menor</option>
-                                <option value="New Balanse">De 1.000.000  +</option>
-                            </select>
-                        </div>
-                        <div className="filter">
-                            <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-                                <option value="all">Hombre</option>
-                                <option value="Jordan">Altos</option>
-                                <option value="Jordan">Enanos</option>
-                                <option value="Adidas">Gordos</option>
-                                <option value="New Balanse">Bajitos</option>
-                            </select>
-                        </div>
-                        <div className="filter">
-                            <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-                                <option value="all">Mujer</option>
-                                <option value="Jordan">Altas</option>
-                                <option value="Adidas">Enanas</option>
-                                <option value="New Balanse">Gordas</option>
-                                <option value="New Balanse">Flacas</option>
-                            </select>
-                        </div>
-                        <div className="filter">
-                            <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-                                <option value="all">Niños</option>
-                                <option value="Jordan">Altas</option>
-                                <option value="Adidas">Enanas</option>
-                                <option value="New Balanse">Gordas</option>
-                                <option value="New Balanse">Flacas</option>
-                            </select>
-                        </div>
+                    <div className="filter">
+                        <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
+                            <option value="all">Marcas</option>
+                            <option value="Jordan">Jordan</option>
+                            <option value="Adidas">Adidas</option>
+                            <option value="New Balanse">New balanse</option>
+                        </select>
                     </div>
+                    <div className="filter">
+                        <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
+                            <option value="all">Precio</option>
+                            <option value="Jordan">Menor a mayor</option>
+                            <option value="Adidas">Mayor a menor</option>
+                            <option value="New Balanse">De 1.000.000  +</option>
+                        </select>
+                    </div>
+                    <div className="filter">
+                        <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
+                            <option value="all">Hombre</option>
+                            <option value="Jordan">Altos</option>
+                            <option value="Jordan">Enanos</option>
+                            <option value="Adidas">Gordos</option>
+                            <option value="New Balanse">Bajitos</option>
+                        </select>
+                    </div>
+                    <div className="filter">
+                        <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
+                            <option value="all">Mujer</option>
+                            <option value="Jordan">Altas</option>
+                            <option value="Adidas">Enanas</option>
+                            <option value="New Balanse">Gordas</option>
+                            <option value="New Balanse">Flacas</option>
+                        </select>
+                    </div>
+                    <div className="filter">
+                        <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
+                            <option value="all">Niños</option>
+                            <option value="Jordan">Altas</option>
+                            <option value="Adidas">Enanas</option>
+                            <option value="New Balanse">Gordas</option>
+                            <option value="New Balanse">Flacas</option>
+                        </select>
+                    </div>
+                </div>
                 <div className="container">
                     <div className="container">
                         <div className="productbox">
                             <div className="contant">
                                 {product.map((curElm) => {
-                                    
+
                                     return (
 
                                         <div className='box' key={curElm.id}>
@@ -153,7 +153,7 @@ const Product = ({
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };

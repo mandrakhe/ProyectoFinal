@@ -1,24 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 * {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 
-.login 
-{
+.login {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     align-items: center;
     height: 100vh;
     background-color: #000;
     clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
 }
 
-.container-login 
-{
+.container-login {
     margin-right: 3rem;
     display: flex;
     flex-direction: column;
@@ -26,63 +25,55 @@
     padding: 20px;
     width: 26vw;
     color: #fff;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
-img[alt="Imagen principal"] 
-{
+img[alt="Imagen principal"] {
     z-index: 2;
     position: absolute;
     transform: scaleX(-1);
 }
 
-.container-login h2 
-{
+.container-login h2 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 30px;
 }
 
-.container-login form 
-{
+.container-login form {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.container-login .inputs 
-{
+.container-login .inputs {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
     width: 100%;
 }
 
-.container-login .inputs label 
-{
+.container-login .inputs label {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.container-login .inputs input 
-{
+.container-login .inputs input {
     border-radius: 3px;
-    color: #fff ;
+    color: #fff;
     background-color: #000;
     padding: 10px;
     width: 100%;
 }
 
-.container-login .inputs input::placeholder
-{
+.container-login .inputs input::placeholder {
     color: #838584;
 }
 
-.container-login button 
-{
+.container-login button {
     padding: 10px 20px;
-    background-color: #fff ;
+    background-color: #fff;
     border: none;
     margin-top: 2rem;
     margin-bottom: 4rem;
@@ -91,66 +82,58 @@ img[alt="Imagen principal"]
     width: 100%;
 }
 
-.container-login button:hover 
-{
+.container-login button:hover {
     background-color: #D3D3D3;
 }
 
-.divider 
-{
+.divider {
     border-top: 1px solid #fff;
     margin: 10px 0;
     width: 24rem;
 }
 
-.container-login p 
-{
+.container-login p {
     font-weight: bold;
     margin-top: 20px;
 }
 
-.container-login a 
-{
+.container-login a {
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
 }
 
-.container-login a:hover
-{
+.container-login a:hover {
     text-decoration: underline;
     font-weight: bold;
 }
 
 /* media queries */
 
-@media (max-width:1235px )
-{
-.login
-{
-    clip-path:none;
-    justify-content: center;
-    height: 80%;
+@media (max-width:1235px) {
+    .login {
+        clip-path: none;
+        justify-content: center;
+        height: 80%;
 
-}
-.container-login
-{
-    border:var(--color-gris) 1px solid;
-    height: auto;
-    
-}
-.container-login .title 
-{
-    color: #007bff;
-}
-    img[alt="Imagen principal"] 
-    {
+    }
+
+    .container-login {
+        border: var(--color-gris) 1px solid;
+        height: auto;
+
+    }
+
+    .container-login .title {
+        color: #007bff;
+    }
+
+    img[alt="Imagen principal"] {
         opacity: 0;
         z-index: -4;
     }
 
-    .divider 
-    {
+    .divider {
         width: 90%;
     }
 }

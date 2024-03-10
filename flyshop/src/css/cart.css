@@ -1,41 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 @import url('../css/variables.css');
-*
 
-
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
-.title
-{ 
-    text-align: center; 
-    font-size: 30px; 
-    margin-top: 20px; 
-    margin-bottom: 20px; 
-    font-family: 'Archivo Black', sans-serif; 
+.title {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Archivo Black', sans-serif;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     line-height: 52px;
 }
 
-.cartcontainer
-{
+.cartcontainer {
     padding: 40px 50px;
     width: 100%;
     background: var(--color-gris);
     border-bottom: 1px solid #9a9a9a;
 }
 
-.cartcontainer .emptycart
-{
+.cartcontainer .emptycart {
     margin-top: 30px;
 }
 
-.cartcontainer .emptycart h2
-{
+.cartcontainer .emptycart h2 {
     font-size: 32px;
     color: var(--color-secundario);
     text-transform: uppercase;
@@ -44,8 +38,7 @@
     margin-bottom: 30px;
 }
 
-.cartcontainer .emptycart .emptycartbtn
-{
+.cartcontainer .emptycart .emptycartbtn {
     text-decoration: none;
     margin-left: 44.5%;
     color: var(--color-primario);
@@ -53,14 +46,12 @@
     background: var(--color-secundario);
 }
 
-.cartcontainer .contant
-{
+.cartcontainer .contant {
     max-width: 100%;
     padding: 20px 30px;
 }
 
-.cartcontainer .contant .cart_item
-{
+.cartcontainer .contant .cart_item {
     padding: 20px 30px;
     display: flex;
     background: var(--color-primario);
@@ -69,28 +60,24 @@
     margin-bottom: 10px;
 }
 
-.cartcontainer .contant .cart_item .img_box
-{
+.cartcontainer .contant .cart_item .img_box {
     padding: 20px 20px;
     background: var(--color-gris);
 }
 
-.cartcontainer .contant .cart_item .img_box  img
-{
+.cartcontainer .contant .cart_item .img_box img {
     width: 250px;
     height: 250px;
 }
 
-.cartcontainer .contant .cart_item .detail
-{
+.cartcontainer .contant .cart_item .detail {
     margin-left: 60px;
     display: flex;
     margin-top: 30px;
     padding: 20px 30px;
 }
 
-.cartcontainer .contant .cart_item .detail .info h4
-{
+.cartcontainer .contant .cart_item .detail .info h4 {
     text-transform: uppercase;
     font-size: 16px;
     color: #9a9a9a;
@@ -98,8 +85,7 @@
     letter-spacing: 1.5px;
 }
 
-.cartcontainer .contant .cart_item .detail .info h3
-{
+.cartcontainer .contant .cart_item .detail .info h3 {
     margin-top: 20px;
     color: var(--color-secundario);
     font-size: 22px;
@@ -107,15 +93,13 @@
     letter-spacing: 1px;
 }
 
-.cartcontainer .contant .cart_item .detail .info p
-{
+.cartcontainer .contant .cart_item .detail .info p {
     margin-top: 10px;
     color: var(--color-secundario);
     letter-spacing: 1px;
 }
 
-.cartcontainer .contant .cart_item .detail .info .qty
-{
+.cartcontainer .contant .cart_item .detail .info .qty {
     margin-top: 10px;
     display: flex;
     justify-content: center;
@@ -125,8 +109,7 @@
     height: 44px;
 }
 
-.cartcontainer .contant .cart_item .detail .info .qty button
-{
+.cartcontainer .contant .cart_item .detail .info .qty button {
     background: none;
     outline: none;
     border: none;
@@ -135,8 +118,7 @@
     cursor: pointer;
 }
 
-.cartcontainer .contant .cart_item .detail .info .qty input
-{
+.cartcontainer .contant .cart_item .detail .info .qty input {
     border: none;
     outline: none;
     background: none;
@@ -147,21 +129,18 @@
     cursor: default;
 }
 
-.cartcontainer .contant .cart_item .detail .info .subtotal
-{
-    color:var(--color-secundario);
+.cartcontainer .contant .cart_item .detail .info .subtotal {
+    color: var(--color-secundario);
     font-size: 22px;
     margin-top: 10px;
 }
 
-.cartcontainer .contant .cart_item .detail .close
-{
+.cartcontainer .contant .cart_item .detail .close {
     margin-top: 30px;
     margin-left: 50px;
 }
 
-.cartcontainer .contant .cart_item .detail button
-{
+.cartcontainer .contant .cart_item .detail button {
     border: none;
     outline: none;
     background: none;
@@ -170,8 +149,7 @@
     cursor: pointer;
 }
 
-.cartcontainer .totalprice
-{
+.cartcontainer .totalprice {
     margin-top: 30px;
     margin-left: 43%;
     font-size: 22px;
@@ -179,8 +157,7 @@
     letter-spacing: 1px;
 }
 
-.cartcontainer .checkout
-{
+.cartcontainer .checkout {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,8 +174,7 @@
     background: #484848;
 }
 
-.cartcontainer .checkout i
-{
+.cartcontainer .checkout i {
     margin-left: 10px;
     font-size: 20px;
 }
