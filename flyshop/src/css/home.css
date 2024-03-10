@@ -52,7 +52,6 @@ img[alt='zapato del banner'] {
 
 }
 
-
 .top_banner .container .detail h2,
 h4 {
     font-size: 52px;
@@ -198,8 +197,6 @@ h4 {
     margin-top: 20px;
     transition: .5s;
 }
-
-
 
 .product .container .box .img_box .icon li {
     list-style: none;
