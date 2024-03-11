@@ -1,8 +1,6 @@
 @import url('../css/variables.css');
 
 * {
-    /* Elimina los márgenes y rellenos por defecto,
-    establece la fuente y el tipo de caja */
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -10,20 +8,18 @@
 }
 
 .products {
-    /* Agrega relleno a la sección de productos */
     padding: 30px 40px;
     width: 100%;
 }
 
 .products .container {
-    /* Establece el ancho máximo y la dirección de los elementos */
     max-width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
+
 .products h2 {
-    /* Establece el estilo del título de la sección */
     width: 562px;
     height: 55px;
     margin-bottom: 1.7%;
@@ -40,19 +36,18 @@
 }
 
 .products p {
-    /* Establece el estilo del texto descriptivo */
     margin-top: 10px;
     color: #9a9a9a;
 }
 
+
+
 .products .filters {
-    /* Establece la dirección de los filtros */
     display: flex;
     width: 70px;
 }
 
 .products .filters h1 {
-    /* Establece el estilo de las etiquetas de filtro */
     font-size: 15px;
     text-transform: uppercase;
     color: #9D9D9D;
@@ -62,13 +57,11 @@
 }
 
 .products .filters .filter {
-    /* Establece el estilo de los selectores de filtro */
     height: 30px;
     width: auto;
 }
 
 .products .filters .filter select {
-    /* Establece el estilo de los selectores de filtro */
     width: 80px;
     color: #9D9D9D;
     font-size: 15px;
@@ -78,15 +71,15 @@
     margin-right: 15px;
 }
 
+
 .products .container .productbox .contant {
-    /* Establece la dirección y el relleno de los productos */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
+
 .products .container .productbox .contant .box {
-    /* Establece el estilo de cada caja de producto */
     overflow: hidden;
     width: 280px;
     height: 400px;
@@ -98,26 +91,24 @@
 }
 
 .products .container .productbox .contant .box:hover {
-    /* Añade una sombra a la caja al pasar el ratón por encima */
     box-shadow: rgba(0, 0, 0, 0.24)0px 3px 8px;
 }
 
 .products .container .productbox .contant .box .img_box {
-    /* Establece el estilo del contenedor de imagen */
     display: flex;
     justify-content: space-between;
     background: #ebebeb;
 }
 
-.products .container .productbox .contant .box.img_box img {
-    /* Establece el estilo de la imagen */
+.products .container .productbox .contant .box .img_box img {
+    margin-right: 1px;
     width: 300px;
     height: 250px;
     margin-right: 50px;
 }
 
 .products .container .box .img_box .icon {
-    /* Establece el estilo del icono */
+
     position: relative;
     left: 0px;
     display: flex;
@@ -126,8 +117,8 @@
     transition: .5s;
 }
 
+
 .products .container .productbox .contant .box .img_box .icon li {
-    /* Establece el estilo de cada icono */
     list-style: none;
     padding: 10px;
     font-size: 40px;
@@ -139,26 +130,22 @@
 }
 
 .products .container .productbox .contant .box .img_box .icon li:hover {
-    /* Cambia el color del icono al pasar el ratón por encima */
     color: var(--color-azul);
     border-radius: 10px;
 }
 
 .products .container .productbox .contant .box .detail {
-    /* Establece el estilo del contenedor de detalles */
     padding: 5px 10px;
     margin-top: 10px;
 }
 
 .products .container .productbox .contant .box .img_box .icon li:nth-child(1) {
-    /* Establece el estilo del primer icono */
     position: absolute;
     top: 0;
     right: 240px;
 }
 
 .detail .button-product {
-    /* Establece el estilo del botón de producto */
     width: 10em;
     padding: 5px;
     border: none;
@@ -170,13 +157,11 @@
 }
 
 .detail .button-product:hover {
-    /* Cambia el color de fondo del botón al pasar el ratón por encima */
     background-color: #222;
     cursor: pointer;
 }
 
 .products .container .productbox .contant .box .detail h3 {
-    /* Establece el estilo del título de producto */
     font-size: 16px;
     margin-top: 5px;
     color: var(--color-secundario);
@@ -184,12 +169,10 @@
 }
 
 .products .container .productbox .contant .box:hover .detail h3 {
-    /* Cambia el color del título de producto al pasar el ratón por encima */
     color: var(--color-azul);
 }
 
 .products .container .productbox .contant .box .detail h4 {
-    /* Establece el estilo del precio de producto */
     margin-top: 5px;
     font-size: 14px;
     color: var(--color-azul);
@@ -197,7 +180,6 @@
 }
 
 .product_detail {
-    /* Establece el estilo del contenedor de detalles de producto */
     margin-top: 30px;
     padding: 30px 40px;
     width: 100%;
@@ -210,7 +192,6 @@
 }
 
 .product_detail .container {
-    /* Establece el estilo del contenedor interno */
     margin-top: 7%;
     margin-left: 14%;
     width: 1000px;
@@ -222,7 +203,6 @@
 }
 
 .product_detail .container .closebtn {
-    /* Establece el estilo del botón de cerrar */
     margin-left: 100%;
     border: none;
     outline: none;
@@ -232,7 +212,6 @@
 }
 
 .product_detail .container .productbox {
-    /* Establece el estilo del contenedor de producto */
     max-width: 100%;
     display: flex;
     padding: 20px 30px;
@@ -241,7 +220,6 @@
 }
 
 .product_detail .container .productbox .img_box {
-    /* Establece el estilo del contenedor de imagen */
     padding: 20px 30px;
     width: 400px;
     height: 350px;
@@ -249,19 +227,16 @@
 }
 
 .product_detail .container .productbox .img_box img {
-    /* Establece el estilo de la imagen */
     width: 250px;
     height: 250px;
 }
 
 .product_detail .container .productbox .detail {
-    /* Establece el estilo del contenedor de detalles */
     margin-left: 30px;
     margin-top: 10px;
 }
 
 .product_detail .container .productbox .detail h4 {
-    /* Establece el estilo de la etiqueta de precio */
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 200;
@@ -270,7 +245,6 @@
 }
 
 .product_detail .container .productbox .detail h2 {
-    /* Establece el estilo del título de producto */
     margin-top: 20px;
     font-size: 32px;
     color: var(--color-secundario);
@@ -279,13 +253,11 @@
 }
 
 .product_detail .container .productbox .detail p {
-    /* Establece el estilo del texto descriptivo */
     margin-top: 10px;
     color: #9a9a9a;
 }
 
 .product_detail .container .productbox .detail h3 {
-    /* Establece el estilo del precio de producto */
     margin-top: 10px;
     color: var(--color-secundario);
     font-size: 32px;
@@ -293,7 +265,6 @@
 }
 
 .product_detail .container .productbox .detail button {
-    /* Establece el estilo del botón de añadir al carrito */
     margin-top: 30px;
     padding: 15px 60px;
     font-size: 18px;
@@ -306,6 +277,5 @@
 }
 
 .product_detail .container .productbox .detail button:hover {
-    /* Cambia el color de fondo del botón al pasar el ratón por encima */
     background: var(--color-azul);
 }

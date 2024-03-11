@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, redirect, redirectDocument } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { MdArrowRightAlt } from "react-icons/md"
 import Footer from '../common/footer'
 import '../../css/home.css'
@@ -74,7 +74,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
               <img src={Nike} alt='Nike'></img>
             </div>
             <div className='detail'>
-              <button >NIKE</button>
+              <button>NIKE</button>
             </div>
           </div>
           <div className='box'>
@@ -90,7 +90,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
               <img src={NB} alt='NB'></img>
             </div>
             <div className='detail'>
-              <button>NB</button>
+              <button>NEW BALANCE</button>
             </div>
           </div>
         </div>

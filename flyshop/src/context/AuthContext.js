@@ -1,5 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { loginRequest, registerRequest, verifyTokenRequest, logoutRequest } from "../api/auth";
+import { loginRequest, registerRequest, verifyTokenRequest, logoutRequest  } from "../api/auth";
 import Cookies from 'js-cookie';
 
 export const AuthContext = createContext();
@@ -7,7 +7,7 @@ export const AuthContext = createContext();
 
 export const useAuth = () => {
     const context = useContext(AuthContext);
-    if (!context) {
+    if(!context){
         throw new Error("useAuth must be used within an AuthProvider");
     }
     return context;
@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
     2, ver las respuestas de los errores y como sale la respuesta cuando hace la accion determiana (correcto)
     3, asignar los errores a el useState de erres
     4, asignar la response a el useState correspondiente
-    */
+    */ 
 
     const signup = async (user) => {
         try {
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
-    const signin = async (user) => {
+    const signin = async (user) =>{
         try {
             const res = await loginRequest(user);
             console.log(res.data);
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
             setUser(res.data);
         } catch (error) {
             console.log(error);
-            if (Array.isArray(error.response.data)) {
+            if(Array.isArray(error.response.data)){
                 //Probar si funciona solo con esto y sin usar el if
                 setErrors(error.response.data)
             }
@@ -62,19 +62,20 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
-    const setLogout = async (user) => {
-        try {
+    const setLogout = async (user) =>
+    {
+        try{
             const res = await logoutRequest(user);
             setIsAuthenticated(false);
             setUser(res);
         }
-        catch (error) {
+        catch (error){
             console.log(error);
         }
     }
 
-    useEffect(() => {
-        if (errors.length > 0) {
+    useEffect(() =>{
+        if(errors.length > 0){
             const timer = setTimeout(() => {
                 setErrors([]);
             }, 3000)
@@ -82,20 +83,21 @@ export const AuthProvider = ({ children }) => {
         }
     }, [errors])
 
-    useEffect(() => {
-        async function checkLogin() {
+    useEffect(() =>{
+        async function checkLogin()
+        {
             const cookies = Cookies.get();
 
-            if (!cookies.token) {
+            if(!cookies.token){
                 setIsAuthenticated(false);
                 setLoading(false);
                 return setUser(null);
             }
-
+    
             try {
                 const res = await verifyTokenRequest(cookies.token)
                 console.log(res)
-                if (!res.data) {
+                if(!res.data){
                     setIsAuthenticated(false);
                     setLoading(false)
                     return;
@@ -110,9 +112,9 @@ export const AuthProvider = ({ children }) => {
             }
         }
         checkLogin();
-    }, [])
+    },[])
 
-    return (
+    return(
         <AuthContext.Provider value={{
             signup,
             user,
