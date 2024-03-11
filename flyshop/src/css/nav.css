@@ -1,33 +1,40 @@
 .header {
+    /* Establece la altura del encabezado en píxeles y como porcentaje */
     height: 80px;
     height: 12vh;
     box-sizing: border-box;
 }
 
 .nav {
+    /* Establece la altura, ancho y posición del menú de navegación */
     height: 6em;
     width: 100%;
     position:absolute;
     margin: auto;
+    /* Centra los elementos vertical y horizontalmente */
     display: flex;
     align-items: center;
+    /* Define el fondo y la sombra del menú de navegación */
     background-color: #000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 
 .nav ul {
+    /* Establece la dirección y alineación de los elementos de la lista */
     display: flex;
     align-items: center;
 }
 
 .nav ul li {
+    /* Elimina los puntos de la lista y establece la alineación */
     list-style: none;
     display: flex;
     margin-right: 20px;
 }
 
 .nav ul li .link {
+    /* Establece el estilo de los enlaces */
     color: #fff;
     font-size: 13px;
     text-decoration: none;
@@ -35,22 +42,26 @@
 }
 
 .nav .link {
+    /* Establece el estilo del enlace del logotipo */
     color: #fff;
     font-size: 20px;
 }
 
 .nav .car {
+    /* Agrega margen a los iconos del carrito */
     margin-right: 20px;
     margin-left: 20px;
 }
 
 .nav .link-login {
+    /* Establece el estilo del enlace de inicio de sesión */
     color: #fff;
     margin-right: 3em;
     font-size: 20px;
 }
 
 .nav .auth button {
+    /* Establece el estilo del botón de autenticación */
     font-size: 20px;
     border: none;
     background: transparent;
@@ -63,6 +74,7 @@
 }
 
 .logo img {
+    /* Establece el tamaño y la apariencia del logotipo */
     width: 12em;
     height: 8em;
     float: left;
@@ -71,12 +83,14 @@
 }
 
 .search_container {
+    /* Establece el ancho y la posición del contenedor de búsqueda */
     width: 250px;
     margin: 50px auto;
     position: relative;
 }
 
 .search_container button {
+    /* Establece el estilo del botón de búsqueda */
     background: transparent;
     outline: none;
     color: #fff;
@@ -86,6 +100,7 @@
 }
 
 .search_icon {
+    /* Posiciona el icono de búsqueda */
     position: absolute;
     top: 50%;
     right: 20px;
@@ -93,6 +108,7 @@
 }
 
 .search_input {
+    /* Establece el estilo del campo de búsqueda */
     width: calc(100% - 30px);
     padding: 3px;
     padding-right: 30px;
@@ -104,15 +120,18 @@
 }
 
 .account .user_icon {
+    /* Agrega margen al icono de usuario */
     margin-right: 10px;
 }
 
 .account p {
+    /* Establece el estilo del texto del perfil */
     color: #fff;
     font-size: 15px;
 }
 
 .icon .account {
+    /* Establece el estilo del icono de perfil */
     color: #fff;
     margin-right: 15px;
     font-size: 25px;

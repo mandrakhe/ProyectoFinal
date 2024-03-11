@@ -1,101 +1,114 @@
+/* Establecer márgenes, almohadillas y caja de borde predeterminados para todos los elementos */
 * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
-}
-
-.footer {
+  }
+  
+  /* Estilos para el pie de página */
+  .footer {
     width: 100%;
     height: 100%;
     background: #ebebeb;
     border-top: 1px solid #000;
-}
-
-.footer .container {
+  }
+  
+  /* Estilos para el contenedor del pie de página */
+  .footer .container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.footer .container img {
+  }
+  
+  /* Estilos para el logotipo y el enlace de inicio */
+  .footer .container img {
     cursor: pointer;
-}
-
-.footer .container .about {
+  }
+  
+  /* Estilos para la sección "Acerca de" */
+  .footer .container .about {
     display: flex;
     width: 25em;
-
-}
-
-.footer .container .about h3 {
+  }
+  
+  /* Estilos para el título "Acerca de" */
+  .footer .container .about h3 {
     font-size: 30px;
     text-transform: uppercase;
     cursor: default;
-}
-
-.footer .container .about ul li {
+  }
+  
+  /* Estilos para los enlaces de la sección "Acerca de" */
+  .footer .container .about ul li {
     margin-top: 10px;
     font-size: 15px;
-}
-
-.footer .container .about .account {
+  }
+  
+  /* Estilos para la sección "Cuenta" */
+  .footer .container .about .account {
     margin-right: 20%;
-}
-
-.footer .container ul li {
+  }
+  
+  /* Estilos para los enlaces del pie de página */
+  .footer .container ul li {
     color: #010f1c;
     font-size: 14px;
     transition: 0.5s;
     cursor: pointer;
-}
-
-.footer .container ul li:hover {
+  }
+  
+  /* Estilos para los enlaces del pie de página al pasar el ratón por encima */
+  .footer .container ul li:hover {
     color: #0989ff;
-}
-
-.footer .container ul li {
+  }
+  
+  /* Estilos para eliminar los puntos de la lista */
+  .footer .container ul li {
     list-style: none;
-}
-
-.page .details .icons {
+  }
+  
+  /* Estilos para los iconos de redes sociales */
+  .page .details .icons {
     margin-top: 20px;
     display: flex;
-}
-
-.page .details .icons li {
+  }
+  
+  /* Estilos para cada icono de red social */
+  .page .details .icons li {
     list-style: none;
     padding: 10px 10px;
     cursor: pointer;
     transition: 0.1s;
-
-}
-
-.page .details .icons li:hover {
+  }
+  
+  /* Estilos para los iconos de red social al pasar el ratón por encima */
+  .page .details .icons li:hover {
     background: #000000;
     color: #fff;
     border-radius: 20%;
-}
-
-.footer .map iframe {
-
+  }
+  
+  /* Estilos para el mapa */
+  .footer .map iframe {
     border: none;
     height: 200px;
     width: 100%;
-}
-
-.footer .map .address {
+  }
+  
+  /* Estilos para la dirección en el mapa */
+  .footer .map .address {
     color: #f00;
     height: 35px;
     margin-left: 10px;
     display: flex;
     justify-content: start;
     align-items: center;
-}
-
-.footer .map .address h2 {
-
+  }
+  
+  /* Estilos para el título de la dirección */
+  .footer .map .address h2 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -103,4 +116,4 @@
     color: #000000;
     line-height: 24px;
     margin-right: 1%;
-}
+  }

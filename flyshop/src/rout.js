@@ -21,7 +21,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
         <Routes>
           <Route path='/register' element={<Signup />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/' element={<Home detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart} addtofavorite={addtofavorite} />} />
+          <Route path='/' element={<Home detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart} addtofavorite={addtofavorite}/>} />
           <Route path='/product' element={<Product product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart} addtofavorite={addtofavorite} />} />
 
           <Route path='/favorite' element={<Favorite favorite={favorite} setFavorite={setFavorite} />} />

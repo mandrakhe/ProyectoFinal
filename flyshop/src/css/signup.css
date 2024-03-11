@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 * {
+    /* Establece la fuente y otras propiedades por defecto */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
     margin: 0;
@@ -8,6 +9,7 @@
 }
 
 .register {
+    /* Establece el fondo y otras propiedades de la página de registro */
     display: flex;
     color: #000;
     background-color: #000;
@@ -19,6 +21,7 @@
 }
 
 .container-signup {
+    /* Establece las propiedades del contenedor de registro */
     margin-left: 3rem;
     display: flex;
     flex-direction: column;
@@ -30,6 +33,7 @@
 }
 
 .container-signup form {
+    /* Establece las propiedades del formulario de registro */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,6 +41,7 @@
 }
 
 .container-signup .inputs {
+    /* Establece las propiedades del contenedor de entradas */
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
@@ -44,11 +49,13 @@
 }
 
 .container-signup .inputs label {
+    /* Establece las propiedades de las etiquetas de entrada */
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 .container-signup .inputs input {
+    /* Establece las propiedades de las entradas */
     color: #000;
     padding: 10px;
     width: 100%;
@@ -57,6 +64,7 @@
 }
 
 .container-signup .inputs input:focus {
+    /* Establece las propiedades de las entradas al hacer foco */
     padding: 10px;
     width: 100%;
     border: none;
@@ -65,6 +73,7 @@
 }
 
 .container-signup .inputs input::placeholder {
+    /* Establece las propiedades del placeholder de las entradas */
     font-family: "Inter", sans-serif;
     color: #838584;
     background-color: #fff;
@@ -72,12 +81,14 @@
 }
 
 input {
+    /* Establece las propiedades por defecto de las entradas */
     border: 1px solid #ccc;
     padding: 5px;
     transition: box-shadow 0.3s, border-color 0.3s;
 }
 
 .container-signup form button {
+    /* Establece las propiedades del botón de registro */
     font-family: "Inter", sans-serif;
     font-size: 1.2em;
     font-weight: bolder;
@@ -92,16 +103,19 @@ input {
 }
 
 .container-signup form button:hover {
+    /* Establece las propiedades del botón de registro al pasar el ratón por encima */
     background-color: #D3D3D3;
 }
 
 .container-signup p {
+    /* Establece las propiedades del texto de enlace */
     margin-top: 20px;
     font-family: "Inter", sans-serif;
     font-size: 1.12em;
 }
 
 .container-signup a {
+    /* Establece las propiedades del enlace */
     font-family: "Inter", sans-serif;
     text-decoration: none;
     font-weight: bold;
@@ -110,11 +124,13 @@ input {
 }
 
 .container-signup a:hover {
+    /* Establece las propiedades del enlace al pasar el ratón por encima */
     font-family: "Inter", sans-serif;
     text-decoration: underline;
 }
 
 .register img[alt="Imagen-principal-signup"] {
+    /* Establece las propiedades de la imagen de fondo */
     position: absolute;
     right: 2%;
     top: 10%;
@@ -122,6 +138,7 @@ input {
 }
 
 .container-signup h2 {
+    /* Establece las propiedades del título de registro */
     font-size: 2rem;
     color: #000;
     font-weight: bold;
@@ -129,5 +146,6 @@ input {
 }
 
 .divider {
+    /* Establece las propiedades del separador */
     border: 1px solid #c9c9c9;
 }

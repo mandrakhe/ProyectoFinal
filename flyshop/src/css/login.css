@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+/* Establece la fuente para todo el documento */
 * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
@@ -8,15 +9,18 @@
 }
 
 .login {
+    /* Centra horizontal y verticalmente el contenido */
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 100vh;
+    /* Define un fondo negro y un clip-path para dar forma a la sección */
     background-color: #000;
     clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
 }
 
 .container-login {
+    /* Agrega margen derecho y centra el contenido */
     margin-right: 3rem;
     display: flex;
     flex-direction: column;
@@ -28,18 +32,21 @@
 }
 
 img[alt="Imagen principal"] {
+    /* Posiciona la imagen absolutamente, la escala horizontalmente y la coloca detrás de los demás elementos */
     z-index: 2;
     position: absolute;
     transform: scaleX(-1);
 }
 
 .container-login h2 {
+    /* Establece el tamaño de fuente y el peso del título */
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 30px;
 }
 
 .container-login form {
+    /* Centra el formulario y establece su dirección */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,6 +54,7 @@ img[alt="Imagen principal"] {
 }
 
 .container-login .inputs {
+    /* Agrupa los campos de entrada y establece su dirección */
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
@@ -54,11 +62,13 @@ img[alt="Imagen principal"] {
 }
 
 .container-login .inputs label {
+    /* Establece el peso de fuente de las etiquetas */
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 .container-login .inputs input {
+    /* Establece el estilo de los campos de entrada */
     border-radius: 3px;
     color: #fff;
     background-color: #000;
@@ -67,10 +77,12 @@ img[alt="Imagen principal"] {
 }
 
 .container-login .inputs input::placeholder {
+    /* Establece el color del place holder */
     color: #838584;
 }
 
 .container-login button {
+    /* Establece el estilo del botón */
     padding: 10px 20px;
     background-color: #fff;
     border: none;
@@ -82,35 +94,40 @@ img[alt="Imagen principal"] {
 }
 
 .container-login button:hover {
+    /* Cambia el fondo del botón al pasar el cursor */
     background-color: #D3D3D3;
 }
 
 .divider {
+    /* Agrega un separador */
     border-top: 1px solid #fff;
     margin: 10px 0;
     width: 24rem;
 }
 
 .container-login p {
+    /* Establece el tamaño de fuente y el peso del texto */
     font-weight: bold;
     margin-top: 20px;
 }
 
 .container-login a {
+    /* Establece el estilo de los enlaces */
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
 }
 
 .container-login a:hover {
+    /* Agrega un subrayado al pasar el cursor */
     text-decoration: underline;
     font-weight: bold;
 }
 
-/* media queries */
-
+/* Media queries para dispositivos con pantallas más pequeñas */
 @media (max-width:1235px) {
     .login {
+        /* Elimina el clip-path y centra el contenido */
         clip-path: none;
         justify-content: center;
         height: 80%;
@@ -118,21 +135,25 @@ img[alt="Imagen principal"] {
     }
 
     .container-login {
+        /* Agrega un borde y elimina el clip-path */
         border: var(--color-gris) 1px solid;
         height: auto;
 
     }
 
     .container-login .title {
+        /* Cambia el color del título */
         color: #007bff;
     }
 
     img[alt="Imagen principal"] {
+        /* Oculta la imagen */
         opacity: 0;
         z-index: -4;
     }
 
     .divider {
+        /* Ajusta el ancho del separador */
         width: 90%;
     }
 }
