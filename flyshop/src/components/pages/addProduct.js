@@ -57,7 +57,7 @@ function AddProduct() {
             <div className='image-preview'>
             </div>
           </div> 
-            
+          <form action="/admin.js" method="post">
             <div className='detail-view'>
               <h3>Título <p>{product.title}</p></h3>
               <h4>Precio <p>{product.price}</p></h4>
@@ -66,7 +66,7 @@ function AddProduct() {
               <h5>Descripción</h5> <p>{product.description}</p>
               <button type='submit'>Subir</button>
             </div>
-
+            </form>
         </div>
        
       </div>

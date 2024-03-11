@@ -10,6 +10,7 @@ import Home from './components/pages/home';
 
 import Product from './components/pages/product';
 import Favorite from './components/pages/favorite';
+import Admin from './components/pages/admin';
 import Cart from './components/pages/cart';
 import AddProduct from './components/pages/addProduct';
 
@@ -26,6 +27,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
 
           <Route path='/favorite' element={<Favorite favorite={favorite} setFavorite={setFavorite} />} />
           <Route path='/addProduct' element={<AddProduct />} />
+          <Route path='/admin' element={<Admin />} />
           <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
 
 
