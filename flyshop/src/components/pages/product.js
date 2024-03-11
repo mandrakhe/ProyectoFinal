@@ -6,8 +6,8 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import "../../css/product.css";
 import Footer from './../common/footer';
+import "../../css/product.css";
 
 const Product = ({
     product,
