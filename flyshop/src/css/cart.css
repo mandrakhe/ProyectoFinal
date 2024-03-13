@@ -89,6 +89,16 @@
     padding: 20px 30px;
 }
 
+.cartcontainer .contant .cart_item .detail .info
+{
+    width: 26em;
+}
+
+.cartcontainer .contant .cart_item .detail .info .price
+{
+    display: flex;
+}
+
 .cartcontainer .contant .cart_item .detail .info h4
 {
     text-transform: uppercase;
@@ -116,8 +126,8 @@
 
 .cartcontainer .contant .cart_item .detail .info .qty
 {
-    margin-top: 10px;
     display: flex;
+    margin:10px 2em ;
     justify-content: center;
     align-items: center;
     border: 1px solid var(--color-secundario);
@@ -131,6 +141,7 @@
     outline: none;
     border: none;
     color: #808080;
+    margin: 0;
     font-size: 32px;
     cursor: pointer;
 }
@@ -151,7 +162,7 @@
 {
     color:var(--color-secundario);
     font-size: 22px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .cartcontainer .contant .cart_item .detail .close

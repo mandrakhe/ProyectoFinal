@@ -3,7 +3,13 @@
     height: 12vh;
     box-sizing: border-box;
 }
-
+.logo img {
+    width: 9em;
+    height: 8em;
+    float: left;
+    box-sizing: border-box;
+    cursor: pointer;
+}
 .nav {
     height: 6em;
     width: 100%;
@@ -53,6 +59,7 @@
 .nav .auth button {
     font-size: 20px;
     border: none;
+    margin-right: 1em;
     background: transparent;
     color: #fff;
     cursor: pointer;
@@ -62,13 +69,6 @@
     text-decoration: none;
 }
 
-.logo img {
-    width: 10em;
-    height: 8em;
-    float: left;
-    box-sizing: border-box;
-    cursor: pointer;
-}
 
 .search_container {
     width: 250px;
