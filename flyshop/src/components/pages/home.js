@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { MdArrowRightAlt } from "react-icons/md"
 import Footer from '../common/footer'
 import '../../css/home.css'
@@ -14,8 +14,11 @@ import Nike from '../../assets/images/zapatos/nike.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
 import NB from '../../assets/images/zapatos/nb.png'
 import { useAuth } from "../../context/AuthContext"
+
+
 const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
-  const { loginWithRedirect, isAuthenticated } = useAuth();
+  const { isAuthenticated, loginWithRedirect } = useAuth();
+
 
   return (
     <>
