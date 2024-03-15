@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import { MdArrowRightAlt } from "react-icons/md"
 import Footer from '../common/footer'
 import '../../css/home.css'
@@ -46,7 +46,6 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                   )
                 })
               }
-              {/* <div className='productbox'></div> */}
             </div>
           </div> : null
       }

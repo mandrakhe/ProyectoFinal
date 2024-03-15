@@ -38,6 +38,7 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(true);
         } catch (error) {
             console.log(error);
+            // eslint-disable-next-line array-callback-return
             error.response.data.map((error) => {
                 setErrors((ant) => {
                     return [

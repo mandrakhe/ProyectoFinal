@@ -61,7 +61,7 @@ const Nav = ({ searchbtn }) => {
                 <div className='auth'>
                         {
                             isAuthenticated ?
-                                <button onClick={() => setLogout()}><CiLogout /></button>
+                                <button onClick={() => setLogout(  window.location.reload())}><CiLogout /></button>
                                 :
                                 <Link className='link-login' to='/login'><CiLogin /></Link>
                         }

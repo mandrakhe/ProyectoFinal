@@ -59,7 +59,7 @@ const Cart = ({ cart, setCart }) => {
                                         <div className='info'>
                                             <h3>{curElm.Name}</h3>
                                            <div className='price'>
-                                           <h3> ${curElm.Price}</h3>
+                                           <h3>${curElm.Price}</h3>
                                             <div className='qty'>
                                                 <button className='decqty' onClick={() => decqty(curElm)}>-</button>
                                                 <input type='text' value={curElm.qty}></input>
@@ -69,7 +69,7 @@ const Cart = ({ cart, setCart }) => {
                                            </div>                                       
                                         </div> 
                                         <div className='close'>
-                                            <button onClick={() => removeproduct(curElm)}><IoMdClose /></button>
+                                            <button onClick={() => removeproduct(curElm)}><IoMdClose/></button>
                                         </div>
                                        
                                     </div>
