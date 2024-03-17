@@ -18,4 +18,5 @@ router.get('/profile', requiredAuth, profile);
 router.post('/create-product', createProduct)
 router.get('/products', products)
 
+
 export default router;
