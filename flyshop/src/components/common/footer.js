@@ -1,9 +1,11 @@
 import React from "react";
-import { IoLogoInstagram } from "react-icons/io";
+
 import { FaWhatsapp } from "react-icons/fa6";
-import Logo from "../../assets/images/logos/logo_flyshop.png";
+import { IoLogoInstagram } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
+import Logo from "../../assets/images/logos/logo_flyshop.png";
 import "../../css/footer.css";
+
 const Footer = () => {
     return (
         <>

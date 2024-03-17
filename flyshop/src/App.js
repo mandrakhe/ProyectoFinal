@@ -1,66 +1,60 @@
-import React, { useState } from 'react'
-import Nav from './components/common/nav.js'
-import Rout from './rout.js'
+import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import Alert from '@mui/material/Alert';
+import Rout from './rout.js';
+import Nav from './components/common/nav.js';
 import Productdetail from './productdetail';
 import addProduct from './components/pages/addProduct.js';
-import { AuthProvider } from './context/AuthContext';
+
 const App = () => {
+  const [favorite, setFavorite] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [close, setClose] = useState(false);
+  const [detail, setDetail] = useState([]);
+  const [product, setProduct] = useState(Productdetail);
+  const [alertMessage, setAlertMessage] = useState('');
+  const [alertSeverity, setAlertSeverity] = useState('success'); // Estado para el nivel de severidad de la alerta
 
-  /* funciones */
-
-  const [favorite, setFavorite] = useState([])
-  const [cart, setCart] = useState([])
-
-
-
-
-  const [close, setClose] = useState(false)
-  const [detail, setDetail] = useState([])
-
-
-
-
-  const [product, setProduct] = useState(Productdetail)
   const searchbtn = (product) => {
-    const change = Productdetail.filter((x) => {
-      return x.Brand === product
-    })
-    setProduct(change)
-  }
+    const change = Productdetail.filter((x) => x.Brand === product);
+    setProduct(change);
+  };
 
   const view = (product) => {
-    setDetail([{ ...product }])
-    setClose(true)
-  }
+    setDetail([{ ...product }]);
+    setClose(true);
+  };
 
+  const showAlert = (message, severity) => {
+    setAlertMessage(message);
+    setAlertSeverity(severity);
 
+    // Ocultar la alerta después de 1 segundo
+    setTimeout(() => {
+      setAlertMessage('');
+    }, 2000);
+  };
 
   const addtocart = (product) => {
-    const exsit = cart.find((x) => {
-      return x.id === product.id
-    })
-    if (exsit) {
-      alert("Este producto ya se encuentra añadido al carrito")
+    const exist = cart.find((x) => x.id === product.id);
+    if (exist) {
+      showAlert('Este producto ya se encuentra añadido al carrito', 'error');
+    } else {
+      setCart([...cart, { ...product, qty: 1 }]);
+      showAlert('El producto ha sido añadido al carrito', 'success');
     }
-    else {
-      setCart([...cart, { ...product, qty: 1 }])
-      alert("El producto ha sido añadido al carrito")
-    }
-  }
+  };
 
   const addFavorite = (product) => {
-    const exsit = favorite.find((x) => {
-      return x.id === product.id
-    })
-    if (exsit) {
-      alert("Este producto ya se encuentra añadido a favoritos")
+    const exist = favorite.find((x) => x.id === product.id);
+    if (exist) {
+      showAlert('Este producto ya se encuentra añadido a favoritos', 'error');
+    } else {
+      setFavorite([...favorite, { ...product, qty: 1 }]);
+      showAlert('El producto ha sido añadido a favoritos', 'success');
     }
-    else {
-      setFavorite([...favorite, { ...product, qty: 1 }])
-      alert("El producto ha sido añadido a favoritos")
-    }
-  }
+  };
 
   return (
     <>
@@ -68,10 +62,31 @@ const App = () => {
         <AuthProvider>
           <Nav searchbtn={searchbtn} />
         </AuthProvider>
-        <Rout addProduct={addProduct} product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addtocart={addtocart} favorite={favorite} setFavorite={setFavorite} addtofavorite={addFavorite} />
+        <div style={{ position: 'fixed', top: '20px', right: '20px', width: '400px', height: '100px', zIndex: '1000' , alignItems:'center'}}>
+          {alertMessage && (
+            <Alert severity={alertSeverity} sx={{ width: '100%', height: '100%', borderRadius: '8px', padding: '10px', fontSize: '1rem' }}>
+              {alertMessage}
+            </Alert>
+          )}
+        </div>
+        <Rout
+          addProduct={addProduct}
+          product={product}
+          setProduct={setProduct}
+          detail={detail}
+          view={view}
+          close={close}
+          setClose={setClose}
+          cart={cart}
+          setCart={setCart}
+          addtocart={addtocart}
+          favorite={favorite}
+          setFavorite={setFavorite}
+          addtofavorite={addFavorite}
+        />
       </BrowserRouter>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

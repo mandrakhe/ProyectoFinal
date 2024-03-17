@@ -1,19 +1,22 @@
 import React from 'react'
-import { Link} from 'react-router-dom'
-import { MdArrowRightAlt } from "react-icons/md"
+import { Link } from 'react-router-dom'
 import Footer from '../common/footer'
+import Homeproduct from '../../homeproduct'
+import { useAuth } from "../../context/AuthContext"
+
+import { GoEye } from "react-icons/go"
+import { IoMdClose } from "react-icons/io"
+import { IoMdHeartEmpty } from "react-icons/io"
+import { MdArrowRightAlt } from "react-icons/md"
+
 import '../../css/home.css'
 import '../../css/product.css'
-import { GoEye } from "react-icons/go"
-import { IoMdHeartEmpty } from "react-icons/io"
-import { IoMdClose } from "react-icons/io"
-import Homeproduct from '../../homeproduct'
-import Zapato from '../../assets/images/logos/logo_banner.png'
-import Adidas from '../../assets/images/zapatos/campus.png'
-import Nike from '../../assets/images/zapatos/nike.png'
-import Jordan from '../../assets/images/zapatos/jordan3.png'
+
 import NB from '../../assets/images/zapatos/nb.png'
-import { useAuth } from "../../context/AuthContext"
+import Nike from '../../assets/images/zapatos/nike.png'
+import Adidas from '../../assets/images/zapatos/campus.png'
+import Jordan from '../../assets/images/zapatos/jordan3.png'
+import Zapato from '../../assets/images/logos/logo_banner.png'
 
 
 const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
@@ -142,7 +145,6 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
         </div>
         <h4>LO MEJOR DE FLYSHOP</h4>
       </div>
-
       <Footer />
     </>
   )

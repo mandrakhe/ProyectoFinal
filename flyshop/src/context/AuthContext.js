@@ -1,7 +1,7 @@
+import Cookies from 'js-cookie';
+import { useNavigate } from "react-router-dom";
 import { createContext, useState, useContext, useEffect } from "react";
 import { loginRequest, registerRequest, verifyTokenRequest, logoutRequest } from "../api/auth";
-import { useNavigate } from "react-router-dom";
-import Cookies from 'js-cookie';
 
 export const AuthContext = createContext();
 

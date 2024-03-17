@@ -23,9 +23,8 @@
 
 .cartcontainer
 {
-    padding: 40px 50px;
     width: 100%;
-    background: var(--color-gris);
+    padding: 40px 50px;
     border-bottom: 1px solid #9a9a9a;
 }
 

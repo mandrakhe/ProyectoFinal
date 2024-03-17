@@ -1,13 +1,14 @@
-import React from "react";
-import Productdetail from "../../productdetail";
-// import { CiShoppingCart } from "react-icons/ci"
 import { GoEye } from "react-icons/go";
-import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
+import { IoMdHeartEmpty } from "react-icons/io";
+
+import React from "react";
 import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import Footer from './../common/footer';
+
 import "../../css/product.css";
+import Footer from './../common/footer';
+import Productdetail from "../../productdetail";
 
 const Product = ({
     product,
@@ -28,9 +29,7 @@ const Product = ({
         });
         setProduct(update);
     };
-    // const AllProducts = () => {
-    //     setProduct(Productdetail);
-    // };
+
     return (
         <>
             {close ? (
