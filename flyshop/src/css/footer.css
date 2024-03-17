@@ -104,3 +104,64 @@
     line-height: 24px;
     margin-right: 1%;
 }
+
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column; /* Cambiar la dirección de los elementos a columna */
+        align-items: flex-start; /* Alinear los elementos a la izquierda */
+    }
+
+    .footer .container .about {
+        width: 100%; /* Ancho completo para el bloque de información */
+        margin-top: 20px; /* Espacio superior para separar del logo */
+    }
+
+    .footer .container .about .account {
+        margin-right: 0; /* Eliminar el margen derecho */
+    }
+
+    .footer .container .about h3 {
+        font-size: 24px; /* Reducir el tamaño de fuente */
+    }
+
+    .footer .container .about ul li {
+        font-size: 14px; /* Reducir el tamaño de fuente */
+    }
+
+    .footer .map .address {
+        margin-left: 0; /* Eliminar el margen izquierdo */
+        margin-top: 10px; /* Espacio superior para separar del mapa */
+    }
+
+    .footer .map .address h2 {
+        font-size: 12px; /* Reducir el tamaño de fuente */
+    }
+}
+
+/* Estilos para pantallas de 500px o menos */
+@media (max-width: 500px) {
+    .footer .container .about {
+        justify-content: center;
+    }
+    .footer .container .about h3 {
+        font-size: 20px; /* Reducir aún más el tamaño de fuente */
+    }
+
+    .footer .container .about ul li {
+        font-size: 12px; /* Reducir aún más el tamaño de fuente */
+    }
+
+    .footer .map .address h2 {
+        font-size: 10px; /* Reducir aún más el tamaño de fuente */
+    }
+    .footer .container img {
+        height: 100px;
+        position: relative;
+        top: 6em;
+        right: 1em;
+    }
+    .footer .map iframe
+    {
+        margin-left: 1.5em;
+    }
+}

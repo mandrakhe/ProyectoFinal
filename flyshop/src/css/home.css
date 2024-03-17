@@ -6,12 +6,14 @@
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
+    transition: .4s ;
+
 }
 
 .container #X-top_banner {
     text-align: center;
     margin-left: 40%;
-   
+
 }
 
 .title {
@@ -40,31 +42,30 @@
 
 .top_banner .container .detail {
     margin-top: 8%;
-    margin-left: 30px;
+    width: 40%;
 }
 
-img[alt='zapato del banner'] {
-    height: 30em;
+.top_banner .container img {
+    height: 100%;
     position: relative;
-    width: 45em;
+    width: 100%;
     margin: auto;
     display: block;
-    background-image: u;
-
+    object-fit: contain;
+    object-fit: contain;
 }
 
-.top_banner .container .detail h2
- {
-     font-size: 52px;
-     left: 30%;
-     top: 20%;
+.top_banner .container .detail h2 {
+    font-size: 52px;
+    left: 30%;
+    top: 20%;
     position: relative;
     color: #000;
 }
-.top_banner .container .detail h4
-{
+
+.top_banner .container .detail h4 {
     color: #000;
-    
+
     top: 25%;
     left: 30%;
     position: relative;
@@ -98,14 +99,16 @@ img[alt='zapato del banner'] {
 }
 
 .shoe_brand .container {
-    max-width: auto;
     display: flex;
     justify-content: space-between;
 }
 
 .shoe_brand .container .box {
     padding: 10px 20px;
-    margin-left: 10px;
+    margin: 10px 0;
+    /* Add margin between boxes */
+    width: calc(25% - 20px);
+    /* Set initial width for each box */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -116,6 +119,7 @@ img[alt='zapato del banner'] {
     overflow: hidden;
     cursor: pointer;
 }
+
 
 .shoe_brand .container .box .img_box img {
     object-fit: cover;
@@ -153,7 +157,7 @@ img[alt='zapato del banner'] {
 }
 
 .product {
-    padding: 20px 50px;
+    padding: 20px 20px;
     width: 100%;
 }
 
@@ -288,4 +292,59 @@ img[alt='zapato del banner'] {
 .detail button:hover {
     background-color: #222;
     cursor: pointer;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+
+    .top_banner .container {
+        position: relative;
+        right: 4em;
+        margin-top: 20%;
+ 
+    }
+    .top_banner .container img{
+        width: 15em;
+        margin-left: 2em;
+        object-fit: contain;
+    }
+
+    .shoe_brand .container .box {
+        display: none !important;
+    }
+
+    .top_banner .container .detail .link 
+    {
+      
+        padding: 8px;
+        font-size: small;
+    }
+    
+    .product
+    {
+        margin-left: 1.5em;
+        padding: 0;
+    }
+}
+
+@media (max-width:500px){
+    .top_banner .container img{
+        display: none;
+    }
+ 
+
+    .top_banner .container .detail .link 
+    {
+        padding: 1px;
+    }
+
+    .product h2
+    {
+        margin-top: 5em;
+        font-size: small;
+        text-align: center;
+    }
 }

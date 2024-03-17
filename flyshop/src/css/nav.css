@@ -122,3 +122,73 @@
     align-items: center;
     justify-content: center;
 }
+
+
+
+/* Estilos generales */
+
+/* Estilos para pantallas de 768px o menos */
+@media (max-width: 768px) {
+
+    .logo img {
+        width: 120px; 
+        height: auto; 
+    }
+
+    .nav {
+        height: auto; 
+        flex-direction: column; 
+    }
+
+    .nav ul {
+        flex-direction: column; /* Cambiar la dirección de los elementos a columna */
+        align-items: center; /* Alinear los elementos al centro */
+        margin-top: 10px; /* Agregar espacio superior */
+    }
+
+    .nav ul li {
+        margin: 5px 0; /* Añadir margen vertical a los elementos de la lista */
+    }
+
+    .nav .link {
+        font-size: 16px; /* Reducir el tamaño de fuente de los enlaces */
+    }
+
+    .nav .car {
+        margin: 10px 0; /* Añadir margen vertical al carrito */
+    }
+
+    .nav .auth button {
+        font-size: 16px; /* Reducir el tamaño de fuente de los botones de autenticación */
+        margin-right: 0; /* Eliminar margen derecho */
+    }
+
+    .search_container {
+        width: 100%; /* Ancho completo para el contenedor de búsqueda */
+        margin: 10px 0; /* Añadir margen vertical */
+    }
+
+    .search_input {
+        width: 100%; /* Ancho completo para el input de búsqueda */
+        margin-top: 5px; /* Añadir margen superior */
+    }
+
+    .icon .account {
+        font-size: 20px; /* Reducir el tamaño de fuente del icono de cuenta */
+    }
+}
+
+/* Estilos para pantallas de 500px o menos */
+@media (max-width: 500px) {
+    .nav .link {
+        font-size: 14px; /* Reducir aún más el tamaño de fuente de los enlaces */
+    }
+
+    .nav .auth button {
+        font-size: 14px; /* Reducir aún más el tamaño de fuente de los botones de autenticación */
+    }
+
+    .icon .account {
+        font-size: 18px; /* Reducir aún más el tamaño de fuente del icono de cuenta */
+    }
+}
