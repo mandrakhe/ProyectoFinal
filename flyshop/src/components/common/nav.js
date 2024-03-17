@@ -36,6 +36,9 @@ const Nav = ({ searchbtn }) => {
                             <li>
                                 <Link className='link' to='/about'>¿Quiénes somos?</Link>
                             </li>
+                            <li>
+                                <Link className='link' to='/admin/listProduct'>Lista e productos</Link>
+                            </li>
                         </ul>
                         <div className="search_container">
                             <div className="search_icon">

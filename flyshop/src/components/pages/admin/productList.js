@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { ExportToExcel } from '../../util/ExportToExcel';
-import { ProductContext } from '../../context/ProductContext';
+import { ExportToExcel } from '../../../util/ExportToExcel';
+import { ProductContext } from '../../../context/ProductContext';
 
 function ProductList() {
     const { products, loading, error } = useContext(ProductContext);

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Alert from '@mui/material/Alert';
-import Rout from './rout.js';
+import Rout from './routes/rout.js';
 import Nav from './components/common/nav.js';
 import Productdetail from './productdetail';
 import addProduct from './components/pages/addProduct.js';
@@ -63,12 +63,12 @@ const App = () => {
           <Nav searchbtn={searchbtn} />
         </AuthProvider>
         <div style={{ position: 'fixed', top: '20px', right: '20px', maxWidth: '400px', width: '100%', height: 'auto', zIndex: '1', alignItems: 'center', display: 'flex', justifyContent: 'center', overflow: 'hidden' }}>
-  {alertMessage && (
-    <Alert severity={alertSeverity} sx={{ width: '100%', borderRadius: '8px', fontSize: '1rem' }}>
-      {alertMessage}
-    </Alert>
-  )}
-</div>
+        {alertMessage && (
+        <Alert severity={alertSeverity} sx={{ width: '100%', borderRadius: '8px', fontSize: '1rem' }}>
+          {alertMessage}
+        </Alert>
+          )}
+        </div>
 
         <Rout
           addProduct={addProduct}
