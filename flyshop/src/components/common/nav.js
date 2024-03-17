@@ -1,17 +1,14 @@
 import React, { useState } from 'react'
-
-import { IoBag } from 'react-icons/io5';
-import { CiUser } from "react-icons/ci";
 import { CiHeart } from 'react-icons/ci';
+import { IoBag } from 'react-icons/io5';
 import { CiLogin } from 'react-icons/ci';
 import { CiLogout } from 'react-icons/ci';
-
+import { CiUser } from "react-icons/ci";
 import { Link } from 'react-router-dom';
-import { IoSearchOutline } from "react-icons/io5";
 import { useAuth } from '../../context/AuthContext';
-
-import '../../css/nav.css'
+import { IoSearchOutline } from "react-icons/io5";
 import Logo from '../../assets/images/logos/logo_flyshop.png'
+import '../../css/nav.css'
 
 const Nav = ({ searchbtn }) => {
     const [search, setSearch] = useState()
@@ -19,13 +16,13 @@ const Nav = ({ searchbtn }) => {
 
 
     return (
-        
+        <>
             <div className='header'>
                 <div className='container'>
                     <div className='nav'>
-{/*                         <div className='logo'  >
+                        <div className='logo'  >
                             <Link to='/'><img src={Logo} alt='Logo de la empresa' /></Link>
-                        </div> */}
+                        </div>
                         <ul>
                             <li>
                                 <Link className='link' to='/'>Inicio</Link>
@@ -72,7 +69,7 @@ const Nav = ({ searchbtn }) => {
                         </div>
                     </div>
             </div>
-        
+        </>
     )
 }
 

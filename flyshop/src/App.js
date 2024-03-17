@@ -33,7 +33,7 @@ const App = () => {
     // Ocultar la alerta después de 1 segundo
     setTimeout(() => {
       setAlertMessage('');
-    }, 2000);
+    }, 1000);
   };
 
   const addtocart = (product) => {
@@ -62,9 +62,9 @@ const App = () => {
         <AuthProvider>
           <Nav searchbtn={searchbtn} />
         </AuthProvider>
-        <div style={{ position: 'fixed', top: '20px', right: '20px', width: '400px', height: '100px', zIndex: '1000' , alignItems:'center'}}>
+        <div style={{ position: 'fixed', top: '20px', right: '20px', width: '400px', height: '100px', zIndex: '1000', alignItems: 'center', display: 'flex', justifyContent: 'center' }}>
           {alertMessage && (
-            <Alert severity={alertSeverity} sx={{ width: '100%', height: '100%', borderRadius: '8px', padding: '10px', fontSize: '1rem' }}>
+            <Alert severity={alertSeverity} sx={{ width: '100%', borderRadius: '8px', fontSize: '1rem' }}>
               {alertMessage}
             </Alert>
           )}
