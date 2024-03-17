@@ -33,7 +33,7 @@ const App = () => {
     // Ocultar la alerta después de 1 segundo
     setTimeout(() => {
       setAlertMessage('');
-    }, 1000);
+    }, 1500);
   };
 
   const addtocart = (product) => {
