@@ -23,9 +23,9 @@ const Nav = ({ searchbtn }) => {
             <div className='header'>
                 <div className='container'>
                     <div className='nav'>
-                        <div className='logo'  >
+{/*                         <div className='logo'  >
                             <Link to='/'><img src={Logo} alt='Logo de la empresa' /></Link>
-                        </div>
+                        </div> */}
                         <ul>
                             <li>
                                 <Link className='link' to='/'>Inicio</Link>
