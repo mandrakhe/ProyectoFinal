@@ -2,6 +2,8 @@ import React from 'react'
 import Footer from '../common/footer'
 import { Link } from 'react-router-dom'
 
+
+
 import { IoMdClose } from "react-icons/io";
 import { GiPadlock } from "react-icons/gi";
 import '../../css/cart.css';
@@ -79,12 +81,14 @@ const Cart = ({ cart, setCart }) => {
                         })
                     }
                 </div>
+                <div className="divider"></div>
                 {
                     cart.length > 0 &&
-                    <>
-                        <h2 className='totalprice'>Total: COP {Totalprice}</h2>
+                    <div className='resumen'>
+                    <h1>Resumen de la compra</h1>
+                        <p className='totalprice'>Total: COP {Totalprice}</p>
                         <button className='checkout'>Pago seguro <i><GiPadlock /></i></button>
-                    </>
+                    </div>
                 }
             </div>
             <Footer />

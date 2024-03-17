@@ -163,6 +163,9 @@
     font-size: 22px;
     margin-top: 20px;
 }
+.resumen h1{
+text-align: center;
+}
 
 .cartcontainer .contant .cart_item .detail .close
 {
@@ -211,4 +214,10 @@
 {
     margin-left: 10px;
     font-size: 20px;
+}
+
+.divider {
+    border-top: 1px solid #fff;
+    margin: 10px 0;
+    width: 100%;
 }

@@ -15,6 +15,7 @@ import Favorite from './components/pages/favorite';
 import Admin from './components/pages/admin';
 import Cart from './components/pages/cart';
 import AddProduct from './components/pages/addProduct';
+import DetailProduct from './components/pages/detailProduct';
 
 
 
@@ -33,6 +34,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
 
 
             <Route path='/listProduct' element={<ProductList />} />
+            <Route path='/detailProduct' element={<DetailProduct />} />
 
 
             <Route path='/favorite' element={<Favorite favorite={favorite} setFavorite={setFavorite} />} />

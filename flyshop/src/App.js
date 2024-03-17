@@ -62,7 +62,7 @@ const App = () => {
         <AuthProvider>
           <Nav searchbtn={searchbtn} />
         </AuthProvider>
-        <div style={{ position: 'fixed', top: '20px', right: '20px', width: '400px', height: '100px', zIndex: '1000', alignItems: 'center', display: 'flex', justifyContent: 'center' }}>
+        <div  style={{ position: 'fixed', top: '20px', right: '20px', width: '400px', height: '100px', zIndex: '1', alignItems: 'center', display: 'flex', justifyContent: 'center' }}>
           {alertMessage && (
             <Alert severity={alertSeverity} sx={{ width: '100%', borderRadius: '8px', fontSize: '1rem' }}>
               {alertMessage}

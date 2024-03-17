@@ -14,7 +14,7 @@ const fileFilter = (req, file, cb) => {
 const upload = multer({ storage, fileFilter });
 
 export const createProduct = async (req, res) => {
-    const uploadFields = upload.fields([{ name: "image", maxCount: 7 }]);
+    const uploadFields = upload.fields([{ name: "image", maxCount: 1 }]);
 
     uploadFields(req, res, async (error) => {
         if (error) {
