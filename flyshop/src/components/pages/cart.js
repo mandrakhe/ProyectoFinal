@@ -1,12 +1,13 @@
 import React from 'react'
 import Footer from '../common/footer'
 import { Link } from 'react-router-dom'
-
-
+// import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 
 import { IoMdClose } from "react-icons/io";
 import { GiPadlock } from "react-icons/gi";
 import '../../css/cart.css';
+
+// initMercadoPago('TEST-3895782c-1661-4be1-bc80-f08d1dbf08fb');
 
 const Cart = ({ cart, setCart }) => {
     const incqty = (product) => {
@@ -87,7 +88,8 @@ const Cart = ({ cart, setCart }) => {
                     <div className='resumen'>
                     <h1>Resumen de la compra</h1>
                         <p className='totalprice'>Total: COP {Totalprice}</p>
-                        <button className='checkout'>Pago seguro <i><GiPadlock /></i></button>
+                        {/* <Wallet initialization={{ preferenceId: '<PREFERENCE_ID>' }} /><GiPadlock/> */}
+
                     </div>
                 }
             </div>

@@ -38,13 +38,13 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
             {/* Metodos y funciones de los productos */}
             <Route path='/product' element={<Product product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart} addtofavorite={addtofavorite} />} />
 
+              <Route path='/admin' element={<Admin />} />
+              <Route path='/addProduct' element={<AddProduct />} />
+              <Route path="/admin/listProduct" element={<ProductList />} />
 
             {/* Funciones del administrador */}
             <Route element={<AdminRoute />}>
             </Route>
-              <Route path='/addProduct' element={<AddProduct />} />
-              <Route path="/admin/listProduct" element={<ProductList />} />
-              <Route path='/admin' element={<Admin />} />
             
 
             {/* Rutas Protegidas (Requiere Autentificación) */}

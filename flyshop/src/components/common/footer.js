@@ -28,7 +28,9 @@ const Footer = () => {
                                 <li>Inicio</li>
                                 <li>Tienda</li>
                                 <li>Contáctanos</li>
-                                <div className="details">
+                                
+                            </ul>
+                            <div className="details">
                                     <div className="icons">
                                         <li>
                                             <IoLogoInstagram />
@@ -38,7 +40,6 @@ const Footer = () => {
                                         </li>
                                     </div>
                                 </div>
-                            </ul>
                         </div>
                     </div>
                     <div className="map">
