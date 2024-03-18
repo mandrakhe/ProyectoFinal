@@ -32,8 +32,7 @@ function AddProduct() {
 
             <div className='imagen'>
               <h3><MdOutlineUploadFile /></h3>
-              <h1>Añadir imagenes</h1>
-              <h2>Minimo 1 máximo 5 imagenes</h2>
+              <h1>Añadir imagen</h1>
               <input type='file' multiple onChange={handleImageChange} />
               <div className='image-preview'>
                 {images.map((image, index) => (

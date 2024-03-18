@@ -41,9 +41,9 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                         <h4>{curElm.Brand}</h4>
                         <h2>{curElm.Name}</h2>
                         <p>Texto pero una cantidad exagerada de texto o sea en plan mucho pero mucho texto sin el más minimo sentido aparente pero igual ya veremos</p>
-                        <h3>{curElm.Price}</h3>
-                        <h3>Tallas</h3>
-                        <button onClick={() => addtocart(curElm)}>Add To Cart</button>
+                        <h3>Precio: <span>{curElm.Price} COP</span> </h3> 
+                        <strong >Talla</strong>
+                        <button id='button-detail' onClick={() => addtocart(curElm)}>Añadir al carrito</button>
                       </div>
                     </div>
                   )
