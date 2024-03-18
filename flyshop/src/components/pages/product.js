@@ -1,15 +1,14 @@
 import { GoEye } from "react-icons/go";
 import { IoMdClose } from "react-icons/io";
 import { IoMdHeartEmpty } from "react-icons/io";
-
+import { ProductContext } from '../../context/ProductContext'
 import React from "react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import "../../css/product.css";
 import Footer from './../common/footer';
 import Productdetail from "../../productdetail";
-
 const Product = ({
     product,
     setProduct,
@@ -21,6 +20,7 @@ const Product = ({
 }) => {
     const { loginWithRedirect, isAuthenticated } = useAuth0();
     const [selectedValue, setSelectedValue] = useState('');
+    const { products } = useContext(ProductContext);
 
     const filtterproduct = (product) => {
         setSelectedValue(product);
@@ -38,23 +38,23 @@ const Product = ({
                         <button onClick={() => setClose(false)} className="closebtn">
                             <IoMdClose />
                         </button>
-                        {detail.map((curElm) => {
+                        {detail.map((object) => {
                             return (
                                 <div className="productbox">
                                     <div className="img-box">
-                                        <img src={curElm.Img} alt={curElm.Name}></img>
+                                        <img src={object.Img} alt={object.Name}></img>
                                     </div>
                                     <div className="detail">
-                                        <h4>{curElm.Brand}</h4>
-                                        <h2>{curElm.Name}</h2>
+                                        <h4>{object.Brand}</h4>
+                                        <h2>{object.Name}</h2>
                                         <p>
                                             Texto pero una cantidad exagerada de texto o sea en plan
                                             mucho pero mucho texto sin el más minimo sentido aparente
                                             pero igual ya veremos
                                         </p>
-                                        <h3>{curElm.Price}</h3>
+                                        <h3>{object.Price}</h3>
                                         <h3>Talla</h3>
-                                        <button onClick={() => addtocart(curElm)}>
+                                        <button onClick={() => addtocart(object)}>
                                             Add To Cart
                                         </button>
                                     </div>
@@ -91,28 +91,33 @@ const Product = ({
                     <div className="container">
                         <div className="productbox">
                             <div className="contant">
-                                {product.map((curElm) => {
-
+                                {products.map((object) => {
+                                    const imageUrl = object.images && object.images[0];
                                     return (
 
-                                        <div className='box' key={curElm.id}>
+                                        <div className='box' key={object.id}>
                                             {/* <img src='./assets/images/zapatos/campus.png' alt='prueba' /> */}
                                             <div className='img_box'>
 
-                                                <img src={curElm.Img} alt={curElm.Name} />
+
+                                                {imageUrl ? ( // Conditionally render the image if a URL exists
+                                                    <img src={imageUrl} alt={object.title} />
+                                                ) : (
+                                                    <p>No image available</p> // Display a placeholder if no image URL is found
+                                                )}
                                                 <div className='icon'>
-                                                    <li onClick={() => view(curElm)}><GoEye /></li>
+                                                    <li onClick={() => view(object)}><GoEye /></li>
                                                     <li ><IoMdHeartEmpty /></li>
                                                 </div>
                                             </div>
                                             <div className='detail'>
-                                                <h3>{curElm.Name}</h3>
-                                                <p>{curElm.Brand}</p>
-                                                <p>{curElm.Price}</p>
+                                                <h3>{object.title}</h3>
+                                                <p>{object.brand}</p>
+                                                <p>{object.price}</p>
                                                 <button className="button-product"
                                                     onClick={
                                                         isAuthenticated
-                                                            ? () => addtocart(curElm)
+                                                            ? () => addtocart(object)
                                                             : () => loginWithRedirect()
                                                     }
                                                 >

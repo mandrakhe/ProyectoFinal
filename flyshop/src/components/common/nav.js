@@ -32,9 +32,6 @@ const Nav = ({ searchbtn }) => {
                             <li>
                                 <Link className='link' to='https://wa.me/+573114042531?text=Hola mono pecueco >:('>Contáctanos</Link>
                             </li>
-                            <li>
-                                <Link className='link' to='/about'>¿Quiénes somos?</Link>
-                            </li>
                             <li>                                
                                     <Link className='link' to='/admin/listProduct'>Lista de productos</Link>
                             </li>
@@ -43,7 +40,6 @@ const Nav = ({ searchbtn }) => {
                             </li>
                             <li>
                                 <Link className='link' to='/cart'> <span>Carrito</span> </Link>
-
                             </li>
                         </ul>
                         <div className="search_container">
