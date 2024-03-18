@@ -58,11 +58,11 @@ function AddProduct() {
           </div>
           <form action="./admin.js" method="post">
             <div className='detail-view'>
-              <h3>Título <p>{product.title}</p></h3>
-              <h4>Precio <p>{product.price}</p></h4>
-              <h5>Talla<p>{product.sizes}</p> </h5>
-              <h5>Marcas </h5> <p>{product.brand}</p>
-              <h5>Descripción</h5> <p>{product.description}</p>
+              <h3>Título </h3><p>{product.title}</p>
+              <h4>Precio </h4><p>{product.price}</p>
+              <h5>Talla</h5><p>{product.sizes}</p> 
+              <h5>Marcas </h5><p>{product.brand}</p>
+              <h5>Descripción </h5> <p>{product.description}</p>
               <button type='submit'>Subir</button>
             </div>
           </form>

@@ -19,7 +19,6 @@
 }
 
 .products h2 {
-    width: 562px;
     height: 55px;
     margin-bottom: 1.7%;
     font-family: 'Arial';
@@ -56,6 +55,7 @@
 
 .products .filters .filter {
     height: 30px;
+    margin-left: 1em;
     width: auto;
 }
 

@@ -86,33 +86,6 @@ const Product = ({
                             <option value="New Balanse">De 1.000.000  +</option>
                         </select>
                     </div>
-                    <div className="filter">
-                        <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-                            <option value="all">Hombre</option>
-                            <option value="Jordan">Altos</option>
-                            <option value="Jordan">Enanos</option>
-                            <option value="Adidas">Gordos</option>
-                            <option value="New Balanse">Bajitos</option>
-                        </select>
-                    </div>
-                    <div className="filter">
-                        <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-                            <option value="all">Mujer</option>
-                            <option value="Jordan">Altas</option>
-                            <option value="Adidas">Enanas</option>
-                            <option value="New Balanse">Gordas</option>
-                            <option value="New Balanse">Flacas</option>
-                        </select>
-                    </div>
-                    <div className="filter">
-                        <select className="filterSelect" onChange={(e) => filtterproduct(e.target.value)}>
-                            <option value="all">Niños</option>
-                            <option value="Jordan">Altas</option>
-                            <option value="Adidas">Enanas</option>
-                            <option value="New Balanse">Gordas</option>
-                            <option value="New Balanse">Flacas</option>
-                        </select>
-                    </div>
                 </div>
                 <div className="container">
                     <div className="container">

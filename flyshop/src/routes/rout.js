@@ -41,10 +41,10 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
 
             {/* Funciones del administrador */}
             <Route element={<AdminRoute />}>
-              <Route path="/admin/listProduct" element={<ProductList />} />
-              <Route path='/addProduct' element={<AddProduct />} />
-              <Route path='/admin' element={<Admin />} />
             </Route>
+              <Route path='/addProduct' element={<AddProduct />} />
+              <Route path="/admin/listProduct" element={<ProductList />} />
+              <Route path='/admin' element={<Admin />} />
             
 
             {/* Rutas Protegidas (Requiere Autentificación) */}

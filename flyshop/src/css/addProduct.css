@@ -10,7 +10,8 @@
     gap: 16px;
     height: 100%;
     width: 90%;
-    margin-left: 1em;
+    justify-content: center;
+    margin-left: 5em;
     margin-top: 32px;
 }
 
@@ -72,6 +73,10 @@
     gap: 8px;
     margin-top: 16px;
 }
+
+
+
+
 
 .image-preview img {
     width: 100%;
