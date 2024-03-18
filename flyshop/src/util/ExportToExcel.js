@@ -28,6 +28,6 @@ export const ExportToExcel = ({ apiData, fileName }) => {
   };
 
   return (
-    <button onClick={(e) => exportToExcel(apiData, fileName)}>Exportar a Excel</button>
+    <button className='export_button' onClick={(e) => exportToExcel(apiData, fileName)}>Exportar a Excel</button>
   );
 };
