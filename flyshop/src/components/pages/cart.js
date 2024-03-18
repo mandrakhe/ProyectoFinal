@@ -1,21 +1,20 @@
-import React from 'react'
+// import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
+// import { GiPadlock } from "react-icons/gi";
+// initMercadoPago('TEST-3895782c-1661-4be1-bc80-f08d1dbf08fb');
+import React from 'react' 
 import Footer from '../common/footer'
 import { Link } from 'react-router-dom'
-// import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
-
 import { IoMdClose } from "react-icons/io";
-import { GiPadlock } from "react-icons/gi";
 import '../../css/cart.css';
-
-// initMercadoPago('TEST-3895782c-1661-4be1-bc80-f08d1dbf08fb');
-
+// import { ProductContext } from '../../context/ProductContext'
+// useContext(ProductContext);
 const Cart = ({ cart, setCart }) => {
     const incqty = (product) => {
         const exsit = cart.find((x) => {
             return x.id === product.id
         })
-        setCart(cart.map((curElm) => {
-            return curElm.id === product.id ? { ...exsit, qty: exsit.qty + 1 } : curElm
+        setCart(cart.map((object) => {
+            return object.id === product.id ? { ...exsit, qty: exsit.qty + 1 } : object
         }))
     }
     const decqty = (product) => {
@@ -26,8 +25,8 @@ const Cart = ({ cart, setCart }) => {
             alert("No puedes comprar 0 articulos")
         }
         else {
-            setCart(cart.map((curElm) => {
-                return curElm.id === product.id ? { ...exsit, qty: exsit.qty - 1 } : curElm
+            setCart(cart.map((object) => {
+                return object.id === product.id ? { ...exsit, qty: exsit.qty - 1 } : object
             }))
         }
     }
@@ -53,27 +52,32 @@ const Cart = ({ cart, setCart }) => {
                     </div>}
                 <div className='contant'>
                     {
-                        cart.map((curElm) => {
+                        cart.map((object) => {
+                            const imageUrl = object.images && object.images[0];
                             return (
-                                <div className='cart_item' key={curElm.id}>
+                                <div className='cart_item' key={object.id}>
                                     <div className='img_box'>
-                                        <img src={curElm.Img} alt={curElm.Name}></img>
+                                    {imageUrl ? ( // Conditionally render the image if a URL exists
+                      <img src={imageUrl} alt={object.title} />
+                    ) : (
+                      <p>No image available</p> // Display a placeholder if no image URL is found
+                    )}
                                     </div>
                                     <div className='detail'>
                                         <div className='info'>
-                                            <h3>{curElm.Name}</h3>
+                                            <h3>{object.title}</h3>
                                             <div className='price'>
-                                                <h3>${curElm.Price}</h3>
+                                                <h3>${object.Price}</h3>
                                                 <div className='qty'>
-                                                    <button className='decqty' onClick={() => decqty(curElm)}>-</button>
-                                                    <input type='text' value={curElm.qty}></input>
-                                                    <button className=' incqty' onClick={() => incqty(curElm)}>+</button>
+                                                    <button className='decqty' onClick={() => decqty(object)}>-</button>
+                                                    <input type='text' value={object.qty}></input>
+                                                    <button className=' incqty' onClick={() => incqty(object)}>+</button>
                                                 </div>
-                                                <h4 className='subtotal'>${curElm.Price * curElm.qty} COP</h4>
+                                                <h4 className='subtotal'>${object.Price * object.qty} COP</h4>
                                             </div>
                                         </div>
                                         <div className='close'>
-                                            <button onClick={() => removeproduct(curElm)}><IoMdClose /></button>
+                                            <button onClick={() => removeproduct(object)}><IoMdClose /></button>
                                         </div>
 
                                     </div>

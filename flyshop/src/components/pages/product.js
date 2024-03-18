@@ -39,14 +39,20 @@ const Product = ({
                             <IoMdClose />
                         </button>
                         {detail.map((object) => {
+                                const imageUrl = object.images && object.images[0];
                             return (
                                 <div className="productbox">
                                     <div className="img-box">
-                                        <img src={object.Img} alt={object.Name}></img>
+                                    
+                                    {imageUrl ? ( // Conditionally render the image if a URL exists
+                                                    <img src={imageUrl} alt={object.title} />
+                                                ) : (
+                                                    <p>No image available</p> // Display a placeholder if no image URL is found
+                                                )}
                                     </div>
                                     <div className="detail">
-                                        <h4>{object.Brand}</h4>
-                                        <h2>{object.Name}</h2>
+                                        <h4>{object.brand}</h4>
+                                        <h2>{object.name}</h2>
                                         <p>
                                             Texto pero una cantidad exagerada de texto o sea en plan
                                             mucho pero mucho texto sin el más minimo sentido aparente
