@@ -141,9 +141,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
               )
             })
           }
-
         </div>
-        <h4>LO MEJOR DE FLYSHOP</h4>
       </div>
       <Footer />
     </>

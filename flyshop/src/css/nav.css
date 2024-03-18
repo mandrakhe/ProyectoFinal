@@ -2,7 +2,9 @@
     height: 80px;
     height: 12vh;
     box-sizing: border-box;
+    position: relative;
 }
+
 .logo img {
     width: 9em;
     height: 8em;
@@ -10,22 +12,25 @@
     cursor: pointer;
     box-sizing: border-box;
 }
+
 .nav {
     height: 6em;
     width: 100%;
     margin: auto;
     z-index: 10;
     display: flex;
-    position:absolute;
+    position: relative; /* Cambiar a relativa */
     align-items: center;
+    justify-content: space-between; /* Centrar los elementos horizontalmente */
     background-color: #000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+    padding: 0 20px; /* Añadir padding a los lados */
 }
 
 .nav ul {
     display: flex;
     align-items: center;
+    list-style: none; /* Quitar el estilo de la lista */
 }
 
 .nav ul li {
@@ -40,15 +45,34 @@
     text-decoration: none;
     text-transform: uppercase;
 }
-
+.nav ul li .link span{
+display: none;
+}
 .nav .link {
     color: #fff;
     font-size: 20px;
 }
 
-.nav .car {
-    margin-left: 20px;
-    margin-right: 20px;
+
+
+.nav .link span
+{
+    display: none ;
+}
+
+.nav .car,
+.nav .link,
+.nav .link-login,
+.nav .auth button {
+    display: flex;
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+
+
+.nav .car,
+.nav .link {
+    margin-right: 10px; /* Añadir espacio entre los elementos */
 }
 
 .nav .link-login {
@@ -60,19 +84,14 @@
 .nav .auth button {
     border: none;
     color: #fff;
-    display: flex;
     font-size: 20px;
     cursor: pointer;
     margin-right: 1em;
-    align-items: center;
-    text-decoration: none;
-    justify-content: center;
     background: transparent;
 }
 
-
 .search_container {
-    width: 250px;
+    width: 200px; /* Reducir el ancho del contenedor de búsqueda */
     margin: 50px auto;
     position: relative;
 }
@@ -107,6 +126,11 @@
 .account .user_icon {
     margin-right: 10px;
 }
+.icons-container
+{
+    margin-right: 2em;
+    display: flex;
+}
 
 .account p {
     color: #fff;
@@ -123,72 +147,65 @@
     justify-content: center;
 }
 
-
-
-/* Estilos generales */
-
 /* Estilos para pantallas de 768px o menos */
 @media (max-width: 768px) {
-
-    .logo img {
-        width: 120px; 
-        height: auto; 
-    }
-
-    .nav {
-        height: auto; 
-        flex-direction: column; 
-    }
-
     .nav ul {
-        flex-direction: column; /* Cambiar la dirección de los elementos a columna */
-        align-items: center; /* Alinear los elementos al centro */
-        margin-top: 10px; /* Agregar espacio superior */
+        display: none; /* Ocultar el menú */
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
+    }
+
+    .nav ul.open {
+        display: flex; /* Mostrar el menú cuando está abierto */
     }
 
     .nav ul li {
-        margin: 5px 0; /* Añadir margen vertical a los elementos de la lista */
+        margin: 5px 0;
     }
 
     .nav .link {
-        font-size: 16px; /* Reducir el tamaño de fuente de los enlaces */
+        font-size: 16px;
     }
-
+    .nav ul li .link span{
+        display:flex;
+        }
+        .icons-container{
+            display: none;
+        }
     .nav .car {
-        margin: 10px 0; /* Añadir margen vertical al carrito */
+        margin: 10px 0;
     }
 
     .nav .auth button {
-        font-size: 16px; /* Reducir el tamaño de fuente de los botones de autenticación */
-        margin-right: 0; /* Eliminar margen derecho */
+        font-size: 16px;
+        margin-right: 0;
     }
 
     .search_container {
-        width: 100%; /* Ancho completo para el contenedor de búsqueda */
-        margin: 10px 0; /* Añadir margen vertical */
+        width: 30%;
+        margin: 10px 0;
     }
 
     .search_input {
-        width: 100%; /* Ancho completo para el input de búsqueda */
-        margin-top: 5px; /* Añadir margen superior */
+        width: 100%;
+        margin-top: 5px;
     }
 
     .icon .account {
-        font-size: 20px; /* Reducir el tamaño de fuente del icono de cuenta */
-    }
-}
-
-/* Estilos para pantallas de 500px o menos */
-@media (max-width: 500px) {
-    .nav .link {
-        font-size: 14px; /* Reducir aún más el tamaño de fuente de los enlaces */
+        font-size: 20px;
     }
 
-    .nav .auth button {
-        font-size: 14px; /* Reducir aún más el tamaño de fuente de los botones de autenticación */
-    }
-
-    .icon .account {
-        font-size: 18px; /* Reducir aún más el tamaño de fuente del icono de cuenta */
+    .hamburger-menu {
+        display: block;
+        color: #fff;
+        font-size: 24px;
+        margin-right: 10px;
+        cursor: pointer;
     }
 }
