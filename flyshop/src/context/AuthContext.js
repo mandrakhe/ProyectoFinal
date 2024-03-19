@@ -1,10 +1,9 @@
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { createContext, useState, useContext, useEffect } from "react";
 import { loginRequest, registerRequest, verifyTokenRequest, logoutRequest } from "../api/auth";
 
 export const AuthContext = createContext();
-
 
 export const useAuth = () => {
     const context = useContext(AuthContext);
@@ -12,9 +11,8 @@ export const useAuth = () => {
         throw new Error("useAuth must be used within an AuthProvider");
     }
     return context;
-}
+};
 
-// eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -23,16 +21,9 @@ export const AuthProvider = ({ children }) => {
 
     const navigate = useNavigate();
 
-    /*
-    1, imprimir por consola la response de la api
-    2, ver las respuestas de los errores y como sale la respuesta cuando hace la accion determiana (correcto)
-    3, asignar los errores a el useState de erres
-    4, asignar la response a el useState correspondiente
-    */
-
     const signup = async (user) => {
         try {
-            const res = await registerRequest(user)
+            const res = await registerRequest(user);
             console.log(res);
             setUser(res.data);
             setIsAuthenticated(true);
@@ -41,14 +32,11 @@ export const AuthProvider = ({ children }) => {
             // eslint-disable-next-line array-callback-return
             error.response.data.map((error) => {
                 setErrors((ant) => {
-                    return [
-                        ...ant,
-                        error
-                    ]
-                })
-            })
+                    return [...ant, error.msg];
+                });
+            });
         }
-    }
+    };
 
     const signin = async (user) => {
         try {
@@ -59,28 +47,27 @@ export const AuthProvider = ({ children }) => {
         } catch (error) {
             console.log(error);
             if (Array.isArray(error.response.data)) {
-                //Probar si funciona solo con esto y sin usar el if
-                setErrors(error.response.data)
+                setErrors(error.response.data);
+            } else {
+                setErrors([error.response.data.message]);
             }
-            setErrors([error.response.data.message]);
         }
-    }
+    };
 
     const setLogout = async (user) => {
         try {
             const res = await logoutRequest(user);
             setIsAuthenticated(false);
             setUser(res);
-        }
-        catch (error) {
+        } catch (error) {
             console.log(error);
         }
-    }
+    };
 
     const loginWithRedirect = async () => {
         try {
             await signin(user);
-            navigate('/login');
+            navigate("/login");
         } catch (error) {
             console.error(error);
         }
@@ -90,10 +77,10 @@ export const AuthProvider = ({ children }) => {
         if (errors.length > 0) {
             const timer = setTimeout(() => {
                 setErrors([]);
-            }, 3000)
-            return () => clearTimeout(timer)
+            }, 3000);
+            return () => clearTimeout(timer);
         }
-    }, [errors])
+    }, [errors]);
 
     useEffect(() => {
         async function checkLogin() {
@@ -106,11 +93,11 @@ export const AuthProvider = ({ children }) => {
             }
 
             try {
-                const res = await verifyTokenRequest(cookies.token)
-                console.log(res)
+                const res = await verifyTokenRequest(cookies.token);
+                console.log(res);
                 if (!res.data) {
                     setIsAuthenticated(false);
-                    setLoading(false)
+                    setLoading(false);
                     return;
                 }
                 setIsAuthenticated(true);
@@ -123,20 +110,22 @@ export const AuthProvider = ({ children }) => {
             }
         }
         checkLogin();
-    }, [])
+    }, []);
 
     return (
-        <AuthContext.Provider value={{
-            signup,
-            user,
-            signin,
-            setLogout,
-            loginWithRedirect,
-            isAuthenticated,
-            errors,
-            loading
-        }}>
+        <AuthContext.Provider
+            value={{
+                signup,
+                user,
+                signin,
+                setLogout,
+                loginWithRedirect,
+                isAuthenticated,
+                errors,
+                loading,
+            }}
+        >
             {children}
         </AuthContext.Provider>
-    )
-}
+    );
+};
