@@ -17,7 +17,7 @@ const App = () => {
   const [alertSeverity, setAlertSeverity] = useState('success'); // Estado para el nivel de severidad de la alerta
 
   const searchbtn = (product) => {
-    const change = Productdetail.filter((x) => x.Brand === product);
+    const change = product.filter((x) => x.Brand === product);
     setProduct(change);
   };
 

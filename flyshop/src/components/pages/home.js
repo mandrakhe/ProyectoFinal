@@ -32,19 +32,14 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
               <button onClick={() => setClose(false)} className='closebtn'><IoMdClose /></button>
               {
                 detail.map((object) => {
-                  const imageUrl = object.images && object.images[0];
                   return (
                     <div className='productbox'>
                       <div className='img-box'>
-                      {imageUrl ? ( // Conditionally render the image if a URL exists
-                      <img src={imageUrl} alt={object.title} />
-                    ) : (
-                      <p>No image available</p> // Display a placeholder if no image URL is found
-                    )}
+                        <img src={(object.Img)} alt={object.Name}></img>
                       </div>
                       <div className='detail'>
-                        <h4>{object.brand}</h4>
-                        <h2>{object.name}</h2>
+                        <h4>{object.Brand}</h4>
+                        <h2>{object.Name}</h2>
                         <p>Texto pero una cantidad exagerada de texto o sea en plan mucho pero mucho texto sin el más minimo sentido aparente pero igual ya veremos</p>
                         <h3>Precio: <span>{object.Price} COP</span> </h3>
                         <strong >Talla</strong>

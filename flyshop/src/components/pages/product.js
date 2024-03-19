@@ -4,7 +4,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { ProductContext } from '../../context/ProductContext'
 import React from "react";
 import { useContext, useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth } from "../../context/AuthContext";
 
 import "../../css/product.css";
 import Footer from './../common/footer';
@@ -18,7 +18,7 @@ const Product = ({
     setClose,
     addtocart,
 }) => {
-    const { loginWithRedirect, isAuthenticated } = useAuth0();
+    const { loginWithRedirect, isAuthenticated } = useAuth();
     const [selectedValue, setSelectedValue] = useState('');
     const { products } = useContext(ProductContext);
 

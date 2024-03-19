@@ -205,9 +205,8 @@
 .product .container .box .img_box .icon {
     position: relative;
     right: 100px;
-
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 20px;
     transition: .5s;
 }
@@ -232,7 +231,7 @@
 .product .container .box .img_box .icon li:nth-child(1) {
     position: absolute;
     top: -15px;
-    left: 60px;
+    left: 50px;
 }
 
 .product .container .box .img_box .icon li:nth-child(2) {

@@ -1,7 +1,7 @@
 // import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 // import { GiPadlock } from "react-icons/gi";
 // initMercadoPago('TEST-3895782c-1661-4be1-bc80-f08d1dbf08fb');
-import React from 'react' 
+import React from 'react'
 import Footer from '../common/footer'
 import { Link } from 'react-router-dom'
 import { IoMdClose } from "react-icons/io";
@@ -40,7 +40,7 @@ const Cart = ({ cart, setCart }) => {
             }))
         }
     }
-    const Totalprice = cart.reduce((price, item) => price + item.qty * item.Price, 0)
+    const Totalprice = cart.reduce((price, item) => price + item.qty * item.price, 0)
     return (
         <>
             <h1 className='title'>Carrito de compras</h1>
@@ -57,11 +57,11 @@ const Cart = ({ cart, setCart }) => {
                             return (
                                 <div className='cart_item' key={object.id}>
                                     <div className='img_box'>
-                                    {imageUrl ? ( // Conditionally render the image if a URL exists
-                      <img src={imageUrl} alt={object.title} />
-                    ) : (
-                      <p>No image available</p> // Display a placeholder if no image URL is found
-                    )}
+                                        {imageUrl ? ( // Conditionally render the image if a URL exists
+                                            <img src={imageUrl} alt={object.title} />
+                                        ) : (
+                                            <p>No image available</p> // Display a placeholder if no image URL is found
+                                        )}
                                     </div>
                                     <div className='detail'>
                                         <div className='info'>
@@ -73,7 +73,7 @@ const Cart = ({ cart, setCart }) => {
                                                     <input type='text' value={object.qty}></input>
                                                     <button className=' incqty' onClick={() => incqty(object)}>+</button>
                                                 </div>
-                                                <h4 className='subtotal'>${object.Price * object.qty} COP</h4>
+                                                <h4 className='subtotal'>${object.price * object.qty} COP</h4>
                                             </div>
                                         </div>
                                         <div className='close'>
@@ -90,7 +90,7 @@ const Cart = ({ cart, setCart }) => {
                 {
                     cart.length > 0 &&
                     <div className='resumen'>
-                    <h1>Resumen de la compra</h1>
+                        <h1>Resumen de la compra</h1>
                         <p className='totalprice'>Total: COP {Totalprice}</p>
                         {/* <Wallet initialization={{ preferenceId: '<PREFERENCE_ID>' }} /><GiPadlock/> */}
 

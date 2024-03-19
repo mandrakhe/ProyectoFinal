@@ -6,6 +6,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import '../../css/nav.css'
 import { CiLogout, CiLogin, CiHeart } from 'react-icons/ci';
 import { CiUser } from 'react-icons/ci';
+import Logo from '../../assets/images/logos/logo_flyshop.png'
 
 const Nav = ({ searchbtn }) => {
     const [search, setSearch] = useState('');
@@ -21,6 +22,9 @@ const Nav = ({ searchbtn }) => {
             <div className={`header ${isOpen ? 'open' : ''}`}>
                 <div className='container'>
                     <div className='nav'>
+                    <div className='logo'  >
+                            <Link to='/'><img src={Logo} alt='Logo de la empresa' /></Link>
+                        </div>
                         <IoMenu className='hamburger-menu' onClick={handleToggleMenu} />
                         <ul className={isOpen ? 'open' : ''}>
                             <li>
