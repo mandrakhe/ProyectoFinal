@@ -1,17 +1,9 @@
-.header {
+/* .header {
     height: 80px;
     height: 12vh;
     box-sizing: border-box;
     position: relative;
-}
-
-.logo img {
-    width: 9em;
-    height: 8em;
-    float: left;
-    cursor: pointer;
-    box-sizing: border-box;
-}
+} */
 
 .nav {
     height: 6em;
@@ -25,6 +17,13 @@
     background-color: #000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 0 20px; /* Añadir padding a los lados */
+}
+
+.logo img {
+    width: 9em;
+    height: 8em;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
 .nav ul {

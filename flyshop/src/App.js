@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Alert from '@mui/material/Alert';
 import Rout from './routes/rout.js';
 import Nav from './components/common/nav.js';
-import Productdetail from './productdetail';
+import { ProductContext } from './context/ProductContext.js';
 import addProduct from './components/pages/addProduct.js';
 
 const App = () => {
@@ -12,9 +12,14 @@ const App = () => {
   const [cart, setCart] = useState([]);
   const [close, setClose] = useState(false);
   const [detail, setDetail] = useState([]);
-  const [product, setProduct] = useState(Productdetail);
+  const [product, setProduct] = useState([]);
   const [alertMessage, setAlertMessage] = useState('');
-  const [alertSeverity, setAlertSeverity] = useState('success'); // Estado para el nivel de severidad de la alerta
+  const [alertSeverity, setAlertSeverity] = useState('success');
+
+  useEffect(() => {
+    // Fetch products from ProductContext on component mount
+    setProduct(ProductContext);
+  }, []);
 
   const searchbtn = (product) => {
     const change = product.filter((x) => x.Brand === product);
@@ -37,8 +42,8 @@ const App = () => {
   };
 
   const addtocart = (product) => {
-    const exist = cart.find((x) => x.id === product.id);
-    if (exist) {
+    const existingProductIndex = cart.findIndex((x) => x._id === product._id);
+    if (existingProductIndex !== -1) {
       showAlert('Este producto ya se encuentra añadido al carrito', 'error');
     } else {
       setCart([...cart, { ...product, qty: 1 }]);
@@ -47,11 +52,11 @@ const App = () => {
   };
 
   const addFavorite = (product) => {
-    const exist = favorite.find((x) => x.id === product.id);
-    if (exist) {
+    const existingProductIndex = favorite.findIndex((x) => x._id === product._id);
+    if (existingProductIndex !== -1) {
       showAlert('Este producto ya se encuentra añadido a favoritos', 'error');
     } else {
-      setFavorite([...favorite, { ...product, qty: 1 }]);
+      setFavorite([...favorite, { ...product }]); // Removed qty from favorite
       showAlert('El producto ha sido añadido a favoritos', 'success');
     }
   };
@@ -63,10 +68,10 @@ const App = () => {
           <Nav searchbtn={searchbtn} />
         </AuthProvider>
         <div style={{ position: 'fixed', top: '20px', right: '20px', maxWidth: '400px', width: '100%', height: 'auto', zIndex: '1', alignItems: 'center', display: 'flex', justifyContent: 'center', overflow: 'hidden' }}>
-        {alertMessage && (
-        <Alert severity={alertSeverity} sx={{ width: '100%', borderRadius: '8px', fontSize: '1rem' }}>
-          {alertMessage}
-        </Alert>
+          {alertMessage && (
+            <Alert severity={alertSeverity} sx={{ width: '100%', borderRadius: '8px', fontSize: '1rem' }}>
+              {alertMessage}
+            </Alert>
           )}
         </div>
 

@@ -1,5 +1,5 @@
-import React, { createContext, useState, useEffect } from 'react'
-import { getProducts, createProduct } from '../api/product';
+import React, { createContext, useState, useEffect } from "react";
+import { getProducts, createProduct, deleteProduct } from "../api/product";
 
 export const ProductContext = createContext();
 
@@ -8,7 +8,7 @@ export const ProductProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const fetchProducts = async () => { // Define fetchProducts function here
+    const fetchProducts = async () => {
         try {
             const response = await getProducts();
             setProducts(response.data.products);
@@ -20,15 +20,25 @@ export const ProductProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        fetchProducts(); // Call fetchProducts inside useEffect
+        fetchProducts();
     }, []);
 
     const createNewProduct = async (formData) => {
         try {
             await createProduct(formData);
-            fetchProducts(); // Update products after creation
+            fetchProducts();
         } catch (error) {
             setError(error);
+        }
+    };
+
+    const handleDeleteProduct = async (_id) => {
+        try {
+            await deleteProduct(_id);
+            fetchProducts();
+        } catch (error) {
+            console.error(error);
+
         }
     };
 
@@ -37,7 +47,10 @@ export const ProductProvider = ({ children }) => {
         loading,
         error,
         createNewProduct,
+        handleDeleteProduct,
     };
 
-    return <ProductContext.Provider value={value}>{children}</ProductContext.Provider>;
+    return (
+        <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
+    );
 };

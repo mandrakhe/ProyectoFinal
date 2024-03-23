@@ -11,7 +11,7 @@ import '../../css/cart.css';
 const Cart = ({ cart, setCart }) => {
     const incqty = (product) => {
         const exsit = cart.find((x) => {
-            return x.id === product.id
+            return x.id === product._id
         })
         setCart(cart.map((object) => {
             return object.id === product.id ? { ...exsit, qty: exsit.qty + 1 } : object
@@ -19,24 +19,24 @@ const Cart = ({ cart, setCart }) => {
     }
     const decqty = (product) => {
         const exsit = cart.find((x) => {
-            return x.id === product.id
+            return x.id === product._id
         })
         if (exsit.qty < 2) {
             alert("No puedes comprar 0 articulos")
         }
         else {
             setCart(cart.map((object) => {
-                return object.id === product.id ? { ...exsit, qty: exsit.qty - 1 } : object
+                return object._id === product.id ? { ...exsit, qty: exsit.qty - 1 } : object
             }))
         }
     }
     const removeproduct = (product) => {
         const exsit = cart.find((x) => {
-            return x.id === product.id
+            return x.id === product._id
         })
         if (exsit.qty > 0) {
             setCart(cart.filter((x) => {
-                return x.id !== product.id
+                return x.id !== product._id
             }))
         }
     }
@@ -55,7 +55,7 @@ const Cart = ({ cart, setCart }) => {
                         cart.map((object) => {
                             const imageUrl = object.images && object.images[0];
                             return (
-                                <div className='cart_item' key={object.id}>
+                                <div className='cart_item' key={object._id}>
                                     <div className='img_box'>
                                         {imageUrl ? ( // Conditionally render the image if a URL exists
                                             <img src={imageUrl} alt={object.title} />

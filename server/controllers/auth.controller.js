@@ -27,7 +27,8 @@ export const register = async (req,res) =>{
         res.status(201).json({
             id: userSaved._id,
             username: userSaved.username,
-            email: userSaved.email
+            email: userSaved.email,
+            Adminrole: userFound.Adminrole
         })
     } catch (error) {
         res.status(500).json({ message : error.message })
@@ -47,7 +48,8 @@ export const login = async (req, res) => {
         res.status(201).json({
             id: userFound._id,
             username: userFound.username,
-            email: userFound.email
+            email: userFound.email,
+            Adminrole: userFound.Adminrole
         });
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -69,7 +71,8 @@ export const profile = async (req, res) =>{
     res.status(201).json({
         id: userFound._id,
         username: userFound.username,
-        email: userFound.email
+        email: userFound.email,
+        Adminrole: userFound.Adminrole
     });
 }
 
@@ -86,7 +89,8 @@ export const verifyToken = async (req, res) =>{
         return res.json({
             id : userFound.id,
             username : userFound.username,
-            email : userFound.email
+            email : userFound.email,
+            Adminrole: userFound.Adminrole
         })
     })
 }

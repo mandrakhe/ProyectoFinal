@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
 import * as XLSXStyle from 'xlsx-js-style'; 
 
 export const ExportToExcel = ({ apiData, fileName }) => {
+  const [loading, setLoading] = useState(false);
   const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
   const fileExtension = '.xlsx';
 
@@ -25,9 +26,15 @@ export const ExportToExcel = ({ apiData, fileName }) => {
     const excelBuffer = XLSXStyle.write(wb, { bookType: 'xlsx', type: 'array' });
     const data = new Blob([excelBuffer], { type: fileType });
     FileSaver.saveAs(data, fileName + fileExtension);
+    setLoading(false);
   };
 
   return (
-    <button className='export_button' onClick={(e) => exportToExcel(apiData, fileName)}>Exportar a Excel</button>
+    <button 
+    className='export_button_excel' 
+    onClick={(e) => exportToExcel(apiData, fileName)}            
+    disabled={loading}
+    >
+        {loading ? 'Exportando...' : 'Exportar a Excel'}</button>
   );
 };

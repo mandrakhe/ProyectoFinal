@@ -27,7 +27,7 @@
     justify-content: end;
 }
 
-.export .export_button
+.export .export_button_excel
 {
     width: 250px;
     height: 50px;
@@ -41,14 +41,27 @@
     cursor: pointer;
 }
 
+.export .export_button_pdf
+{
+    width: 250px;
+    height: 50px;
+    margin-right: 40px;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #fff;
+    background: #ff0000;
+    cursor: pointer;
+}
+
 .list_product
 {
-    width: 40%;
+    width: 90%;
     margin-bottom: 40px;
+    margin-top: 50px;
     margin-left: 30px;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .list_product .list_img
@@ -60,6 +73,7 @@
     padding: 10px;
     box-shadow: 1px 2px 12px -5px rgba(0,0,0,0.59);
 }
+
 .list_product .list_img img {
     width: 100%;
     height: 100%;
@@ -67,8 +81,31 @@
 
 .list_product .list_detail
 {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-size: 20px;
     margin-left: 20px;
     font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+}
+
+.list_product .actions
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50%;
+}
+
+.list_product .actions button
+{
+    color: #fff;
+    background: #484848;
+    width: 100px;
+    height: 35px;
+    margin-bottom: 5px;
+    cursor: pointer;
 }
