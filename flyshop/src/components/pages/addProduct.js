@@ -3,7 +3,7 @@ import '../../css/addProduct.css'
 import { MdOutlineUploadFile } from "react-icons/md";
 import { ProductContext } from '../../context/ProductContext'; // Importa el contexto de productos
 
-function AddProduct() {
+function AddProduct() { 
   const { createNewProduct } = useContext(ProductContext); // Obtén la función createNewProduct del contexto de productos
   const [images, setImages] = useState([]);
   const [product, setProduct] = useState({

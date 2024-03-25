@@ -40,11 +40,11 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
 
 
 
+              <Route path='/admin/addProduct' element={<AddProduct />} />
+              <Route path="/admin/listProduct" element={<ProductList />} />
             {/* Funciones del administrador */}
             <Route element={<AdminRoute />}>
               <Route path='/admin' element={<Admin />} />
-              <Route path='/admin/addProduct' element={<AddProduct />} />
-              <Route path="/admin/listProduct" element={<ProductList />} />
             </Route>
             
 
