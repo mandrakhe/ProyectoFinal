@@ -134,7 +134,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                     )}
                   </div>
                   <div class="details">
-                    <h2>
+                    <h2 onClick={() => handleProductClick(object)}>
                       {object.title}
                       <br />
                       <span>{object.description}</span>
