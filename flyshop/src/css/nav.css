@@ -1,9 +1,10 @@
-/* .header {
-    height: 80px;
-    height: 12vh;
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
     box-sizing: border-box;
-    position: relative;
-} */
+  }
+  
 
 .nav {
     height: 6em;

@@ -57,6 +57,12 @@ export const products = async (req, res) => {
     }
 };
 
+export const getProduct = async(req, res) =>{
+    const product = await Product.findById(req.params.id);
+    if(!product) return res.status(404).json({ message: 'Producto no encontrado' })
+    res.status(200).json(product);
+}
+
 export const deleteProduct = async (req, res) => {
     try {
         const product = await Product.findByIdAndDelete(req.params.id);
