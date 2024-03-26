@@ -18,7 +18,7 @@ import Cart from '../components/pages/cart';
 import AddProduct from '../components/pages/addProduct';
 import DetailProduct from '../components/pages/detailProduct';
 
-
+import ProductPage from '../components/pages/productPage';
 
 
 const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCart, addtocart, favorite, setFavorite, addtofavorite }) => {
@@ -28,6 +28,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
       <AuthProvider>
         <ProductProvider>
           <Routes>
+            <Route path="/product/:id" element={<ProductPage/>} />
             {/* Register, Login, Home y ruta alterna */}
             <Route path='/register' element={<Signup />} />
             <Route path='/login' element={<Login />} />

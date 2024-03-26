@@ -17,11 +17,17 @@ import Nike from '../../assets/images/zapatos/nike.png'
 import Adidas from '../../assets/images/zapatos/campus.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
 import Zapato from '../../assets/images/logos/logo_banner.png'
+import { useNavigate } from 'react-router-dom';
 import { ProductContext } from '../../context/ProductContext'
 
 const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
   const { isAuthenticated, loginWithRedirect } = useAuth();
   const { products } = useContext(ProductContext);
+  const navigate = useNavigate();
+
+  const handleProductClick = (product) => {
+    navigate(`/product/${product._id}`);
+  };
 
   return (
     <>
