@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../common/footer'
 import { useAuth } from "../../context/AuthContext"
-
+import Spline from '@splinetool/react-spline';
 import { IoEyeOutline } from "react-icons/io5";
 
 import { IoMdClose } from "react-icons/io"
@@ -16,18 +16,11 @@ import NB from '../../assets/images/zapatos/nb.png'
 import Nike from '../../assets/images/zapatos/nike.png'
 import Adidas from '../../assets/images/zapatos/campus.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
-import Zapato from '../../assets/images/logos/logo_banner.png'
-import { useNavigate } from 'react-router-dom';
 import { ProductContext } from '../../context/ProductContext'
 
 const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
   const { isAuthenticated, loginWithRedirect } = useAuth();
   const { products } = useContext(ProductContext);
-  const navigate = useNavigate();
-
-  const handleProductClick = (product) => {
-    navigate(`/product/${product._id}`);
-  };
 
   return (
     <>
@@ -65,8 +58,9 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
             <h2>FLYSHOP</h2>
             <h4>Be bold. Be you.</h4>
             <Link className='link' to='/product'>Compra ya! <MdArrowRightAlt /></Link></div>
-          <div className='img_box'>
-            <img src={Zapato} alt='zapato del banner' />
+          <div className='shoe-banner'>
+          <Spline scene="https://prod.spline.design/HQQTK5PBXF3yH1TW/scene.splinecode" />
+
           </div>
         </div>
       </div>
@@ -134,7 +128,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                     )}
                   </div>
                   <div class="details">
-                    <h2 onClick={() => handleProductClick(object)}>
+                    <h2>
                       {object.title}
                       <br />
                       <span>{object.description}</span>
@@ -168,6 +162,11 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
           }
         </div>
       </div>
+      {/* <Spline scene="https://prod.spline.design/ZJeZC8OSKmaFHxZt/scene.splinecode" /> */}
+
+    
+
+      
       <Footer />
     </>
   )

@@ -42,16 +42,12 @@
 .top_banner .container .detail {
     margin-top: 8%;
     width: 40%;
+    left: 10%;
 }
 
-.top_banner .container img {
-    height: 100%;
-    position: relative;
-    width: 100%;
-    margin: auto;
-    display: block;
-    object-fit: contain;
-
+.shoe-banner
+{
+  width: 80%;
 }
 
 .top_banner .container .detail h2 {
@@ -87,10 +83,6 @@
     color: var(--color-primario);
 }
 
-.top_banner .container .detail {
-    position: relative;
-    left: 10%;
-}
 
 .shoe_brand {
     width: auto;
@@ -329,7 +321,6 @@
   }
   
   
-
 
 
 @media (max-width: 768px) {
