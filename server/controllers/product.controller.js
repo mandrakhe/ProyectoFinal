@@ -14,7 +14,7 @@ const fileFilter = (req, file, cb) => {
 const upload = multer({ storage, fileFilter });
 
 export const createProduct = async (req, res) => {
-    const uploadFields = upload.fields([{ name: "image", maxCount: 1 }]);
+    const uploadFields = upload.fields([{ name: "image", maxCount: 10 }]);
 
     uploadFields(req, res, async (error) => {
         if (error) {
@@ -56,6 +56,12 @@ export const products = async (req, res) => {
         res.status(400).json({ message: "Ocurrió un error:", error });
     }
 };
+
+export const getProduct = async(req, res) =>{
+    const product = await Product.findById(req.params.id);
+    if(!product) return res.status(404).json({ message: 'Producto no encontrado' })
+    res.status(200).json(product);
+}
 
 export const deleteProduct = async (req, res) => {
     try {

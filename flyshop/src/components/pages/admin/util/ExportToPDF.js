@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { ProductContext } from '../../../../context/ProductContext';
 import jsPDF from 'jspdf'; // Import jsPDF
 
-export const ExportToPDF = ( ) => {
+export const ExportToPDF = () => {
     const [loading, setLoading] = useState(false);
     const { products } = useContext(ProductContext);
 
@@ -10,10 +10,10 @@ export const ExportToPDF = ( ) => {
         setLoading(true);
 
         const doc = new jsPDF();
-        doc.text('Publicaciones', 15, 15); 
+        doc.text('Publicaciones', 15, 15);
 
-        let y = 30; 
-        {products.map((object) => {
+        let y = 30;
+        products.map((object) => {
             const imageUrl = object.images && object.images[0];
             const title = object.title;
             const price = object.price;
@@ -25,12 +25,13 @@ export const ExportToPDF = ( ) => {
             doc.text(`Precio: ${price}`, 15, y);
             y += 10;
             doc.text(`Añadido el: ${createdAt}`, 15, y);
-            y += 15; 
+            y += 15;
+            return object
         });
-        doc.save('Stock_Products.pdf'); 
+        doc.save('Stock_Products.pdf');
         setLoading(false);
-        };
-        }
+    };
+
     return (
         <button
             className="export_button_pdf"

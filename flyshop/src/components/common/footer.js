@@ -30,8 +30,8 @@ const Footer = () => {
                                 <li>Contáctanos</li>
                                 
                             </ul>
-                            <div className="details">
-                                    <div className="icons">
+                            <div className="footer-details">
+                                    <div className="icons-footer">
                                         <li>
                                             <IoLogoInstagram />
                                         </li>

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../common/footer'
-// import Homeproduct from '../../homeproduct'
 import { useAuth } from "../../context/AuthContext"
+import Spline from '@splinetool/react-spline';
+import { IoEyeOutline } from "react-icons/io5";
 
-import { GoEye } from "react-icons/go"
 import { IoMdClose } from "react-icons/io"
-import { IoMdHeartEmpty } from "react-icons/io"
+import { PiHeartDuotone } from "react-icons/pi";
 import { MdArrowRightAlt } from "react-icons/md"
 
 import '../../css/home.css'
@@ -16,12 +16,17 @@ import NB from '../../assets/images/zapatos/nb.png'
 import Nike from '../../assets/images/zapatos/nike.png'
 import Adidas from '../../assets/images/zapatos/campus.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
-import Zapato from '../../assets/images/logos/logo_banner.png'
 import { ProductContext } from '../../context/ProductContext'
+import { useNavigate } from 'react-router-dom';
 
 const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
   const { isAuthenticated, loginWithRedirect } = useAuth();
   const { products } = useContext(ProductContext);
+  const navigate = useNavigate();
+
+  const handleProductClick = (product) => {
+    navigate(`/product/${product._id}`);
+  };
 
   return (
     <>
@@ -59,8 +64,12 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
             <h2>FLYSHOP</h2>
             <h4>Be bold. Be you.</h4>
             <Link className='link' to='/product'>Compra ya! <MdArrowRightAlt /></Link></div>
-          <div className='img_box'>
-            <img src={Zapato} alt='zapato del banner' />
+          <div className='shoe-banner'>
+
+          <Spline scene="https://prod.spline.design/HQQTK5PBXF3yH1TW/scene.splinecode" />
+          <Spline scene="https://prod.spline.design/HQQTK5PBXF3yH1TW/scene.splinecode" />
+
+
           </div>
         </div>
       </div>
@@ -102,37 +111,48 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
       </div>
       <div className='product'>
         <h2>¡NO TE LO PIERDAS!</h2>
-        <div className='container'>
+        <div className="cart-container">
           {
             products.map((object) => {
               const imageUrl = object.images && object.images[0];
               return (
+                <div class="item">
+                  <div class="img-box">
+                    <PiHeartDuotone id='heart-icon'
+                      onClick={
+                        isAuthenticated
+                          ? () => addtofavorite(object)
+                          : () => loginWithRedirect()
+                      }
+                    />
 
-                <div className='box' key={object.id}>
+                    <IoEyeOutline id='eye-icon'
+                      onClick={() => view(object)}
+                    />
 
-                  <div className='img_box'>
-
-                    {imageUrl ? ( // Conditionally render the image if a URL exists
+                    {imageUrl ? (
                       <img src={imageUrl} alt={object.title} />
                     ) : (
-                      <p>No image available</p> // Display a placeholder if no image URL is found
+                      <p>No image available</p>
                     )}
-                    <div className='icon'>
-                      <li onClick={() => view(object)}><GoEye /></li>
-                      <li
-                        onClick={
-                          isAuthenticated
-                            ? () => addtofavorite(object)
-                            : () => loginWithRedirect()
-                        }
-
-                      ><IoMdHeartEmpty /></li>
-                    </div>
                   </div>
-                  <div className='detail'>
-                    <h3>{object.title}</h3>
-                    <p>{object.brand}</p>
-                    <p>{object.price}</p>
+                  <div class="details">
+                    <h2 onClick={() => handleProductClick(object)}>
+                      {object.title}
+                      <br />
+                      <span>{object.description}</span>
+                    </h2>
+                    <div class="price">${object.price}</div>
+                    <label>Tallas</label>
+                    <ul>
+                      <li>{object.size}</li>
+                    </ul>
+                    {/* <label>Color</label>
+            <ul class="colors">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul> */}
                     <button
                       onClick={
                         isAuthenticated
@@ -142,6 +162,8 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                     >
                       Añadir al carrito
                     </button>
+                    <div className='icons-detail'>
+                    </div>
                   </div>
                 </div>
               )
@@ -149,6 +171,11 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
           }
         </div>
       </div>
+      {/* <Spline scene="https://prod.spline.design/ZJeZC8OSKmaFHxZt/scene.splinecode" /> */}
+
+    
+
+      
       <Footer />
     </>
   )
