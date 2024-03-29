@@ -241,7 +241,7 @@
     font-weight: normal;
   }
   
-  .details .price {
+  .details .price{
     position: absolute;
     top: 0;
     right: 25px;
@@ -273,7 +273,6 @@
   }
   
   .details ul li:hover {
-    cursor: pointer;
     color: #333;
     transition: 0.7s;
   }

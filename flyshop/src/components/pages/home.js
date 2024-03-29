@@ -17,10 +17,16 @@ import Nike from '../../assets/images/zapatos/nike.png'
 import Adidas from '../../assets/images/zapatos/campus.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
 import { ProductContext } from '../../context/ProductContext'
+import { useNavigate } from 'react-router-dom';
 
 const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
   const { isAuthenticated, loginWithRedirect } = useAuth();
   const { products } = useContext(ProductContext);
+  const navigate = useNavigate();
+
+  const handleProductClick = (product) => {
+    navigate(`/product/${product._id}`);
+  };
 
   return (
     <>
@@ -59,7 +65,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
             <h4>Be bold. Be you.</h4>
             <Link className='link' to='/product'>Compra ya! <MdArrowRightAlt /></Link></div>
           <div className='shoe-banner'>
-          <Spline scene="https://prod.spline.design/HQQTK5PBXF3yH1TW/scene.splinecode" />
+          <Spline scene="https://prod.spline.design/HQQTK5PBXF3yH1TW/scene.splinecode" />
 
           </div>
         </div>
@@ -128,7 +134,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                     )}
                   </div>
                   <div class="details">
-                    <h2>
+                    <h2 onClick={() => handleProductClick(object)}>
                       {object.title}
                       <br />
                       <span>{object.description}</span>
