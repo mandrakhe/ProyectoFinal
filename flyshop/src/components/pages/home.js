@@ -70,7 +70,10 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
             <h4>Be bold. Be you.</h4>
             <Link className='link' to='/product'>Compra ya! <MdArrowRightAlt /></Link></div>
           <div className='shoe-banner'>
+
+          <Spline scene="https://prod.spline.design/HQQTK5PBXF3yH1TW/scene.splinecode" />
           <Spline scene="https://prod.spline.design/HQQTK5PBXF3yH1TW/scene.splinecode" />
+
 
           </div>
         </div>
