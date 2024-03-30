@@ -18,6 +18,7 @@ import Adidas from '../../assets/images/zapatos/campus.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
 import { ProductContext } from '../../context/ProductContext'
 import { useNavigate } from 'react-router-dom';
+import Admin from './admin';
 
 const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
   const { isAuthenticated, loginWithRedirect } = useAuth();
@@ -117,7 +118,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
         <h2>¡NO TE LO PIERDAS!</h2>
         <div className="cart-container">
           {
-            products.map((object) => {
+            products.slice(0, 8).map((object) => {
               const imageUrl = object.images && object.images[0];
               return (
                 <div className="item">
@@ -173,12 +174,71 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
               )
             })
           }
+
+        </div>
+        <h2>LO MEJOR DE FLYSHOP</h2>
+        <div className="cart-container">
+          {
+            products.slice(9, 17).map((object) => {
+              const imageUrl = object.images && object.images[0];
+              return (
+                <div className="item">
+                  <div className="img-box">
+                    <PiHeartDuotone id='heart-icon'
+                      onClick={
+                        isAuthenticated
+                          ? () => addtofavorite(object)
+                          : () => loginWithRedirect()
+                      }
+                    />
+
+                    <IoEyeOutline id='eye-icon'
+                      onClick={() => view(object)}
+                    />
+
+                    {imageUrl ? (
+                      <img src={imageUrl} alt={object.title} />
+                    ) : (
+                      <p>No image available</p>
+                    )}
+                  </div>
+                  <div className="details">
+                    <h2 onClick={() => handleProductClick(object)}>
+                      {object.title}
+                      <br />
+                      <span>{object.description}</span>
+                    </h2>
+                    <div className="price">${object.price}</div>
+                    <label>Tallas</label>
+                    <ul>
+                      <li>{object.size}</li>
+                    </ul>
+                    {/* <label>Color</label>
+            <ul class="colors">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul> */}
+                    <button
+                      onClick={
+                        isAuthenticated
+                          ? () => addtocart(object)
+                          : () => loginWithRedirect()
+                      }
+                    >
+                      Añadir al carrito
+                    </button>
+                    <div className='icons-detail'>
+                    </div>
+                  </div>
+                </div>
+              )
+            })
+          }
+
         </div>
       </div>
       {/* <Spline scene="https://prod.spline.design/ZJeZC8OSKmaFHxZt/scene.splinecode" /> */}
-
-    
-
       
       <Footer />
     </>
