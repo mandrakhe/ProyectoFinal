@@ -8,7 +8,7 @@ const ProductPage = () => {
 
     useEffect(() => {
         fetchProduct(id);
-    });
+    }, [id]);
 
     return (
       <div>
@@ -40,4 +40,4 @@ const ProductPage = () => {
     );
   };
   
-  export default ProductPage;
+export default ProductPage;

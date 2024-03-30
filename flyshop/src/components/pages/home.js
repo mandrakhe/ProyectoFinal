@@ -37,16 +37,21 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
               <button onClick={() => setClose(false)} className='closebtn'><IoMdClose /></button>
               {
                 detail.map((object) => {
+                  const imageUrl = object.images && object.images[0];
                   return (
-                    <div className='productbox'>
+                    <div key={object._id} className='productbox'>
                       <div className='img-box'>
-                        <img src={(object.Img)} alt={object.Name}></img>
+                        {imageUrl ? (
+                          <img src={imageUrl} alt={object.title} />
+                            ):(
+                          <p>No image available</p>
+                        )}
                       </div>
                       <div className='detail'>
-                        <h4>{object.Brand}</h4>
-                        <h2>{object.Name}</h2>
-                        <p>Texto pero una cantidad exagerada de texto o sea en plan mucho pero mucho texto sin el más minimo sentido aparente pero igual ya veremos</p>
-                        <h3>Precio: <span>{object.Price} COP</span> </h3>
+                        <h4>{object.brand}</h4>
+                        <h2>{object.name}</h2>
+                        <p>{object.description}</p>
+                        <h3>Precio: <span>{object.price} COP</span> </h3>
                         <strong >Talla</strong>
                         <button id='button-detail' onClick={() => addtocart(object)}>Añadir al carrito</button>
                       </div>
@@ -113,8 +118,8 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
             products.map((object) => {
               const imageUrl = object.images && object.images[0];
               return (
-                <div class="item">
-                  <div class="img-box">
+                <div className="item">
+                  <div className="img-box">
                     <PiHeartDuotone id='heart-icon'
                       onClick={
                         isAuthenticated
@@ -133,13 +138,13 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                       <p>No image available</p>
                     )}
                   </div>
-                  <div class="details">
+                  <div className="details">
                     <h2 onClick={() => handleProductClick(object)}>
                       {object.title}
                       <br />
                       <span>{object.description}</span>
                     </h2>
-                    <div class="price">${object.price}</div>
+                    <div className="price">${object.price}</div>
                     <label>Tallas</label>
                     <ul>
                       <li>{object.size}</li>
