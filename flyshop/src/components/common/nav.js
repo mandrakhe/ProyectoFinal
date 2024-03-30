@@ -20,7 +20,7 @@ const Nav = ({ searchbtn }) => {
     return (
         <>
             <div className={`header ${isOpen ? 'open' : ''}`}>
-                <div className='container'>
+                <div className='container-nav'>
                     <div className='nav'>
                     <div className='logo'  >
                             <Link to='/'><img src={Logo} alt='Logo de la empresa' /></Link>

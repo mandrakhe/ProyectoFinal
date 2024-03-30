@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
-import Alert from '@mui/material/Alert';
 import Rout from './routes/rout.js';
 import Nav from './components/common/nav.js';
 import { ProductContext } from './context/ProductContext.js';
 import addProduct from './components/pages/addProduct.js';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const [favorite, setFavorite] = useState([]);
@@ -13,8 +14,6 @@ const App = () => {
   const [close, setClose] = useState(false);
   const [detail, setDetail] = useState([]);
   const [product, setProduct] = useState([]);
-  const [alertMessage, setAlertMessage] = useState('');
-  const [alertSeverity, setAlertSeverity] = useState('success');
 
   useEffect(() => {
     // Fetch products from ProductContext on component mount
@@ -31,14 +30,8 @@ const App = () => {
     setClose(true);
   };
 
-  const showAlert = (message, severity) => {
-    setAlertMessage(message);
-    setAlertSeverity(severity);
-
-    // Ocultar la alerta después de 1 segundo
-    setTimeout(() => {
-      setAlertMessage('');
-    }, 1500);
+  const showAlert = (message, type = 'success') => {
+    toast[type](message);
   };
 
   const addtocart = (product) => {
@@ -56,7 +49,7 @@ const App = () => {
     if (existingProductIndex !== -1) {
       showAlert('Este producto ya se encuentra añadido a favoritos', 'error');
     } else {
-      setFavorite([...favorite, { ...product }]); // Removed qty from favorite
+      setFavorite([...favorite, { ...product }]);
       showAlert('El producto ha sido añadido a favoritos', 'success');
     }
   };
@@ -67,14 +60,7 @@ const App = () => {
         <AuthProvider>
           <Nav searchbtn={searchbtn} />
         </AuthProvider>
-        <div style={{ position: 'fixed', top: '20px', right: '20px', maxWidth: '400px', width: '100%', height: 'auto', zIndex: '1', alignItems: 'center', display: 'flex', justifyContent: 'center', overflow: 'hidden' }}>
-          {alertMessage && (
-            <Alert severity={alertSeverity} sx={{ width: '100%', borderRadius: '8px', fontSize: '1rem' }}>
-              {alertMessage}
-            </Alert>
-          )}
-        </div>
-
+        <ToastContainer />
         <Rout
           addProduct={addProduct}
           product={product}
