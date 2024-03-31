@@ -1,105 +1,76 @@
-// import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
-// import { GiPadlock } from "react-icons/gi";
-// initMercadoPago('TEST-3895782c-1661-4be1-bc80-f08d1dbf08fb');
-import React from 'react'
-import Footer from '../common/footer'
-import { Link } from 'react-router-dom'
-import { IoMdClose } from "react-icons/io";
+import React, { useContext } from 'react';
+import Footer from '../common/footer';
+import { Link } from 'react-router-dom';
+import { IoMdClose } from 'react-icons/io';
+import { CartContext } from '../../context/CartContext';
 import '../../css/cart.css';
-// import { ProductContext } from '../../context/ProductContext'
-// useContext(ProductContext);
-const Cart = ({ cart, setCart }) => {
-    const incqty = (product) => {
-        const exsit = cart.find((x) => {
-            return x._id === product._id
-        })
-        setCart(cart.map((object) => {
-            return object.id === product.id ? { ...exsit, qty: exsit.qty + 1 } : object
-        }))
-    }
-    const decqty = (product) => {
-        const exsit = cart.find((x) => {
-            return x._id === product._id
-        })
-        if (exsit.qty < 2) {
-            alert("No puedes comprar 0 articulos")
-        }
-        else {
-            setCart(cart.map((object) => {
-                return object._id === product.id ? { ...exsit, qty: exsit.qty - 1 } : object
-            }))
-        }
-    }
-    const removeproduct = (product) => {
-        const exsit = cart.find((x) => {
-            return x._id === product._id
-        })
-        if (exsit.qty > 0) {
-            setCart(cart.filter((x) => {
-                return x._id !== product._id
-            }))
-        }
-    }
-    const Totalprice = cart.reduce((price, item) => price + item.qty * item.price, 0)
+
+const Cart = () => {
+    const { cart, removeProductFromCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
+
     return (
         <>
             <h1 className='title'>Carrito de compras</h1>
             <div className='cartcontainer'>
-                {cart.length === 0 &&
+                {cart.length === 0 && (
                     <div className='emptycart'>
-                        <h2 className='empty'>El carro está vacio</h2>
-                        <Link className='emptycartbtn' to='/product'>Comprar ahora</Link>
-                    </div>}
+                        <h2 className='empty'>El carro está vacío</h2>
+                        <Link className='emptycartbtn' to='/product'>
+                            Comprar ahora
+                        </Link>
+                    </div>
+                )}
                 <div className='contant'>
-                    {
-                        cart.map((object) => {
-                            const imageUrl = object.images && object.images[0];
-                            return (
-                                <div className='cart_item' key={object._id}>
-                                    <div className='img_box'>
-                                        {imageUrl ? ( // Conditionally render the image if a URL exists
-                                            <img src={imageUrl} alt={object.title} />
-                                        ) : (
-                                            <p>No image available</p> // Display a placeholder if no image URL is found
-                                        )}
-                                    </div>
-                                    <div className='detail'>
-                                        <div className='info'>
-                                            <h3>{object.title}</h3>
-                                            <div className='price'>
-                                                <h3>${object.Price}</h3>
-                                                <div className='qty'>
-                                                    <button className='decqty' onClick={() => decqty(object)}>-</button>
-                                                    <input type='text' value={object.qty}></input>
-                                                    <button className=' incqty' onClick={() => incqty(object)}>+</button>
-                                                </div>
-                                                <h4 className='subtotal'>${object.price * object.qty} COP</h4>
+                    {cart.map((item) => {
+                        const product = item.product; // Acceder al objeto de producto dentro del item del carrito
+                        return (
+                            <div className='cart_item' key={item._id}>
+                                <div className='img_box'>
+                                    {product.images ? (
+                                        <img src={product.images[0]} alt={product.title} />
+                                    ) : (
+                                        <p>No hay imagen disponible</p>
+                                    )}
+                                </div>
+                                <div className='detail'>
+                                    <div className='info'>
+                                        <h3>{product.title}</h3>
+                                        <div className='price'>
+                                            <h3>${product.price}</h3>
+                                            <div className='qty'>
+                                                <button className='decqty' onClick={() => decreaseQuantity(product)}>
+                                                    -
+                                                </button>
+                                                <input type='text' value={item.qty} readOnly />
+                                                <button className='incqty' onClick={() => increaseQuantity(product)}>
+                                                    +
+                                                </button>
                                             </div>
+                                            <h4 className='subtotal'>${product.price * item.qty} COP</h4>
                                         </div>
-                                        <div className='close'>
-                                            <button onClick={() => removeproduct(object)}><IoMdClose /></button>
-                                        </div>
-
+                                    </div>
+                                    <div className='close'>
+                                        <button onClick={() => removeProductFromCart(item.product._id)}>
+                                            <IoMdClose />
+                                        </button>
                                     </div>
                                 </div>
-                            )
-                        })
-                    }
+                            </div>
+                        );
+                    })}
                 </div>
-                <div className="divider"></div>
-                {
-                    cart.length > 0 &&
+                <div className='divider'></div>
+                {cart.length > 0 && (
                     <div className='resumen'>
                         <h1>Resumen de la compra</h1>
-                        <p className='totalprice'>Total: COP {Totalprice}</p>
-                        {/* <Wallet initialization={{ preferenceId: '<PREFERENCE_ID>' }} /><GiPadlock/> */}
-
+                        <p className='totalprice'>Total: COP</p>
+                        {/* Aquí puedes agregar otros detalles del resumen de la compra */}
                     </div>
-                }
+                )}
             </div>
             <Footer />
         </>
-    )
-}
+    );
+};
 
-export default Cart
+export default Cart;

@@ -19,6 +19,7 @@ import AddProduct from '../components/pages/addProduct';
 import DetailProduct from '../components/pages/detailProduct';
 
 import ProductPage from '../components/pages/productPage';
+import { CartProvider } from '../context/CartContext';
 
 
 const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCart, addtocart, favorite, setFavorite, addtofavorite }) => {
@@ -27,36 +28,38 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
 
       <AuthProvider>
         <ProductProvider>
-          <Routes>
-            <Route path="/product/:id" element={<ProductPage/>} />
-            {/* Register, Login, Home y ruta alterna */}
-            <Route path='/register' element={<Signup />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/' element={<Home detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart} addtofavorite={addtofavorite} />} />
-            <Route path='*' element={<Home/>} /> 
-            <Route path='/detailProduct' element={<DetailProduct />} />
+          <CartProvider>
+            <Routes>
+              <Route path="/product/:id" element={<ProductPage />} />
+              {/* Register, Login, Home y ruta alterna */}
+              <Route path='/register' element={<Signup />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/' element={<Home detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart} addtofavorite={addtofavorite} />} />
+              <Route path='*' element={<Home />} />
+              <Route path='/detailProduct' element={<DetailProduct />} />
 
-            {/* Metodos y funciones de los productos */}
-            <Route path='/product' element={<Product product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart} addtofavorite={addtofavorite} />} />
+              {/* Metodos y funciones de los productos */}
+              <Route path='/product' element={<Product product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addtofavorite={addtofavorite} />} />
 
 
 
               <Route path='/admin/addProduct' element={<AddProduct />} />
               <Route path="/admin/listProduct" element={<ProductList />} />
-            {/* Funciones del administrador */}
-            <Route element={<AdminRoute />}>
-              <Route path='/admin' element={<Admin />} />
-            </Route>
-            
+              {/* Funciones del administrador */}
+              <Route element={<AdminRoute />}>
+                <Route path='/admin' element={<Admin />} />
+              </Route>
 
-            {/* Rutas Protegidas (Requiere Autentificación) */}
 
-            <Route element={<ProtectedRoute />}>
-              <Route path='/favorite' element={<Favorite favorite={favorite} setFavorite={setFavorite} />} />
-              <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
-            </Route>
+              {/* Rutas Protegidas (Requiere Autentificación) */}
 
-          </Routes>
+              <Route element={<ProtectedRoute />}>
+                <Route path='/favorite' element={<Favorite favorite={favorite} setFavorite={setFavorite} />} />
+                <Route path='/cart' element={<Cart cart={cart} />} />
+              </Route>
+
+            </Routes>
+          </CartProvider>
         </ProductProvider>
       </AuthProvider>
     </>

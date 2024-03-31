@@ -1,6 +1,6 @@
 import multer from "multer";
 import { uploadFile } from "../util/uploadFile.js";
-import { Product } from "../models/product.js";
+import { Product } from "../models/product.models.js"
 
 const storage = multer.memoryStorage();
 const fileFilter = (req, file, cb) => {

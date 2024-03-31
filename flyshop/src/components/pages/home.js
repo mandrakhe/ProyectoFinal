@@ -17,16 +17,22 @@ import Nike from '../../assets/images/zapatos/nike.png'
 import Adidas from '../../assets/images/zapatos/campus.png'
 import Jordan from '../../assets/images/zapatos/jordan3.png'
 import { ProductContext } from '../../context/ProductContext'
+import { CartContext } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
-import Admin from './admin';
+
 
 const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
   const { isAuthenticated, loginWithRedirect } = useAuth();
+  const { addProductToCart } = useContext(CartContext);
   const { products } = useContext(ProductContext);
   const navigate = useNavigate();
 
   const handleProductClick = (product) => {
     navigate(`/product/${product._id}`);
+  };
+
+  const addToCart = (_id) => {
+    addProductToCart(_id);
   };
 
   return (
@@ -50,10 +56,10 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                       </div>
                       <div className='detail'>
                         <h4>{object.brand}</h4>
-                        <h2>{object.title}</h2>
+                        <h2>{object.name}</h2>
                         <p>{object.description}</p>
-                        <h2>Precio: <span>{object.price} COP</span> </h2>
-                        <p>Talla <span>{object.size}</span> </p>  
+                        <h3>Precio: <span>{object.price} COP</span> </h3>
+                        <strong >Talla</strong>
                         <button id='button-detail' onClick={() => addtocart(object)}>Añadir al carrito</button>
                       </div>
                     </div>
@@ -121,7 +127,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
             products.slice(0, 8).map((object) => {
               const imageUrl = object.images && object.images[0];
               return (
-                <div className="item" >
+                <div className="item">
                   <div className="img-box">
                     <PiHeartDuotone id='heart-icon'
                       onClick={
@@ -141,9 +147,8 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                       <p>No image available</p>
                     )}
                   </div>
-                  
                   <div className="details">
-                    <h2 onClick={() => handleProductClick(object)}> 
+                    <h2 onClick={() => handleProductClick(object)}>
                       {object.title}
                       <br />
                       <span>{object.description}</span>
@@ -162,7 +167,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                     <button
                       onClick={
                         isAuthenticated
-                          ? () => addtocart(object)
+                          ? () => addToCart(object._id)
                           : () => loginWithRedirect()
                       }
                     >
@@ -223,7 +228,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                     <button
                       onClick={
                         isAuthenticated
-                          ? () => addtocart(object)
+                          ? () => addToCart(object._id)
                           : () => loginWithRedirect()
                       }
                     >

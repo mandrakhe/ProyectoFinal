@@ -9,7 +9,7 @@ const ProductPage = () => {
 
     useEffect(() => {
         fetchProduct(id);
-    }, [fetchProduct, id]);
+    }, [id]);
 
     return (
 

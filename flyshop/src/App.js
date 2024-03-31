@@ -10,7 +10,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const [favorite, setFavorite] = useState([]);
-  const [cart, setCart] = useState([]);
   const [close, setClose] = useState(false);
   const [detail, setDetail] = useState([]);
   const [product, setProduct] = useState([]);
@@ -34,15 +33,6 @@ const App = () => {
     toast[type](message);
   };
 
-  const addtocart = (product) => {
-    const existingProductIndex = cart.findIndex((x) => x._id === product._id);
-    if (existingProductIndex !== -1) {
-      showAlert('Este producto ya se encuentra añadido al carrito', 'error');
-    } else {
-      setCart([...cart, { ...product, qty: 1 }]);
-      showAlert('El producto ha sido añadido al carrito', 'success');
-    }
-  };
 
   const addFavorite = (product) => {
     const existingProductIndex = favorite.findIndex((x) => x._id === product._id);
@@ -69,9 +59,6 @@ const App = () => {
           view={view}
           close={close}
           setClose={setClose}
-          cart={cart}
-          setCart={setCart}
-          addtocart={addtocart}
           favorite={favorite}
           setFavorite={setFavorite}
           addtofavorite={addFavorite}
