@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { IoMenu, IoBag } from 'react-icons/io5';
+import { IoMenu } from 'react-icons/io5';
+import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { IoSearchOutline } from "react-icons/io5";
@@ -54,7 +55,7 @@ const Nav = ({ searchbtn }) => {
                         </div>
                         <div className='icons-container'>
                             <Link className='link' to='/favorite'><CiHeart /></Link>
-                            <Link className='link' to='/cart'><IoBag /></Link>
+                            <Link className='link' to='/cart'><MdOutlineShoppingCart /></Link>
                         </div>
                         <div className='icon' >
                             {isAuthenticated &&
