@@ -38,7 +38,7 @@ const Nav = ({ searchbtn }) => {
                                 <Link className='link' to='/contact'>Contáctanos</Link>
                             </li>
                             <li>                                
-                                    <Link className='link' to='/admin/listProducts'>Lista de productos</Link>
+                                    <Link className='link' to='/admin'>DashBoard</Link>
                             </li>
                             <li>
                                 <Link className='link' to='/favorite'> <span>Favoritos</span> </Link>
