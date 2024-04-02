@@ -1,24 +1,24 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import Footer from '../common/footer'
-import { useAuth } from "../../context/AuthContext"
 import Spline from '@splinetool/react-spline';
+import React, { useContext } from 'react';
 import { IoEyeOutline } from "react-icons/io5";
+import { Link } from 'react-router-dom';
+import { useAuth } from "../../context/AuthContext";
+import Footer from '../common/footer';
 
-import { IoMdClose } from "react-icons/io"
+import { IoMdClose } from "react-icons/io";
+import { MdArrowRightAlt } from "react-icons/md";
 import { PiHeartDuotone } from "react-icons/pi";
-import { MdArrowRightAlt } from "react-icons/md"
 
-import '../../css/home.css'
-import '../../css/product.css'
+import '../../css/home.css';
+import '../../css/product.css';
 
-import NB from '../../assets/images/zapatos/nb.png'
-import Nike from '../../assets/images/zapatos/nike.png'
-import Adidas from '../../assets/images/zapatos/campus.png'
-import Jordan from '../../assets/images/zapatos/jordan3.png'
-import { ProductContext } from '../../context/ProductContext'
-import { CartContext } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
+import Adidas from '../../assets/images/zapatos/campus.png';
+import Jordan from '../../assets/images/zapatos/jordan3.png';
+import NB from '../../assets/images/zapatos/nb.png';
+import Nike from '../../assets/images/zapatos/nike.png';
+import { CartContext } from '../../context/CartContext';
+import { ProductContext } from '../../context/ProductContext';
 
 
 const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
@@ -58,7 +58,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                         <h4>{object.brand}</h4>
                         <h2>{object.title}</h2>
                         <p>{object.description}</p>
-                        <h3>Precio: <span id='detail-price'>{object.price} COP</span> </h3>
+                        <h3>$ {object.price} COP </h3>
                         <strong >Talla</strong><p>{object.size}</p>
                         <button id='button-detail' onClick={() => addtocart(object)}>Añadir al carrito</button>
                       </div>
@@ -213,12 +213,6 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                     <ul>
                       <li>{object.size}</li>
                     </ul>
-                    {/* <label>Color</label>
-            <ul class="colors">
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul> */}
                     <button
                       onClick={
                         isAuthenticated

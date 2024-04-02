@@ -64,11 +64,11 @@
     position: relative;
 }
 
-#detail-price
+ .container .detail strong
 {
-font-weight: 500;
+display: inline-block;
+margin-top: 20px;
 }
-
 .top_banner .container .detail .link {
     padding: 10px 20px;
     text-decoration: none;
@@ -169,7 +169,7 @@ font-weight: 500;
   #heart-icon
   {
     position: absolute;
-    left: 215px;
+    left: 85%;
     top: 8px;
     margin-left: 5px;
     font-size: x-large;

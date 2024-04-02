@@ -12,6 +12,8 @@
     border-top: 1px solid #000;
 }
 
+
+
 .footer .container {
     width: 100%;
     display: flex;
@@ -41,6 +43,14 @@
     font-size: 15px;
 }
 
+.footer .container .about  ul li a {
+    text-decoration: none;
+    color: #000;
+}
+.footer .container .about  ul li a:hover 
+{
+    color: var(--color-azul);
+}
 .footer .container .about .account {
     margin-right: 20%;
 }
@@ -88,6 +98,46 @@
     height: 200px;
     width: 100%;
 }
+
+.contact-details-container {
+  text-align: center;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.contact-details-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  color: #333;
+}
+
+.contact-details {
+  list-style: none;
+  padding: 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.contact-details li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon {
+  margin-right: 10px;
+  font-size: 2rem;
+  color: #000;
+}
+
+.contact-icon:hover
+{
+    color: var(--color-azul);
+}
+
 
 .footer .map .address {
     color: #f00;
