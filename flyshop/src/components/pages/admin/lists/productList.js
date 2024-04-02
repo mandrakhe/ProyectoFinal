@@ -1,11 +1,18 @@
 import React, { useContext } from 'react';
-import { ExportToExcel } from './util/ExportToExcel';
-import { ProductContext } from '../../../context/ProductContext';
-import { ExportToPDF } from './util/ExportToPDF'
-import './adminCSS/productList.css'; // Assuming CSS file path
+import { useNavigate } from 'react-router-dom';
+import { ExportToExcel } from '../util/ExportToExcel';
+import { ProductContext } from '../../../../context/ProductContext';
+import { ExportToPDF } from '../util/ExportToPDF'
+import '../adminCSS/productList.css'
 
 function ProductList() {
     const { products, loading, error, handleDeleteProduct } = useContext(ProductContext);
+
+    const navigate = useNavigate();
+
+    const handleEditProduct = (productId) => {
+        navigate(`/admin/edit-product/${productId}`);
+    };    
 
     return (
         <>
@@ -38,7 +45,7 @@ function ProductList() {
                             </div>
                             <div className='actions actions_effects'>
                                 <button onClick={() => handleDeleteProduct(object._id)}>Eliminar</button>
-                                <button>Editar</button>
+                                <button onClick={() => handleEditProduct(object._id)}>Editar</button>
                                 <button>Detalles</button>
                             </div>
                         </div>

@@ -86,3 +86,65 @@ export const deleteProduct = async (req, res) => {
         return res.status(500).json({ message: "Error al eliminar el producto" });
     }
 };
+
+export const updateProduct = async (req, res) => {
+    try {
+        const updatedProduct = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+
+        if (!updatedProduct) {
+            return res.status(404).json({ message: "Producto no encontrado" });
+        }
+
+        const uploadFields = upload.fields([{ name: "image", maxCount: 10 }]);
+
+        uploadFields(req, res, async (error) => {
+            if (error) {
+                return res.status(400).json({ message: error.message });
+            }
+
+            const images = req.files?.image;
+            let imageUrls = [];
+
+            if (images && images.length > 0) {
+                const promises = images.map(async (image) => {
+                    const { downloadURL } = await uploadFile(image);
+                    return downloadURL;
+                });
+
+                const newImageUrls = await Promise.all(promises);
+                imageUrls = newImageUrls;
+            }
+
+            // Actualizar los campos del producto
+            if (req.body.title) {
+                updatedProduct.title = req.body.title;
+            }
+            if (req.body.brand) {
+                updatedProduct.brand = req.body.brand;
+            }
+            if (req.body.description) {
+                updatedProduct.description = req.body.description;
+            }
+            if (req.body.price) {
+                updatedProduct.price = req.body.price;
+            }
+            if (req.body.size) {
+                updatedProduct.size = req.body.size;
+            }
+
+            // Actualizar las imágenes del producto
+            updatedProduct.images = imageUrls;
+            await updatedProduct.save();
+
+            //console.log("Producto actualizado:", updatedProduct);
+            return res.status(200).json({ updatedProduct });
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: "Error al actualizar el producto" });
+    }
+};
+
+
+
+

@@ -6,4 +6,6 @@ export const getProducts = () => axios.get(`/products`);
 
 export const createProduct = (formData) => axios.post(`/create-product`, formData);
 
+export const editProduct = (formData, id) => axios.put(`/edit-product/${id}`, formData);
+
 export const deleteProduct = (id) => axios.delete(`/deleteProduct/${id}`);

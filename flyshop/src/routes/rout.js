@@ -1,25 +1,33 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
-import { AuthProvider } from '../context/AuthContext';
 import ProtectedRoute from "./ProtectedRoute"
 import AdminRoute from './AdminRoute';
 
-import { ProductProvider } from '../context/ProductContext';
 
 import Login from '../components/pages/login';
 import Signup from '../components/pages/Signup';
 import Home from '../components/pages/home';
-import ProductList from '../components/pages/admin/productList';
+
 
 import Product from '../components/pages/product';
 import Favorite from '../components/pages/favorite';
-import Admin from '../components/pages/admin';
+
 import Cart from '../components/pages/cart';
-import AddProduct from '../components/pages/addProduct';
 import DetailProduct from '../components/pages/detailProduct';
 
 import ProductPage from '../components/pages/productPage';
+
 import { CartProvider } from '../context/CartContext';
+import { ProductProvider } from '../context/ProductContext';
+import { AuthProvider } from '../context/AuthContext';
+import { UserProvider } from '../context/UserContext';
+
+import Admin from '../components/pages/admin/dashboard';
+import UserList from '../components/pages/admin/lists/userList';
+import ProductList from '../components/pages/admin/lists/productList';
+import AddProduct from '../components/pages/addProduct';
+import EditProduct from '../components/pages/admin/products/editProduct'
+
 
 
 const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCart, addtocart, favorite, setFavorite, addtofavorite }) => {
@@ -27,6 +35,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
     <>
 
       <AuthProvider>
+        <UserProvider>
         <ProductProvider>
           <CartProvider>
             <Routes>
@@ -44,7 +53,9 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
 
 
               <Route path='/admin/addProduct' element={<AddProduct />} />
-              <Route path="/admin/listProduct" element={<ProductList />} />
+              <Route path='/admin/edit-product/:id' element={<EditProduct/>}  />
+              <Route path="/admin/listProducts" element={<ProductList />} />
+              <Route path="/admin/listUsers" element={<UserList />} />
               {/* Funciones del administrador */}
               <Route element={<AdminRoute />}>
                 <Route path='/admin' element={<Admin />} />
@@ -61,6 +72,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
             </Routes>
           </CartProvider>
         </ProductProvider>
+        </UserProvider>
       </AuthProvider>
     </>
   )

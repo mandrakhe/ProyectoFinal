@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
-import { getProducts, createProduct, deleteProduct, getProduct } from "../api/product";
+import { getProducts, createProduct, deleteProduct, getProduct, updateProduct, editProduct } from "../api/product";
 
 export const ProductContext = createContext();
 
@@ -52,11 +52,24 @@ export const ProductProvider = ({ children }) => {
         }
     };
 
+    const updateProduct = async (_id, formData) => {
+        try {
+            await editProduct(formData, _id); // Cambiar el orden de los parámetros
+            await fetchProducts();
+        } catch (error) {
+            setError(error);
+        }
+    };
+    
+    
+    
+
     const value = {
         products,
         loading,
         error,
         createNewProduct,
+        updateProduct,
         currentProduct,
         fetchProduct,
         handleDeleteProduct,
