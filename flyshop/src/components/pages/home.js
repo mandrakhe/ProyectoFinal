@@ -41,7 +41,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
         close ?
           <div className='product_detail'>
             <div className='container'>
-              <button onClick={() => setClose(false)} className='closebtn'><IoMdClose /></button>
+              <button onClick={() => setClose(false)} className='closebtn'><IoMdClose/></button>
               {
                 detail.map((object) => {
                   const imageUrl = object.images && object.images[0];
@@ -56,10 +56,10 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                       </div>
                       <div className='detail'>
                         <h4>{object.brand}</h4>
-                        <h2>{object.name}</h2>
+                        <h2>{object.title}</h2>
                         <p>{object.description}</p>
-                        <h3>Precio: <span>{object.price} COP</span> </h3>
-                        <strong >Talla</strong>
+                        <h3>Precio: <span id='detail-price'>{object.price} COP</span> </h3>
+                        <strong >Talla</strong><p>{object.size}</p>
                         <button id='button-detail' onClick={() => addtocart(object)}>Añadir al carrito</button>
                       </div>
                     </div>
@@ -151,19 +151,13 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                     <h2 onClick={() => handleProductClick(object)}>
                       {object.title}
                       <br />
-                      <span>{object.description}</span>
-                    </h2>
                     <div className="price">${object.price}</div>
+                      <span>{object.brand}</span>
+                    </h2>
                     <label>Tallas</label>
                     <ul>
                       <li>{object.size}</li>
                     </ul>
-                    {/* <label>Color</label>
-            <ul class="colors">
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul> */}
                     <button
                       onClick={
                         isAuthenticated

@@ -6,8 +6,8 @@
   padding: 0;
   font-family: sans-serif;
   box-sizing: border-box;
-/*   background: #ddd; */
 }
+
 
 .container #X-top_banner {
     text-align: center;
@@ -30,7 +30,6 @@
     width: 100%;
     background-color: #fff;
 }
-
 
 .top_banner .container {
     max-width: 100%;
@@ -60,10 +59,14 @@
 
 .top_banner .container .detail h4 {
     color: #000;
-
     top: 25%;
     left: 30%;
     position: relative;
+}
+
+#detail-price
+{
+font-weight: 500;
 }
 
 .top_banner .container .detail .link {
@@ -82,7 +85,6 @@
     background-color: #000;
     color: var(--color-primario);
 }
-
 
 .shoe_brand {
     width: auto;
@@ -108,7 +110,6 @@
     overflow: hidden;
     cursor: pointer;
 }
-
 
 .shoe_brand .container .box .img_box img {
     object-fit: cover;
@@ -145,8 +146,6 @@
     cursor: pointer;
 }
 
-  
-  
   .cart-container {
     display: flex;
     flex-wrap: wrap; 
@@ -190,7 +189,6 @@
     color: var(--color-azul);
   }
 
-
   .item .img-box {
     height: 80%; 
     width: 100%;
@@ -206,7 +204,6 @@
 
     transition: 1s;
   }
-  
 
   .details {
     position: absolute;
@@ -229,25 +226,27 @@
   .details h2 {
     margin: 0;
     padding: 0;
-    padding-bottom: 25px;
     font-size: 16px;
     transition: .3s;
     cursor: pointer;
+    text-transform: capitalize;
   }
   
   .details h2 span {
     font-size: 12px;
+    position: absolute;
+    top: 20px;
+    text-transform: capitalize;
+    right: 10px;
     color: #bbb;
-    font-weight: normal;
+    font-size:medium;
   }
   
   .details .price{
-    position: absolute;
-    top: 0;
-    right: 25px;
     font-weight: bold;
     font-size: 20px;
     transition: .3s;
+    padding: 7px 0;
   }
   
   .details label {
@@ -276,30 +275,7 @@
     color: #333;
     transition: 0.7s;
   }
-  
-  /* .details ul.colors li {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .details ul.colors li:hover {
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  }
-  
-  .details ul.colors li:nth-child(1) {
-    background: #9F8A42;
-  }
-  
-  .details ul.colors li:nth-child(2) {
-    background: #ACAEA9;
-  }
-  
-  .details ul.colors li:nth-child(3) {
-    background: #cd7f32;
-  }
-   */
+
   .details button {
     display: block;
     padding: 5px;
@@ -319,17 +295,12 @@
     transition: .3s;
   }
   
-  
-
-
 @media (max-width: 768px) {
-
 
     .top_banner .container {
         position: relative;
         right: 4em;
         margin-top: 20%;
-
     }
 
     .top_banner .container img {
@@ -343,19 +314,15 @@
     }
 
     .top_banner .container .detail .link {
-
         padding: 8px;
         font-size: small;
     }
-
-    
 }
 
 @media (max-width:500px) {
     .top_banner .container img {
         display: none;
     }
-
 
     .top_banner .container .detail .link {
         padding: 1px;
