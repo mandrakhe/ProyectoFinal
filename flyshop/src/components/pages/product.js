@@ -1,11 +1,12 @@
-import { GoEye } from "react-icons/go";
-import { IoMdClose } from "react-icons/io";
-import { IoMdHeartEmpty } from "react-icons/io";
 import React, { useContext, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { CartContext } from "../../context/CartContext";
+import { useNavigate } from "react-router-dom";
 import { ProductContext } from "../../context/ProductContext";
 import Footer from "../common/footer";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
+import { PiHeartDuotone } from "react-icons/pi";
 import Productdetail from "../../productdetail";
 import "../../css/product.css";
 
@@ -14,13 +15,20 @@ const Product = ({
     detail,
     view,
     close,
+    addtofavorite,
     setClose,
     addtocart,
 }) => {
     const { loginWithRedirect, isAuthenticated } = useAuth();
     const [selectedValue, setSelectedValue] = useState('');
-    const { products } = useContext(ProductContext);
+
     const { addProductToCart } = useContext(CartContext);
+
+    const { products } = useContext(ProductContext);
+    const navigate = useNavigate();
+    const handleProductClick = (product) => {
+        navigate(`/product/${product._id}`);
+    };
 
     const filtterproduct = (product) => {
         setSelectedValue(product);
@@ -37,46 +45,36 @@ const Product = ({
     return (
         <>
             {close ? (
-                <div className="product_detail">
-                    <div className="container">
-                        <button onClick={() => setClose(false)} className="closebtn">
-                            <IoMdClose />
-                        </button>
+                <div className='product_detail'>
+                    <div className='container'>
+                        <button onClick={() => setClose(false)} className='closebtn'><IoMdClose /></button>
                         {detail.map((object) => {
                             const imageUrl = object.images && object.images[0];
                             return (
-                                <div className="productbox">
-                                    <div className="img-box">
-                                        {imageUrl ? ( // Renderización condicional de la imagen si existe una URL
+                                <div key={object._id} className='productbox'>
+                                    <div className='img-box'>
+                                        {imageUrl ? (
                                             <img src={imageUrl} alt={object.title} />
                                         ) : (
-                                            <p>No hay imagen disponible</p> // Mostrar un marcador de posición si no se encuentra una URL de imagen
+                                            <p>No image available</p>
                                         )}
                                     </div>
-                                    <div className="detail">
+                                    <div className='detail'>
                                         <h4>{object.brand}</h4>
-                                        <h2>{object.name}</h2>
-                                        <p>
-                                            Texto pero una cantidad exagerada de texto o sea en plan
-                                            mucho pero mucho texto sin el más mínimo sentido
-                                            aparente pero igual ya veremos
-                                        </p>
-                                        <h3>{object.price}</h3>
-                                        <h3>Talla</h3>
-                                        <button onClick={() => addtocart(object)}>
-                                            Añadir al carrito
-                                        </button>
+                                        <h2>{object.title}</h2>
+                                        <p>{object.description}</p>
+                                        <h3>$ {object.price} COP </h3>
+                                        <strong >Talla</strong><p>{object.size}</p>
+                                        <button id='button-detail' onClick={() => addtocart(object)}>Añadir al carrito</button>
                                     </div>
                                 </div>
                             );
                         })}
-                        <div className="productbox"></div>
                     </div>
                 </div>
             ) : null}
-
             <div className="products">
-                <h2>{selectedValue}(Resultados)</h2>
+                <h2>{selectedValue} (Resultados)</h2>
                 <div className="filters">
                     <h1>Filtrar: </h1>
                     <div className="filter">
@@ -102,49 +100,57 @@ const Product = ({
                         </select>
                     </div>
                 </div>
-                <div className="container">
-                    <div className="container">
-                        <div className="productbox">
-                            <div className="contant">
-                                {products.map((product) => {
-                                    const imageUrl = product.images && product.images[0];
-                                    return (
-                                        <div className="box" key={product.id}>
-                                            <div className="img_box">
-                                                {imageUrl ? ( // Renderización condicional de la imagen si existe una URL
-                                                    <img src={imageUrl} alt={product.title} />
-                                                ) : (
-                                                    <p>No hay imagen disponible</p> // Mostrar un marcador de posición si no se encuentra una URL de imagen
-                                                )}
-                                                <div className="icon">
-                                                    <li onClick={() => view(product)}>
-                                                        <GoEye />
-                                                    </li>
-                                                    <li>
-                                                        <IoMdHeartEmpty />
-                                                    </li>
-                                                </div>
-                                            </div>
-                                            <div className="detail">
-                                                <h3>{product.title}</h3>
-                                                <p>{product.brand}</p>
-                                                <p>{product.price}</p>
-                                                <button
-                                                    className="button-product"
-                                                    onClick={
-                                                        isAuthenticated
-                                                            ? () => addToCart(product._id)
-                                                            : () => loginWithRedirect()
-                                                    }
-                                                >
-                                                    Añadir al carrito
-                                                </button>
-                                            </div>
+                <div className='product'>
+                    <div className="cart-container">
+                        {products.slice(0, 8).map((object) => {
+                            const imageUrl = object.images && object.images[0];
+                            return (
+                                <div className="item" key={object._id}>
+                                    <div className="img-box">
+                                        <PiHeartDuotone
+                                            id='heart-icon'
+                                            onClick={
+                                                isAuthenticated
+                                                    ? () => addtofavorite(object)
+                                                    : () => loginWithRedirect()
+                                            }
+                                        />
+                                        <IoEyeOutline
+                                            id='eye-icon'
+                                            onClick={() => view(object)}
+                                        />
+                                        {imageUrl ? (
+                                            <img src={imageUrl} alt={object.title} />
+                                        ) : (
+                                            <p>No image available</p>
+                                        )}
+                                    </div>
+                                    <div className="details">
+                                        <h2 onClick={() => handleProductClick(object)}>
+                                            {object.title}
+                                            <br />
+                                            <div className="price">${object.price}</div>
+                                            <span>{object.brand}</span>
+                                        </h2>
+                                        <label>Tallas</label>
+                                        <ul>
+                                            <li>{object.size}</li>
+                                        </ul>
+                                        <button
+                                            onClick={
+                                                isAuthenticated
+                                                    ? () => addToCart(object._id)
+                                                    : () => loginWithRedirect()
+                                            }
+                                        >
+                                            Añadir al carrito
+                                        </button>
+                                        <div className='icons-detail'>
                                         </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

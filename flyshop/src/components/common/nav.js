@@ -23,7 +23,7 @@ const Nav = ({ searchbtn }) => {
             <div className={`header ${isOpen ? 'open' : ''}`}>
                 <div className='container-nav'>
                     <div className='nav'>
-                    <div className='logo'  >
+                        <div className='logo'  >
                             <Link to='/'><img src={Logo} alt='Logo de la empresa' /></Link>
                         </div>
                         <IoMenu className='hamburger-menu' onClick={handleToggleMenu} />
@@ -37,9 +37,11 @@ const Nav = ({ searchbtn }) => {
                             <li>
                                 <Link className='link' to='/contact'>Contáctanos</Link>
                             </li>
-                            <li>                                
+                            {isAuthenticated && user && user.Adminrole && (
+                                <li>
                                     <Link className='link' to='/admin'>DashBoard</Link>
-                            </li>
+                                </li>
+                            )}
                             <li>
                                 <Link className='link' to='/favorite'> <span>Favoritos</span> </Link>
                             </li>
