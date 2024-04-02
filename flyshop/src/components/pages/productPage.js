@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
+import { FaArrowLeft } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { useAuth } from "../../context/AuthContext"
 import { ProductContext } from '../../context/ProductContext';
@@ -37,7 +38,6 @@ const ProductPage = () => {
           </div>
 
           <div className='detail__product-page'>
-            <span>{currentProduct.brand}</span>
             <h2 className='info'>{currentProduct.title}</h2>
             <p className='info'>Precio: {currentProduct.price}COP</p>
             <h4 className='info'>Tallas disponibles <b className='info'>{currentProduct.size}</b></h4>
@@ -53,7 +53,7 @@ const ProductPage = () => {
               />
 
               <button>COMPRAR</button>
-              <button><Link to="/">Atrás</Link></button>
+            <Link to="/"><FaArrowLeft /></Link>
 
             </div>
           </div>
