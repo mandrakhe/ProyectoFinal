@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 import { FaPager } from "react-icons/fa6";
 import { FaUserAstronaut } from "react-icons/fa";
+import { useAuth } from '../../../context/AuthContext';
 import '../admin/adminCSS/dashBoard.css'
 function Admin() {
 
-
+  const { user } = useAuth();
   return (
     <>
     <div className='admin_panel'> 
-    <h1>Bienvenido al Panel de Administración</h1>
+    <h1>Bienvenido de nuevo {user.username}</h1>
       <div className='dashboard'>
         <div className='admin_links'>
         <div className='lists'>

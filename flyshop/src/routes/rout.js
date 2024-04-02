@@ -52,7 +52,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
 
 
 
-              <Route path='/contact' element={<Contact />} />
+              <Route path='/about' element={<Contact />} />
               <Route path='/admin/addProduct' element={<AddProduct />} />
               <Route path='/admin/edit-product/:id' element={<EditProduct/>}  />
               <Route path="/admin/listProducts" element={<ProductList />} />

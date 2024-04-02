@@ -35,7 +35,7 @@ const Nav = ({ searchbtn }) => {
                                 <Link className='link' to='/product'>Tienda</Link>
                             </li>
                             <li>
-                                <Link className='link' to='/contact'>Contáctanos</Link>
+                                <Link className='link' to='/about'>Sobre nosotros</Link>
                             </li>
                             {isAuthenticated && user && user.Adminrole && (
                                 <li>

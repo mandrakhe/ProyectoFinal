@@ -10,7 +10,6 @@ import { MdArrowRightAlt } from "react-icons/md";
 import { PiHeartDuotone } from "react-icons/pi";
 
 import '../../css/home.css';
-import '../../css/product.css';
 
 import { useNavigate } from 'react-router-dom';
 import Adidas from '../../assets/images/zapatos/campus.png';

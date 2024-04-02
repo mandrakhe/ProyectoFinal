@@ -1,4 +1,4 @@
-/* import React from 'react';
+import React from 'react';
 import { Card, CardBody, CardText, CardTitle, Col, Container, Row } from 'reactstrap';
 import Logo from "../../assets/images/logos/logo_flyshop.png";
 import '../../css/contact.css';
@@ -46,4 +46,3 @@ function Contact() {
 }
 
 export default Contact;
- */
