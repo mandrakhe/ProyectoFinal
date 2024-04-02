@@ -231,8 +231,8 @@ border-radius: 10px;
 }
 
 .product_detail .container .productbox .detail {
-    margin-left: 30px;
     margin-top: 10px;
+    margin: 0 auto;
 }
 
 .product_detail .container .productbox .detail h4 {

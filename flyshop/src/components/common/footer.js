@@ -1,7 +1,6 @@
 import React from "react";
-
 import { FaWhatsapp } from "react-icons/fa6";
-import { IoLogoInstagram } from "react-icons/io";
+import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { IoLocationSharp } from "react-icons/io5";
 import Logo from "../../assets/images/logos/logo_flyshop.png";
 import "../../css/footer.css";
@@ -14,12 +13,19 @@ const Footer = () => {
                     <img src={Logo} alt="logo" />
                     <div className="about">
                         <div className="account">
-                            <h3>Cuenta</h3>
-                            <ul>
-                                <li>Pedidos</li>
-                                <li>Favoritos</li>
-                                <li>Mi cuenta</li>
-                                <li>Carrito de compras</li>
+                            <ul className="contact-details">
+                                <li>
+                                    <FaEnvelope className="contact-icon" />
+                                    <a href="mailto:info@flyshop.com">info@flyshop.com</a>
+                                </li>
+                                <li>
+                                    <FaWhatsapp className="contact-icon" />
+                                    <a href="tel:+57 311 4042531">Contactanos por Whatsapp</a>
+                                </li>
+                                <li>
+                                    <FaMapMarkerAlt className="contact-icon" />
+                                    Cl. 54 #57-31 Medellín, Antioquia
+                                </li>
                             </ul>
                         </div>
                         <div className="page">
@@ -28,18 +34,8 @@ const Footer = () => {
                                 <li>Inicio</li>
                                 <li>Tienda</li>
                                 <li>Contáctanos</li>
-                                
+
                             </ul>
-                            <div className="footer-details">
-                                    <div className="icons-footer">
-                                        <li>
-                                            <IoLogoInstagram />
-                                        </li>
-                                        <li>
-                                            <FaWhatsapp />
-                                        </li>
-                                    </div>
-                                </div>
                         </div>
                     </div>
                     <div className="map">

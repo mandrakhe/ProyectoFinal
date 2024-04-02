@@ -14,7 +14,7 @@ import Favorite from '../components/pages/favorite';
 
 import Cart from '../components/pages/cart';
 import DetailProduct from '../components/pages/detailProduct';
-
+import Contact from '../components/pages/contact';
 import ProductPage from '../components/pages/productPage';
 
 import { CartProvider } from '../context/CartContext';
@@ -40,7 +40,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
           <CartProvider>
             <Routes>
               <Route path="/product/:id" element={<ProductPage />} />
-              {/* Register, Login, Home y ruta alterna */}
+              {/* Register, Login, Home,Contactanos y ruta alterna */}
               <Route path='/register' element={<Signup />} />
               <Route path='/login' element={<Login />} />
               <Route path='/' element={<Home detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart} addtofavorite={addtofavorite} />} />
@@ -52,6 +52,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
 
 
 
+              <Route path='/contact' element={<Contact />} />
               <Route path='/admin/addProduct' element={<AddProduct />} />
               <Route path='/admin/edit-product/:id' element={<EditProduct/>}  />
               <Route path="/admin/listProducts" element={<ProductList />} />

@@ -209,3 +209,83 @@ display: none;
         cursor: pointer;
     }
 }
+@media (max-width: 500px) {
+    /* Menu */
+    .nav ul {
+        display: none; /* Initially hide the menu */
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .nav ul.open { /* Show menu when hamburger menu is clicked */
+        display: flex;
+    }
+
+    .nav ul li {
+        margin: 5px 0;
+    }
+
+    .nav .link {
+        font-size: 16px;
+    }
+
+    .nav ul li .link span {
+        display: flex; /* Show link text on smaller screens */
+    }
+
+    .icons-container {
+        display: none; /* Hide icons container on smaller screens */
+    }
+
+    .nav .car {
+        margin: 10px 0;
+    }
+
+    .nav .auth button {
+        font-size: 16px;
+        margin-right: 0;
+    }
+
+    /* Search */
+    .search_container {
+        width: 100%; /* Take up full width on smaller screens */
+        margin: 10px 0;
+    }
+
+    .search_input {
+        width: 100%; /* Take up full width on smaller screens */
+        margin-top: 5px;
+    }
+
+    /* Hamburger Menu (remains visible) */
+    .hamburger-menu {
+        display: block; /* Ensure hamburger menu is always visible */
+        color: #fff;
+        font-size: 60px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    /* Estilos para mostrar los productos de a 2 por fila */
+    .product-item {
+        width: calc(50% - 10px); /* Ancho del 50% y espacio de 10px entre productos */
+        margin-right: 10px; /* Espacio entre productos */
+        margin-bottom: 10px; /* Espacio debajo de los productos */
+        box-sizing: border-box; /* Incluye el padding y border en el ancho */
+    }
+
+    /* Evitar que se cree un scroll horizontal */
+    .nav-container {
+        overflow-x: hidden;
+    }
+}
