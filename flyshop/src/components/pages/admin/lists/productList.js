@@ -46,7 +46,6 @@ function ProductList() {
                             <div className='actions actions_effects'>
                                 <button onClick={() => handleDeleteProduct(object._id)}>Eliminar</button>
                                 <button onClick={() => handleEditProduct(object._id)}>Editar</button>
-                                <button>Detalles</button>
                             </div>
                         </div>
                     );

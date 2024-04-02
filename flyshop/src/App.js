@@ -4,7 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import Rout from './routes/rout.js';
 import Nav from './components/common/nav.js';
 import { ProductContext } from './context/ProductContext.js';
-import addProduct from './components/pages/addProduct.js';
+import addProduct from './components/pages/admin/products/addProduct.js';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

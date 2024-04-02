@@ -30,3 +30,16 @@ export const deleteUser = async (req, res) => {
         return res.status(500).json({ message: 'Ocurrió un error al eliminar el usuario' });
     }
 };
+
+export const editUser = async (req, res) => {
+    try {
+        const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!updatedUser) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+        return res.status(200).json({ message: 'Usuario actualizado correctamente', user: updatedUser });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Ocurrió un error al actualizar el usuario' });
+    }
+};

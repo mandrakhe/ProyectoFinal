@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
-import { getUser, getUsers, deleteUser } from "../api/user";
+import { getUser, getUsers, editUser, deleteUser } from "../api/user";
 
 export const UserContext = createContext();
 
@@ -31,12 +31,25 @@ export const UserProvider = ({ children }) => {
 
     useEffect(() => {
         fetchUsers();
-    }, []); // Solo se ejecutará al montar el componente
+    }, []);
 
     const handleDeleteUser = async (_id) => {
         try {
             await deleteUser(_id);
             // Actualizar la lista de usuarios después de eliminar uno
+            await fetchUsers();
+        } catch (error) {
+            console.error(error);
+            // Manejar el error estableciendo el estado de error
+            setError(error);
+        }
+    };
+
+    const handleEditUser = async (_id, userData) => {
+        try {
+            await editUser(_id, userData);
+            await fetchUser(_id);
+            // Actualizar la lista de usuarios después de editar uno
             await fetchUsers();
         } catch (error) {
             console.error(error);
@@ -52,6 +65,7 @@ export const UserProvider = ({ children }) => {
         user,
         fetchUser,
         handleDeleteUser,
+        handleEditUser,
     };
 
     return (

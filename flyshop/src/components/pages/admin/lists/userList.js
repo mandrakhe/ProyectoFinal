@@ -1,12 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { ExportToExcel } from '../util/ExportToExcel';
 import { ExportToPDF } from '../util/ExportToPDF'
 import '../adminCSS/lists.css'
 import { UserContext } from '../../../../context/UserContext';
 
 function UserList() {
+    const { users, loading, error, handleDeleteUser, handleEditUser } = useContext(UserContext);
+    const [editingUserId, setEditingUserId] = useState(null);
+    const [editedUserData, setEditedUserData] = useState({});
 
-    const { users, loading, error, handleDeleteUser } = useContext(UserContext);
+    const handleEditClick = (userId) => {
+        setEditingUserId(userId);
+        const userToEdit = users.find(user => user._id === userId);
+        setEditedUserData(userToEdit);
+    };
+
+    const handleSaveEdit = async () => {
+        try {
+            await handleEditUser(editingUserId, editedUserData);
+            setEditingUserId(null);
+            setEditedUserData({});
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     return (
         <>
@@ -30,8 +47,18 @@ function UserList() {
                                 </div>
                                 <div className='actions actions_effects'>
                                     <button onClick={() => handleDeleteUser(object._id)}>Eliminar</button>
-                                    <button>Editar</button>
-                                    <button>Detalles</button>
+                                    {editingUserId === object._id ? (
+                                        <>
+                                            <input
+                                                type="text"
+                                                value={editedUserData.username || ''}
+                                                onChange={(e) => setEditedUserData({ ...editedUserData, username: e.target.value })}
+                                            />
+                                            <button onClick={handleSaveEdit}>Guardar</button>
+                                        </>
+                                    ) : (
+                                        <button onClick={() => handleEditClick(object._id)}>Editar</button>
+                                    )}
                                 </div>
                             </div>
                         );

@@ -1,6 +1,5 @@
 import { Router } from "express";
-import { getUser, getUsers, deleteUser } from "../controllers/user.controller.js";
-import { requiredAuth } from "../middlewares/tokenValidation.js";
+import { getUser, getUsers, deleteUser, editUser } from "../controllers/user.controller.js";
 const router = Router();
 
 
@@ -9,7 +8,10 @@ const router = Router();
 router.get('/user/:id', getUser);
 router.get('/users', getUsers)
 
-/* Eliminar Producto */
+/* Eliminar Usuario */
 router.delete('/deleteUser/:id', deleteUser);
+
+/* Editar usuario */
+router.put('/editUser/:id', editUser)
 
 export default router;

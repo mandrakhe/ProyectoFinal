@@ -8,7 +8,6 @@ const router = Router();
 
 export const removeExpiredCarts = async () => {
     try {
-        // Encuentra y elimina los carritos cuya fecha de expiración ha pasado
         await Cart.deleteMany({ expirationDate: { $lte: new Date() } });
         console.log("Carritos expirados eliminados correctamente.");
     } catch (error) {

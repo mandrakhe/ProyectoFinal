@@ -25,7 +25,7 @@ import { UserProvider } from '../context/UserContext';
 import Admin from '../components/pages/admin/dashboard';
 import UserList from '../components/pages/admin/lists/userList';
 import ProductList from '../components/pages/admin/lists/productList';
-import AddProduct from '../components/pages/addProduct';
+import AddProduct from '../components/pages/admin/products/addProduct';
 import EditProduct from '../components/pages/admin/products/editProduct'
 
 
@@ -49,18 +49,16 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
 
               {/* Metodos y funciones de los productos */}
               <Route path='/product' element={<Product product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addtofavorite={addtofavorite} />} />
-
-
-
               <Route path='/about' element={<Contact />} />
-              <Route path='/admin/addProduct' element={<AddProduct />} />
-              <Route path='/admin/edit-product/:id' element={<EditProduct/>}  />
-              <Route path="/admin/listProducts" element={<ProductList />} />
-              <Route path="/admin/listUsers" element={<UserList />} />
+
               
               {/* Funciones del administrador */}
               <Route element={<AdminRoute />}>
                 <Route path='/admin' element={<Admin/>} />
+                <Route path='/admin/addProduct' element={<AddProduct />} />
+                <Route path='/admin/edit-product/:id' element={<EditProduct/>}  />
+                <Route path="/admin/listProducts" element={<ProductList />} />
+                <Route path="/admin/listUsers" element={<UserList />} />
               </Route>
 
 

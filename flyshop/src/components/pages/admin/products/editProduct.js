@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { ProductContext } from '../../../../context/ProductContext';
+import '../adminCSS/editProduct.css'
 
 const EditProduct = () => {
     const { id } = useParams();
@@ -65,7 +66,7 @@ const EditProduct = () => {
 
     return (
         <div>
-            <h2>Edit Product</h2>
+            <h2>Editar Producto</h2>
             <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <input type="text" name="title" placeholder="Title" value={formData.title} onChange={handleChange} required />
                 <input type="number" name="price" placeholder="Price" value={formData.price} onChange={handleChange} required />
