@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ExportToExcel } from '../util/ExportToExcel';
 import { ProductContext } from '../../../../context/ProductContext';
 import { ExportToPDF } from '../util/ExportToPDF'
-import '../adminCSS/productList.css'
+import '../adminCSS/lists.css'
 
 function ProductList() {
     const { products, loading, error, handleDeleteProduct } = useContext(ProductContext);

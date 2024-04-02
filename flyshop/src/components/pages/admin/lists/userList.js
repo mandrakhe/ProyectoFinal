@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ExportToExcel } from '../util/ExportToExcel';
 import { ExportToPDF } from '../util/ExportToPDF'
-import '../adminCSS/productList.css'
+import '../adminCSS/lists.css'
 import { UserContext } from '../../../../context/UserContext';
 
 function UserList() {
