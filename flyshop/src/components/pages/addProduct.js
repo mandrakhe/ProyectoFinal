@@ -1,97 +1,67 @@
-import React, { useState, useContext } from 'react';
-import '../../css/addProduct.css'
-import { MdOutlineUploadFile } from "react-icons/md";
-import { ProductContext } from '../../context/ProductContext'; // Importa el contexto de productos
+import React, { useContext, useState } from 'react';
+import { ProductContext } from '../../context/ProductContext';
 
-function AddProduct() { 
-  const { createNewProduct } = useContext(ProductContext); // Obtén la función createNewProduct del contexto de productos
-  const [images, setImages] = useState([]);
-  const [product, setProduct] = useState({
-    title: '',
-    price: '',
-    brand: '',
-    description: '',
-    sizes: '',
-  });
-  const [previewImage, setPreviewImage] = useState(null); // Estado para la imagen de previsualización
-
-  const handleInputChange = (e) => {
-    setProduct({
-      ...product,
-      [e.target.name]: e.target.value,
+const AddProduct = () => {
+    const { createNewProduct } = useContext(ProductContext);
+    const [formData, setFormData] = useState({
+        title: '',
+        price: '',
+        brand: '',
+        description: '',
+        size: '',
+        image: null
     });
-  };
 
-  const handleImageChange = (e) => {
-    const selectedImage = e.target.files[0]; // Solo tomamos la primera imagen seleccionada
-    setImages([selectedImage]); // Almacenamos la imagen en el estado de imágenes
-    setPreviewImage(URL.createObjectURL(selectedImage)); // Establecemos la URL de previsualización de la imagen
-  };
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('title', product.title);
-    formData.append('price', product.price);
-    formData.append('brand', product.brand);
-    formData.append('description', product.description);
-    formData.append('sizes', product.sizes);
-    images.forEach((image, index) => {
-      formData.append(`image${index}`, image);
-    });
-    createNewProduct(formData); // Llama a la función createNewProduct con los datos del formulario
-    // Restablece el estado del formulario después de enviar
-    setImages([]);
-    setPreviewImage(null); // Limpiamos la previsualización de la imagen
-    setProduct({
-      title: '',
-      price: '',
-      brand: '',
-      description: '',
-      sizes: '',
-    });
-  };
+    const handleImageChange = (e) => {
+        setFormData({
+            ...formData,
+            image: e.target.files[0]
+        });
+    };
 
-  return (
-    <div className="addproduct-container">
-      <h1>Agregar producto</h1>
-      <div className="addproduct">
-        <div className='container-preview'>
-          <div className='imagen'>
-            <h3><MdOutlineUploadFile /></h3>
-            <h1>Añadir imagen</h1>
-            <input type='file' multiple onChange={handleImageChange} />
-            <div className='image-preview'>
-              {/* Mostrar la imagen de previsualización si está disponible */}
-             
-            </div>
-          </div>
-          <div className='detail-product'>
-            <input type="text" id="title" name="title" value={product.title} onChange={handleInputChange} placeholder='Título del producto' />
-            <input type="number" id="price" name="price" value={product.price} onChange={handleInputChange} placeholder='Precio del producto' />
-            <input type="text" id="brand" name="brand" value={product.brand} onChange={handleInputChange} placeholder='Marca del producto' />
-            <textarea id="description" name="description" value={product.description} onChange={handleInputChange} placeholder='Una breve descripción del producto'></textarea>
-            <input type="text" id="sizes" name="sizes" value={product.sizes} onChange={handleInputChange} placeholder='Tallas disponibles' />
-          </div>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = new FormData();
+        data.append('title', formData.title);
+        data.append('price', formData.price);
+        data.append('brand', formData.brand);
+        data.append('description', formData.description);
+        data.append('size', formData.size);
+        data.append('image', formData.image);
+
+        createNewProduct(data);
+        // Limpiar el formulario después de enviar
+        setFormData({
+            title: '',
+            price: '',
+            brand: '',
+            description: '',
+            size: '',
+            image: null
+        });
+    };
+
+    return (
+        <div>
+            <h2>Add New Product</h2>
+            <form onSubmit={handleSubmit} encType="multipart/form-data">
+                <input type="text" name="title" placeholder="Titulo" value={formData.title} onChange={handleChange} required />
+                <input type="number" name="price" placeholder="Precio" value={formData.price} onChange={handleChange} required />
+                <input type="text" name="brand" placeholder="Marca" value={formData.brand} onChange={handleChange} required />
+                <input type="text" name="description" placeholder="Descripcion" value={formData.description} onChange={handleChange} required />
+                <input type="text" name="size" placeholder="Talla" value={formData.size} onChange={handleChange} required />
+                <input type="file" name="image" onChange={handleImageChange} required />
+                <button type="submit">Añadir Producto</button>
+            </form>
         </div>
-        <div className='imagen-view'>
-          <h3><MdOutlineUploadFile /></h3>
-          {previewImage && <img src={previewImage} alt="Preview" / >}
-          <div className='image-preview'></div>
-        </div>
-        <form onSubmit={handleSubmit}> {/* Agrega onSubmit para manejar el envío del formulario */}
-          <div className='detail-view'>
-            <h3>Título </h3><p>{product.title}</p>
-            <h4>Precio </h4><p>{product.price}</p>
-            <h5>Talla</h5><p>{product.sizes}</p> 
-            <h5>Marcas </h5><p>{product.brand}</p>
-            <h5>Descripción </h5> <p>{product.description}</p>
-            <button type='submit'>Subir</button> {/* Agrega un botón para enviar el formulario */}
-          </div>
-        </form>
-      </div>
-    </div>
-  )
-}
+    );
+};
 
 export default AddProduct;

@@ -15,7 +15,7 @@ const ProductPage = () => {
   const addToCart = (_id) => {
     addProductToCart(_id);
   };
- 
+
   useEffect(() => {
     fetchProduct(id);
   }, [id]);
@@ -25,14 +25,16 @@ const ProductPage = () => {
     <div className="product-page">
       {currentProduct ? (
         <>
-<div className='images'>
-  <div className='first-image'>
-      <img src={currentProduct.images[0]} alt={currentProduct.title}></img>
-  </div>
-          <img src={currentProduct.images[1]} alt={currentProduct.title}></img>
-          <img src={currentProduct.images[2]} alt={currentProduct.title}></img>
-          <img src={currentProduct.images[3]} alt={currentProduct.title}></img>
-</div>
+          <div className='images'>
+            <div className='first-image'>
+              <img src={currentProduct.images[0]} alt={currentProduct.title}></img>
+            </div>
+            <div className='colum-images'>
+              <img src={currentProduct.images[1]} alt={currentProduct.title}></img>
+              <img src={currentProduct.images[2]} alt={currentProduct.title}></img>
+              <img src={currentProduct.images[3]} alt={currentProduct.title}></img>
+            </div>
+          </div>
 
           <div className='detail__product-page'>
             <span>{currentProduct.brand}</span>
@@ -41,14 +43,14 @@ const ProductPage = () => {
             <h4 className='info'>Tallas disponibles <b className='info'>{currentProduct.size}</b></h4>
             <p className='info description'>{currentProduct.description}</p>
             <div className='buttons'>
-            <MdOutlineShoppingCart id='cart'
-            onClick={
-              isAuthenticated
-                ? () => addToCart(currentProduct._id)
-                : () => loginWithRedirect()
-            }
-            
-            />
+              <MdOutlineShoppingCart id='cart'
+                onClick={
+                  isAuthenticated
+                    ? () => addToCart(currentProduct._id)
+                    : () => loginWithRedirect()
+                }
+
+              />
 
               <button>COMPRAR</button>
               <button><Link to="/">Atrás</Link></button>
