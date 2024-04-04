@@ -8,6 +8,11 @@ import '../../css/cart.css';
 const Cart = () => {
     const { cart, removeProductFromCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
 
+    const totalPrice = cart.reduce((total, item) => {
+        const product = item.product;
+        return total + (product.price * item.quantity);
+    }, 0);
+
     return (
         <>
             <h1 className='title'>Carrito de compras</h1>
@@ -41,12 +46,11 @@ const Cart = () => {
                                                 <button className='decqty' onClick={() => decreaseQuantity(product)}>
                                                     -
                                                 </button>
-                                                <input type='text' value={item.qty} readOnly />
+                                                <input type='text' value={item.quantity} readOnly />
                                                 <button className='incqty' onClick={() => increaseQuantity(product)}>
                                                     +
                                                 </button>
                                             </div>
-                                            <h4 className='subtotal'>${product.price * item.qty} COP</h4>
                                         </div>
                                     </div>
                                     <div className='close'>
@@ -63,7 +67,7 @@ const Cart = () => {
                 {cart.length > 0 && (
                     <div className='resumen'>
                         <h1>Resumen de la compra</h1>
-                        <p className='totalprice'>Total: COP</p>
+                        <p className='totalprice'>Total: ${totalPrice} COP</p>
                         <Link to="/ShippingForm">
                             <button>Comprar</button>
                         </Link>

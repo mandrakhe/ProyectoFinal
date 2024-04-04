@@ -21,12 +21,16 @@ import { CartProvider } from '../context/CartContext';
 import { ProductProvider } from '../context/ProductContext';
 import { AuthProvider } from '../context/AuthContext';
 import { UserProvider } from '../context/UserContext';
+import { OrderProvider } from '../context/OrderContext';
+
+
 import ShippingForm from '../components/pages/ShippingForm';
 import Admin from '../components/pages/admin/dashboard';
 import UserList from '../components/pages/admin/lists/userList';
 import ProductList from '../components/pages/admin/lists/productList';
 import AddProduct from '../components/pages/admin/products/addProduct';
 import EditProduct from '../components/pages/admin/products/editProduct'
+import OrdersPage from '../components/pages/admin/orderPage';
 
 
 
@@ -38,6 +42,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
         <UserProvider>
         <ProductProvider>
           <CartProvider>
+            <OrderProvider>
             <Routes>
               <Route path="/product/:id" element={<ProductPage />} />
               {/* Register, Login, Home,Contactanos y ruta alterna */}
@@ -60,6 +65,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
                 <Route path='/admin/edit-product/:id' element={<EditProduct/>}  />
                 <Route path="/admin/listProducts" element={<ProductList />} />
                 <Route path="/admin/listUsers" element={<UserList />} />
+                <Route path='/admin/orders' element={<OrdersPage/>} />
               </Route>
 
 
@@ -71,6 +77,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
               </Route>
 
             </Routes>
+            </OrderProvider>
           </CartProvider>
         </ProductProvider>
         </UserProvider>

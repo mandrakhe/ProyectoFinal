@@ -13,7 +13,7 @@ export const CartProvider = ({ children }) => {
             const response = await getCart();
             setCart(response.data.products.map(product => ({
                 ...product,
-                qty: 1 // Establecer la cantidad predeterminada como 1
+                qty: 1
             })));
         } catch (error) {
             setError(error);

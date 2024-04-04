@@ -20,6 +20,7 @@ function Admin() {
           <Link to="/admin/addProduct">Agregar Productos<FaPager /></Link>
           <Link to="/">Catalogo de Productos<FaPager /></Link>
         </div>
+        <Link to="/admin/orders">ordenes<FaPager /></Link>
         </div>
         <FaUserAstronaut className='avatar' />
       </div>

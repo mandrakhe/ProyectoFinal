@@ -1,10 +1,6 @@
-import { Router } from "express";
 import { Cart } from "../models/cart.models.js";
 import { Product } from "../models/product.models.js";
 import User from '../models/user.models.js';
-
-
-const router = Router();
 
 export const removeExpiredCarts = async () => {
     try {
@@ -54,14 +50,13 @@ export const addToCart = async (req, res) => {
         );
 
         if (existingProductIndex !== -1) {
-            cart.products[existingProductIndex];
+            cart.products[existingProductIndex].quantity++;
             console.log("El producto ya está en el carrito")
         } else {
             cart.products.push({ product: req.params.id, quantity: 1 }); // Corregir req.params.id
         }
 
         await cart.save();
-        alert("añadido")
         res.json(cart);
     } catch (error) {
         console.error(error);
