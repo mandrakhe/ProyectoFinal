@@ -54,13 +54,14 @@ export const addToCart = async (req, res) => {
         );
 
         if (existingProductIndex !== -1) {
-            cart.products[existingProductIndex].quantity++;
+            cart.products[existingProductIndex];
             console.log("El producto ya está en el carrito")
         } else {
             cart.products.push({ product: req.params.id, quantity: 1 }); // Corregir req.params.id
         }
 
         await cart.save();
+        alert("añadido")
         res.json(cart);
     } catch (error) {
         console.error(error);
