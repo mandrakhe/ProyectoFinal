@@ -87,7 +87,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
         <div className='container'>
           <div className='box'>
             <div className='img_box'>
-              <img src={Adidas} alt='Adidas'></img>
+              <img src={Adidas} alt='Adidas'/>
             </div>
             <div className='detail'>
               <button>ADIDAS</button>
@@ -95,7 +95,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
           </div>
           <div className='box'>
             <div className='img_box'>
-              <img src={Nike} alt='Nike'></img>
+              <img src={Nike} alt='Nike'/>
             </div>
             <div className='detail'>
               <button>NIKE</button>
@@ -103,7 +103,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
           </div>
           <div className='box'>
             <div className='img_box'>
-              <img src={Jordan} alt='Jordan'></img>
+              <img src={Jordan} alt='Jordan'/>
             </div>
             <div className='detail'>
               <button>JORDAN</button>
@@ -111,7 +111,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
           </div>
           <div className='box'>
             <div className='img_box'>
-              <img src={NB} alt='NB'></img>
+              <img src={NB} alt='NB'/>
             </div>
             <div className='detail'>
               <button>NEW BALANCE</button>

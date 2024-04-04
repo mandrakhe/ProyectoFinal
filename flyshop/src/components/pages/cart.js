@@ -64,7 +64,9 @@ const Cart = () => {
                     <div className='resumen'>
                         <h1>Resumen de la compra</h1>
                         <p className='totalprice'>Total: COP</p>
-                        {/* Aquí puedes agregar otros detalles del resumen de la compra */}
+                        <Link to="/ShippingForm">
+                            <button>Comprar</button>
+                        </Link>
                     </div>
                 )}
             </div>

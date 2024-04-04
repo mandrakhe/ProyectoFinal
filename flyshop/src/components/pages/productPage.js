@@ -52,7 +52,9 @@ const ProductPage = () => {
 
               />
 
-              <button>COMPRAR</button>
+<Link to="/ShippingForm">
+      <button>Comprar</button>
+    </Link>
             <Link to="/"><FaArrowLeft /></Link>
 
             </div>

@@ -21,7 +21,7 @@ import { CartProvider } from '../context/CartContext';
 import { ProductProvider } from '../context/ProductContext';
 import { AuthProvider } from '../context/AuthContext';
 import { UserProvider } from '../context/UserContext';
-
+import ShippingForm from '../components/pages/ShippingForm';
 import Admin from '../components/pages/admin/dashboard';
 import UserList from '../components/pages/admin/lists/userList';
 import ProductList from '../components/pages/admin/lists/productList';
@@ -52,6 +52,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
               <Route path='/about' element={<Contact />} />
 
               
+              <Route path='/ShippingForm' element={<ShippingForm />} />
               {/* Funciones del administrador */}
               <Route element={<AdminRoute />}>
                 <Route path='/admin' element={<Admin/>} />
