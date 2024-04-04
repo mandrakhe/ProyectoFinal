@@ -57,7 +57,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
               <Route path='/about' element={<Contact />} />
 
               
-              <Route path='/ShippingForm' element={<ShippingForm />} />
+              <Route path='/checkout' element={<ShippingForm />} />
               {/* Funciones del administrador */}
               <Route element={<AdminRoute />}>
                 <Route path='/admin' element={<Admin/>} />
