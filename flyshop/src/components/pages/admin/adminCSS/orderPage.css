@@ -11,7 +11,14 @@
   max-width: 1200px;
   background-color: #f5f5f5;
 }
+.search-bar 
+{
+  margin: 1rem;
+}
 
+.search-bar input {
+  border-radius: 10px;
+}
 .title-order {
   text-align: center;
 

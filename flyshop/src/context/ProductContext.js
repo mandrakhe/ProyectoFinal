@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { getProducts, createProduct, deleteProduct, getProduct, editProduct } from "../api/product";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const ProductContext = createContext();
 
@@ -48,14 +50,13 @@ export const ProductProvider = ({ children }) => {
             fetchProducts();
         } catch (error) {
             console.error(error);
-
         }
     };
 
     const updateProduct = async (_id, formData) => {
         try {
             await editProduct(formData, _id); // Cambiar el orden de los parámetros
-            alert('Producto actualizado')
+            toast.success('Producto actualizado'); // Utilizar toast.success para la notificación
             await fetchProducts();
         } catch (error) {
             setError(error);
@@ -72,8 +73,11 @@ export const ProductProvider = ({ children }) => {
         fetchProduct,
         handleDeleteProduct,
     };
-
     return (
-        <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
+        <>
+            <ToastContainer /> 
+            <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
+        </>
     );
+    
 };
