@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { OrderContext } from '../../context/OrderContext';
-import '../../css/ShippingForm.css'
+import '../../css/ShippingForm.css';
 
 function ShippingForm() {
     const { cart } = useContext(CartContext);
@@ -74,20 +74,22 @@ function ShippingForm() {
                 {cart.map((item) => {
                     const product = item.product; // Acceder al objeto de producto dentro del item del carrito
                     return (
-                        <div className='cart_item' key={item._id}>
+                        <div className='cart-item_shipping' key={item._id}>
                             <div className='img_box'>
-                                {product.images ? (
+                            {product.images ? (
                                     <img src={product.images[0]} alt={product.title} />
                                 ) : (
                                     <p>No hay imagen disponible</p>
                                 )}
-                            </div>
-                            <div className='detail'>
-                                <div className='info'>
+                                <h3 id='qty' >{item.quantity}</h3>
+                                
+                            </div><div className='info_box'>
                                     <h3>{product.title}</h3>
-                                    <h3>{item.quantity}</h3>
-                                    <div className='price'>
-                                        <h3>${product.price}</h3>
+                                    <h3>Talla: {product.size}</h3>
+                                </div>
+                            <div className='detail-shipping'>
+                                <div className='info-detail'>
+                                    <div className='priprice-shippingce'>
                                         <h4 className='subtotal'>${product.price * item.quantity} COP</h4>
                                     </div>
                                 </div>

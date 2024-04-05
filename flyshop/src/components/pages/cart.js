@@ -68,7 +68,7 @@ const Cart = () => {
                     <div className='resumen'>
                         <h1>Resumen de la compra</h1>
                         <p className='totalprice'>Total: ${totalPrice} COP</p>
-                        <Link to="/ShippingForm">
+                        <Link to="/checkout">
                             <button>Comprar</button>
                         </Link>
                     </div>

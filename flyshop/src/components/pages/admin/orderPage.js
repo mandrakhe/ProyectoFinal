@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { OrderContext } from '../../../context/OrderContext';
 import { ProductContext } from '../../../context/ProductContext';
-
+import './adminCSS/orderPage.css';
 function OrdersPage() {
     const { orders, fetchOrders } = useContext(OrderContext);
     const { products } = useContext(ProductContext)
@@ -11,10 +11,11 @@ function OrdersPage() {
     }, []);
 
     return (
-        <div>
-            <h2>Lista de Órdenes</h2>
+        <>
+            <h2 className='title-order'>Lista de Órdenes</h2>
+        <div className='order'>
             {orders.map(order => (
-                <div key={order._id}>
+                <div key={order._id} className='order-card'>
                     <h3>Orden ID: {order._id}</h3>
                     <p>Email: {order.email}</p>
                     <p>Departamento: {order.departamento}</p>
@@ -38,6 +39,7 @@ function OrdersPage() {
                 </div>
             ))}
         </div>
+        </>
     );
 }
 

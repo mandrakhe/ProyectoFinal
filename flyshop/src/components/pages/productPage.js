@@ -1,10 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { CartContext } from '../../context/CartContext';
-import { Link } from 'react-router-dom';
 import { FaArrowLeft } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import { useAuth } from "../../context/AuthContext"
+import { Link, useParams } from 'react-router-dom';
+import { useAuth } from "../../context/AuthContext";
+import { CartContext } from '../../context/CartContext';
 import { ProductContext } from '../../context/ProductContext';
 import '../../css/productPage.css';
 
@@ -52,10 +51,10 @@ const ProductPage = () => {
 
               />
 
-<Link to="/ShippingForm">
-      <button>Comprar</button>
+<Link to="/checkout">
+      <button>Añadir al carrito</button>
     </Link>
-            <Link to="/"><FaArrowLeft /></Link>
+            <Link id='arrorw' to="/"><FaArrowLeft /></Link>
 
             </div>
           </div>

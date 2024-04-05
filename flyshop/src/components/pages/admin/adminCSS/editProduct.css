@@ -1,1 +1,50 @@
-/* */
+.container-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-edit form {
+    width: 80%;
+    max-width: 500px; /* Ajusta el ancho máximo según sea necesario */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-edit input[type="text"],
+.form-edit input[type="number"],
+.form-edit input[type="file"],
+.form-edit button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.container-edit button {
+    width: 40%;
+   margin: 0 25%;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-azul);
+}
+
+/* Estilo opcional para el título del formulario */
+.container-edit h2 {
+    text-align: center;
+    margin: 60px;
+}
+

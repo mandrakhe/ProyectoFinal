@@ -139,7 +139,7 @@ body {
     color: #000;
 }
 
-.product-page .detail__product-page .buttons a:hover {
+.product-page .detail__product-page .buttons #arrorw:hover {
     color: var(--color-azul); 
     transform: translateX(-30px);
     transition: transform 0.5s ease-in-out; 

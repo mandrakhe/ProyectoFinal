@@ -1,11 +1,9 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
 }
 
-.publicaciones
-{
+.publicaciones {
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -21,14 +19,12 @@
     cursor: pointer;
 }
 
-.export
-{
+.export {
     display: flex;
     justify-content: flex-end;
 }
 
-.export .export_button_excel
-{
+.export .export_button_excel {
     width: 250px;
     height: 50px;
     margin-right: 40px;
@@ -41,8 +37,7 @@
     cursor: pointer;
 }
 
-.export .export_button_pdf
-{
+.export .export_button_pdf {
     width: 250px;
     height: 50px;
     margin-right: 40px;
@@ -55,8 +50,7 @@
     cursor: pointer;
 }
 
-.list_product
-{
+.list_product {
     width: 90%;
     margin-bottom: 40px;
     margin-top: 50px;
@@ -64,14 +58,13 @@
     display: flex;
 }
 
-.list_product .list_img
-{
+.list_product .list_img {
     border: 1px solid #000;
     width: 30%;
     height: 150px;
     border-radius: 20px;
     padding: 10px;
-    box-shadow: 1px 2px 12px -5px rgba(0,0,0,0.59);
+    box-shadow: 1px 2px 12px -5px rgba(0, 0, 0, 0.59);
 }
 
 .list_product .list_img img {
@@ -79,8 +72,7 @@
     height: 100%;
 }
 
-.list_product .list_detail
-{
+.list_product .list_detail {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,21 +83,100 @@
     width: 80%;
 }
 
-.list_product .actions
-{
+.list_product .actions {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 50%;
 }
 
-.list_product .actions button
-{
+.list_product .actions button {
     color: #fff;
     background: #484848;
     width: 100px;
+    
     height: 35px;
-    margin-bottom: 5px;
+    margin: 5px;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .publicaciones {
+        font-size: 36px;
+        margin-bottom: 1.2%;
+    }
+
+    .export {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .export.export_button_excel,
+    .export.export_button_pdf {
+        width: 200px;
+        height: 40px;
+        font-size: 16px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .list_product {
+        border: #000 1px solid;
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .list_product h2,h4 {
+        font-size:medium;
+        margin-bottom: 5px;
+    }
+    .list_product.list_img {
+        width: 80%;
+        height: 200px;
+    }
+
+    .list_product.list_detail {
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .list_product.actions {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .list_product.actions {
+        margin: 1rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .publicaciones {
+        font-size: 24px;
+        margin-bottom: 1%;
+    }
+
+    .export.export_button_excel,
+    .export.export_button_pdf {
+        width: 150px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .list_product.list_img {
+        width: 100%;
+        height: 150px;
+    }
+
+    .list_product.list_detail {
+        font-size: 16px;
+    }
+
+    .list_product.actions button {
+        width: 80px;
+        height: 30px;
+        font-size: 14px;
+    }
 }

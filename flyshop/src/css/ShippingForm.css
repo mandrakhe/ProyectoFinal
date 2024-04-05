@@ -1,30 +1,137 @@
-.shipping{
+.shipping {
     display: flex;
 }
 
-.shipping-Form{
-    width: 50%;
-}
-.shipping-Form form{
-margin: 2rem;
+.shipping-Form form {
+    margin: 2rem;
 }
 
-.shipping-Form form strong{
+.shipping-Form form strong {
     color: #d85757;
+    display: block;
 }
 
-.shipping-Form input{
+.shipping-Form input {
     width: 526px;
     height: 48px;
     padding: 10px;
     border-radius: 10px;
     margin: 1rem 0;
 }
-.shipping-Form p{
-    color: #d85757;
+
+.shipping-Form .checkoutMenu {
+    margin-top: 1rem;
 }
-.cart-view{
+
+.shipping-Form .checkoutMenu select {
+    width: 100%;
+    border-radius: 5px;
+    height: 2rem;
+}
+
+.shipping-Form form button {
+    border: none;
+    background-color: #000;
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.shipping-Form form button:hover {
+    transition: .3s;
+    background-color: var(--color-azul);
+}
+
+.shipping .title-shipping {
+    margin: 1rem 0;
+}
+
+.cart-view {
     width: 50%;
-    background-color: black;
+    padding: 2rem;
+    background-color: #1C1B1F;
     color: white;
+}
+
+.cart-item_shipping {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.img_box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.img_box img {
+    margin-top: 1rem;
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+}
+
+
+#qty {
+    background-color: #ddd;
+    padding: 5px;
+    color: #000;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    bottom: 30px;
+    right: 10px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.info_box {
+    width: 250px;
+}
+
+.shipping h3 {
+    margin: 5px 0;
+}
+
+
+
+.info-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.price-shipping {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.subtotal {
+    font-weight: bold;
+}
+
+.total-price {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.total-price span {
+    float: left;
 }

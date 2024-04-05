@@ -1,8 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ProductContext } from '../../../../context/ProductContext';
-import '../adminCSS/editProduct.css'
+import '../adminCSS/editProduct.css';
 
 const EditProduct = () => {
     const { id } = useParams();
@@ -65,16 +64,16 @@ const EditProduct = () => {
     };
 
     return (
-        <div>
+        <div className="container-edit">
             <h2>Editar Producto</h2>
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
-                <input type="text" name="title" placeholder="Title" value={formData.title} onChange={handleChange} required />
-                <input type="number" name="price" placeholder="Price" value={formData.price} onChange={handleChange} required />
-                <input type="text" name="brand" placeholder="Brand" value={formData.brand} onChange={handleChange} required />
-                <input type="text" name="description" placeholder="Description" value={formData.description} onChange={handleChange} required />
-                <input type="text" name="size" placeholder="Size" value={formData.size} onChange={handleChange} required />
-                <input type="file" name="image" onChange={handleImageChange} />
-                <button type="submit">Actualizar producto</button>
+            <form className='form-edit' onSubmit={handleSubmit} encType="multipart/form-data">
+                <input  type="text" name="title" placeholder="Title" value={formData.title} onChange={handleChange} required />
+                <input  type="number" name="price" placeholder="Price" value={formData.price} onChange={handleChange} required />
+                <input  type="text" name="brand" placeholder="Brand" value={formData.brand} onChange={handleChange} required />
+                <input  type="text" name="description" placeholder="Description" value={formData.description} onChange={handleChange} required />
+                <input  type="text" name="size" placeholder="Size" value={formData.size} onChange={handleChange} required />
+                <input  type="file" name="image" onChange={handleImageChange} />
+                <button  type="submit">Actualizar producto</button>
             </form>
         </div>
     );

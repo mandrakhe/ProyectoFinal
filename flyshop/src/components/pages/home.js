@@ -59,7 +59,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                         <p>{object.description}</p>
                         <h3>$ {object.price} COP </h3>
                         <strong >Talla</strong><p>{object.size}</p>
-                        <button id='button-detail' onClick={() => addtocart(object)}>Añadir al carrito</button>
+                        <button id='button-detail' onClick={() => addToCart(object._id)}>Añadir al carrito</button>
                       </div>
                     </div>
                   )

@@ -1,86 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 .dashboard {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  .admin_links {
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.admin_links {
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.dashboard a {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4em;
+  padding-bottom: 20px;
+  text-decoration: none;
+  color: #000;
+  background-color: transparent;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  width: 300px;
+  margin-right: 8px;
+}
+
+.dashboard a:nth-child(3){
+  margin-top: 20px;
+}
+.admin_links .lists {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.admin_links .lists_products {
+  display: flex;
+}
+
+.dashboard a:hover {
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.admin_panel h1 {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Archivo Black', sans-serif;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  line-height: 52px;
+}
+
+.avatar {
+  font-size: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .admin_panel {
     text-align: center;
-    height: 100%;
   }
 
+  .dashboard {
+    
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+  }
+
+  .admin_links {
+    margin-top: 40px;
+  }
   
   .dashboard a {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left:4em;
-    padding-bottom: 20px;
-    text-decoration: none;
-    color: #000;
-    background-color: transparent;
-    border-bottom: 1px solid #e0e0e0;
-    cursor: pointer;
-    width: 300px;
-    margin-right: 8px;
+    width: 250px;
+    margin-top: 40px;
+
+    padding: 15px;
+    font-size: 1.2rem;
   }
 
-  .admin_links .lists
-  {
-    display: flex;
-    margin-bottom: 30px;
-  }
-
-  .admin_links .lists_products
-  {
-    display: flex;
-  }
-  
-  .dashboard a:hover {
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  } 
-  
-
-  .admin_panel h1 {
-    text-align: center; 
-    font-size: 30px; 
-    font-family: 'Archivo Black', sans-serif; 
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    line-height: 52px;
-  }
-  
   .avatar {
-    font-size: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: #000;
+    font-size: 200px;
   }
-  
-  @media screen and (max-width: 800px) {
-    .dashboard {
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .links {
-      margin-top: 40px;
-    }
-  
-    .dashboard a {
-      width: 250px;
-      padding: 15px;
-      font-size: 1.2rem;
-    }
-  
-    .avatar {
-      font-size: 200px;
-    }
+}
+
+@media (max-width: 480px) {
+  .admin_panel h1 {
+    font-size: 24px;
+    line-height: 40px;
   }
+
+  .dashboard a {
+    width: 150px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .avatar {
+    font-size: 150px;
+  }
+}
