@@ -70,42 +70,52 @@ export const addToCart = async (req, res) => {
 
 export const updateAmount = async (req, res) => {
     try {
+        // Validación de usuario y obtención de ID
         if (!req.user || !req.user.id) {
             return res.status(401).json({ error: "Usuario no autenticado." });
         }
-
         const userId = req.user.id;
+
+        // Obtención de ID de producto y cantidad
         const productId = req.params.id;
         const quantity = parseInt(req.params.quantity);
 
+        // Validación de ID de producto
         if (!mongoose.Types.ObjectId.isValid(productId)) {
             return res.status(400).json({ error: "ID de producto inválido." });
         }
 
+        // Validación de la cantidad
         if (isNaN(quantity)) {
             return res.status(400).json({ error: "La cantidad debe ser un número." });
         }
 
+        // Buscar el carrito del usuario
         const cart = await Cart.findOne({ user: userId });
 
+        // Si no se encuentra el carrito
         if (!cart) {
             return res.status(404).json({ error: "No se encontró el carrito para este usuario." });
         }
 
+        // Buscar el índice del producto en el carrito
         const productIndex = cart.products.findIndex(product => product.product.toString() === productId);
 
+        // Si el producto no está en el carrito
         if (productIndex === -1) {
             return res.status(404).json({ error: "El producto no está en el carrito." });
         }
 
-        cart.products[productIndex].quantity += quantity; // Ajustar la cantidad según el signo de la cantidad enviada
+        // Ajustar la cantidad
+        cart.products[productIndex].quantity += quantity;
 
-        if (cart.products[productIndex].quantity < 0) {
-            cart.products[productIndex].quantity = 0; // Asegurarse de que la cantidad no sea negativa
-        }
+        // Asegurar una cantidad mínima de 1
+        cart.products[productIndex].quantity = Math.max(cart.products[productIndex].quantity, 1);
 
+        // Guardar los cambios en el carrito
         await cart.save();
 
+        // Enviar el carrito actualizado como respuesta
         res.status(200).json(cart);
     } catch (error) {
         console.error(error);
