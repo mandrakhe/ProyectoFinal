@@ -11,13 +11,39 @@
   max-width: 1200px;
   background-color: #f5f5f5;
 }
-.search-bar 
-{
+.search-bar {
   margin: 1rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 0.5rem;
 }
 
 .search-bar input {
   border-radius: 10px;
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+}
+
+.search-bar button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #3e8e41;
 }
 .title-order {
   text-align: center;
@@ -38,6 +64,26 @@
   transition: transform 0.3s ease-in-out;
   background-color: #fff;
   border-radius: 5px;
+}
+
+.order button {
+  background-color: #000;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: .3s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.order button:hover {
+  transition: .3s;
+  background-color: var(--color-azul);
 }
 
 .order-card:hover {

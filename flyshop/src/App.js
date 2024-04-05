@@ -46,7 +46,7 @@ const App = () => {
 
   return (
     <>
-      <BrowserRouter>
+       <BrowserRouter>
         <AuthProvider>
           <Nav searchbtn={searchbtn} />
         </AuthProvider>

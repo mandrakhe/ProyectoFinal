@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
+import { CiHeart, CiLogin, CiLogout, CiUser } from 'react-icons/ci';
 import { IoMenu } from 'react-icons/io5';
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import Logo from '../../assets/images/logos/logo_flyshop.png';
 import { useAuth } from '../../context/AuthContext';
-import { IoSearchOutline } from "react-icons/io5";
-import '../../css/nav.css'
-import { CiLogout, CiLogin, CiHeart } from 'react-icons/ci';
-import { CiUser } from 'react-icons/ci';
-import Logo from '../../assets/images/logos/logo_flyshop.png'
+import '../../css/nav.css';
 
 const Nav = ({ searchbtn }) => {
-    const [search, setSearch] = useState('');
     const { setLogout, user, isAuthenticated } = useAuth();
     const [isOpen, setIsOpen] = useState(false);
 
@@ -50,10 +47,7 @@ const Nav = ({ searchbtn }) => {
                             </li>
                         </ul>
                         <div className="search_container">
-                            <div className="search_icon">
-                                <button onClick={() => searchbtn(search)}><IoSearchOutline /></button>
-                            </div>
-                            <input className='search_input' type='search' value={search} placeholder='Buscar' autoComplete='off' onChange={(e) => setSearch(e.target.value)} />
+                          
                         </div>
                         <div className='icons-container'>
                             <Link className='link' to='/favorite'><CiHeart /></Link>
