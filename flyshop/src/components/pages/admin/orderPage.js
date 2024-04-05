@@ -25,8 +25,6 @@ function OrdersPage() {
 
     return (
         <>
-            <div className='header'>
-            <h2 className="title-order">Lista de Órdenes</h2>
             <div className="search-bar">
                 <input
                     type="text"
@@ -35,7 +33,8 @@ function OrdersPage() {
                     onChange={handleSearchChange}
                 />
             </div>
-            </div>
+
+            <h2 className="title-order">Lista de Órdenes</h2>
             <div className="order">
                 {filteredOrders.map((order) => (
                     <div key={order._id} className="order-card">

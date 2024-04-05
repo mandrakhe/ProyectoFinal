@@ -43,11 +43,11 @@ const Cart = () => {
                                         <div className='price'>
                                             <h3>${product.price}</h3>
                                             <div className='qty'>
-                                                <button className='decqty' onClick={() => decreaseQuantity(product)}>
+                                                <button className='decqty' onClick={() => decreaseQuantity(item.product._id)}>
                                                     -
                                                 </button>
                                                 <input type='text' value={item.quantity} readOnly />
-                                                <button className='incqty' onClick={() => increaseQuantity(product)}>
+                                                <button className='incqty' onClick={() => increaseQuantity(item.product._id, 1)}>
                                                     +
                                                 </button>
                                             </div>

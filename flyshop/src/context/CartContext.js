@@ -54,23 +54,26 @@ export const CartProvider = ({ children }) => {
         }
     };
 
-    const increaseQuantity = async (_id, quantity) => {
+    const increaseQuantity = async (_id) => {
         try {
-            const updatedCart = await updateCartItem(_id, quantity++);
-            setCart(updatedCart);
+            await updateCartItem(_id, 1);
+            fetchCart();
         } catch (error) {
             console.error("Error al aumentar la cantidad del producto:", error);
+            setError(error);
         }
     };
-
+    
     const decreaseQuantity = async (_id) => {
         try {
-            const updatedCart = await updateCartItem(_id, -1);
-            setCart(updatedCart);
+            await updateCartItem(_id, -1);
+            fetchCart();
         } catch (error) {
             console.error("Error al disminuir la cantidad del producto:", error);
+            setError(error);
         }
     };
+    
 
     const value = {
         cart,

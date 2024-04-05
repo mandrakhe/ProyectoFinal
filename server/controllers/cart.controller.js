@@ -1,6 +1,7 @@
 import { Cart } from "../models/cart.models.js";
 import { Product } from "../models/product.models.js";
 import User from '../models/user.models.js';
+import mongoose from 'mongoose';
 
 export const removeExpiredCarts = async () => {
     try {
@@ -70,28 +71,50 @@ export const addToCart = async (req, res) => {
 export const updateAmount = async (req, res) => {
     try {
         if (!req.user || !req.user.id) {
-            return res.status(401).json({ message: "No se proporcionó un usuario válido." });
+            return res.status(401).json({ error: "Usuario no autenticado." });
         }
 
-        const cart = await Cart.findOne({ user: req.user.id });
-        const productIndex = cart.products.findIndex(
-            (product) => product.product._id.toString() === req.params.productId
-        );
+        const userId = req.user.id;
+        const productId = req.params.id;
+        const quantity = parseInt(req.params.quantity);
 
-        if (productIndex !== -1) {
-            cart.products[productIndex].quantity = parseInt(req.params.quantity);
-            if (cart.products[productIndex].quantity <= 0) {
-                cart.products.splice(productIndex, 1);
-            }
-            await cart.save();
-            res.status(200).json(cart);
-        } else {
-            res.status(404).json({ error: "Producto no encontrado en el carrito." });
+        if (!mongoose.Types.ObjectId.isValid(productId)) {
+            return res.status(400).json({ error: "ID de producto inválido." });
         }
+
+        if (isNaN(quantity)) {
+            return res.status(400).json({ error: "La cantidad debe ser un número." });
+        }
+
+        const cart = await Cart.findOne({ user: userId });
+
+        if (!cart) {
+            return res.status(404).json({ error: "No se encontró el carrito para este usuario." });
+        }
+
+        const productIndex = cart.products.findIndex(product => product.product.toString() === productId);
+
+        if (productIndex === -1) {
+            return res.status(404).json({ error: "El producto no está en el carrito." });
+        }
+
+        cart.products[productIndex].quantity += quantity; // Ajustar la cantidad según el signo de la cantidad enviada
+
+        if (cart.products[productIndex].quantity < 0) {
+            cart.products[productIndex].quantity = 0; // Asegurarse de que la cantidad no sea negativa
+        }
+
+        await cart.save();
+
+        res.status(200).json(cart);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.error(error);
+        res.status(500).json({ error: "Error en el servidor." });
     }
 };
+
+
+
 
 // Eliminar un producto del carrito del usuario actual
 
