@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import Bancolombia from '../../assets/images/Bancolombia.jpg';
 import { CartContext } from '../../context/CartContext';
 import { OrderContext } from '../../context/OrderContext';
 import '../../css/ShippingForm.css';
@@ -6,6 +7,7 @@ import '../../css/ShippingForm.css';
 function ShippingForm() {
     const { cart } = useContext(CartContext);
     const { sendOrderToServer } = useContext(OrderContext);
+    const [showTransferImage, setShowTransferImage] = useState(false); // Estado para mostrar u ocultar la imagen
 
     const totalPrice = cart.reduce((total, item) => {
         const product = item.product;
@@ -34,7 +36,9 @@ function ShippingForm() {
         await sendOrderToServer(orderData);
     };
 
-
+    const handleOptionChange = (e) => {
+        setShowTransferImage(e.target.value === 'transferencia'); // Mostrar la imagen si la opción es 'transferencia'
+    };
 
     return (
         <div className='shipping'>
@@ -54,12 +58,15 @@ function ShippingForm() {
                     <strong>Todas las transacciones son seguras y están encriptadas</strong>
                     <div className='checkoutMenu'>
                         <h3>Seleccionar método de pago:</h3>
-                        <select name="metodoPago">
+                        <select name="metodoPago" onChange={handleOptionChange}>
                             <option value="mercadoPago">Mercado Pago</option>
                             <option value="transferencia">Pago por transferencia</option>
                             <option value="contraentrega">Contraentrega</option>
                         </select>
                     </div>
+                    {showTransferImage && (
+                        <img id='transferencia' src={Bancolombia} alt="Imagen de transferencia" />
+                    )}
                     <div className='checkoutMenu'>
                         <h3>Seleccionar dirección de envío:</h3>
                         <select name="direccionEnvio">
@@ -76,17 +83,17 @@ function ShippingForm() {
                     return (
                         <div className='cart-item_shi' key={item._id}>
                             <div className='img_box'>
-                            {product.images ? (
+                                {product.images ? (
                                     <img src={product.images[0]} alt={product.title} />
                                 ) : (
                                     <p>No hay imagen disponible</p>
                                 )}
                                 <h3 id='qty' >{item.quantity}</h3>
-                                
-                            </div><div className='info_box'>
-                                    <h3>{product.title}</h3>
-                                    <h3>Talla: {product.size}</h3>
-                                </div>
+                            </div>
+                            <div className='info_box'>
+                                <h3>{product.title}</h3>
+                                <h3>Talla: {product.size}</h3>
+                            </div>
                             <div className='detail-shipping'>
                                 <div className='info-detail'>
                                     <div className='priprice-shippingce'>
