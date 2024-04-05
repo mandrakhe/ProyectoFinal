@@ -41,7 +41,6 @@ export const AuthProvider = ({ children }) => {
     const signin = async (user) => {
         try {
             const res = await loginRequest(user);
-            console.log(res.data);
             setIsAuthenticated(true);
             setUser(res.data);
         } catch (error) {
@@ -94,7 +93,6 @@ export const AuthProvider = ({ children }) => {
 
             try {
                 const res = await verifyTokenRequest(cookies.token);
-                console.log(res);
                 if (!res.data) {
                     setIsAuthenticated(false);
                     setLoading(false);

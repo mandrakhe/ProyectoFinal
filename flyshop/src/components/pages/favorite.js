@@ -5,10 +5,10 @@ import '../../css/addFavorite.css'
 import Footer from './../common/footer';
 
 const Favorite = ({ favorite, setFavorite }) => {
-    const removeProduct = (product) => {
-        const exist = favorite.find((x) => x.id === product._id);
+    const removeProduct = (object) => {
+        const exist = favorite.find((x) => x._id === object._id);
         if (exist && exist.qty > 0) {
-            setFavorite(favorite.filter((x) => x.id !== product._id));
+            setFavorite(favorite.filter((x) => x._id !== object._id));
         }
     };
 
@@ -27,10 +27,10 @@ const Favorite = ({ favorite, setFavorite }) => {
                         return(
                         <div className='favorite__item' key={object._id}>
                             <div className='favorite__img-box'>
-                                {imageUrl ? ( // Conditionally render the image if a URL exists
+                                {imageUrl ? ( 
                                     <img src={imageUrl} alt={object.title} />
                                 ) : (
-                                    <p>No image available</p> // Display a placeholder if no image URL is found
+                                    <p>No image available</p> 
                                 )}
                             </div>
                             <div className='favorite__detail'>
@@ -39,7 +39,7 @@ const Favorite = ({ favorite, setFavorite }) => {
                                     <h4>{object.brand}</h4>
                                 </div>
                                 <div className='favorite__close'>
-                                    <button onClick={() => removeProduct(object)}><IoMdClose /></button>
+                                    <button onClick={() => removeProduct(object._id)}><IoMdClose /></button>
                                 </div>
                             </div>
                         </div>

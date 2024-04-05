@@ -18,7 +18,7 @@ function Admin() {
         </div>
         <div className='lists_products'>
           <Link to="/admin/addProduct">Agregar Productos <FaPager className="dashboard-icon"/></Link>
-          <Link to="/">Catalogo de Productos <FaPager className="dashboard-icon"/></Link>
+          <Link to="/product">Catalogo de Productos <FaPager className="dashboard-icon"/></Link>
         </div>
         <Link to="/admin/orders">ordenes <FaPager className="dashboard-icon"/></Link>
         </div>

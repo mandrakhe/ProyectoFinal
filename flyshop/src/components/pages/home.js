@@ -205,7 +205,6 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                     <h2 onClick={() => handleProductClick(object)}>
                       {object.title}
                       <br />
-                      <span>{object.description}</span>
                     </h2>
                     <div className="price">${object.price}</div>
                     <label>Tallas</label>
@@ -228,7 +227,6 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
             })
           }
         </div>
-        <Link to="/checkout">aa</Link>
       </div>
       
       <Footer />

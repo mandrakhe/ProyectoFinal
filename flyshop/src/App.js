@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Nav from './components/common/nav.js';
 import addProduct from './components/pages/admin/products/addProduct.js';
@@ -29,18 +29,14 @@ const App = () => {
     setClose(true);
   };
 
-  const showAlert = (message, type = 'success') => {
-    toast[type](message);
-  };
+
 
 
   const addFavorite = (product) => {
     const existingProductIndex = favorite.findIndex((x) => x._id === product._id);
     if (existingProductIndex !== -1) {
-      showAlert('Este producto ya se encuentra añadido a favoritos', 'error');
     } else {
       setFavorite([...favorite, { ...product }]);
-      showAlert('El producto ha sido añadido a favoritos', 'success');
     }
   };
 

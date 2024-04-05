@@ -32,8 +32,8 @@ const Product = ({
 
     const filtterproduct = (product) => {
         setSelectedValue(product);
-        const update = Productdetail.filter((x) => {
-            return x.Brand === product;
+        const update = products.filter((x) => {
+            return x.brand === product;
         });
         setProduct(update);
     };
@@ -65,7 +65,7 @@ const Product = ({
                                         <p>{object.description}</p>
                                         <h3>$ {object.price} COP </h3>
                                         <strong >Talla</strong><p>{object.size}</p>
-                                        <button id='button-detail' onClick={() => addtocart(object)}>Añadir al carrito</button>
+                                        <button id='button-detail' onClick={() => addToCart(object._id)}>Añadir al carrito</button>
                                     </div>
                                 </div>
                             );
@@ -74,35 +74,9 @@ const Product = ({
                 </div>
             ) : null}
             <div className="products">
-                <h2>{selectedValue} (Resultados)</h2>
-                <div className="filters">
-                    <h1>Filtrar: </h1>
-                    <div className="filter">
-                        <select
-                            className="filterSelect"
-                            onChange={(e) => filtterproduct(e.target.value)}
-                        >
-                            <option value="Todos">Marcas</option>
-                            <option value="Jordan">Jordan</option>
-                            <option value="Adidas">Adidas</option>
-                            <option value="New Balanse">New balanse</option>
-                        </select>
-                    </div>
-                    <div className="filter">
-                        <select
-                            className="filterSelect"
-                            onChange={(e) => filtterproduct(e.target.value)}
-                        >
-                            <option value="all">Precio</option>
-                            <option value="Jordan">Menor a mayor</option>
-                            <option value="Adidas">Mayor a menor</option>
-                            <option value="New Balanse">De 1.000.000 +</option>
-                        </select>
-                    </div>
-                </div>
                 <div className='product'>
                     <div className="cart-container">
-                        {products.slice(0, 8).map((object) => {
+                        {products.map((object) => {
                             const imageUrl = object.images && object.images[0];
                             return (
                                 <div className="item" key={object._id}>
