@@ -228,6 +228,7 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
             })
           }
         </div>
+        <Link to="/checkout">aa</Link>
       </div>
       
       <Footer />

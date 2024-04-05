@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { getCart, addToCart, updateCartItem, removeFromCart } from "../api/cart";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CartContext = createContext();
 
@@ -29,7 +31,7 @@ export const CartProvider = ({ children }) => {
     const addProductToCart = async (_id) => {
         try {
             await addToCart(_id);
-            alert('agregado al producto')
+            toast.success('Producto añadido al carrito');
             fetchCart();
         } catch (error) {
             setError(error);
@@ -87,6 +89,9 @@ export const CartProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={value}>{children}</CartContext.Provider>
+        <CartContext.Provider value={value}>
+            <ToastContainer />
+            {children}
+        </CartContext.Provider>
     );
 };

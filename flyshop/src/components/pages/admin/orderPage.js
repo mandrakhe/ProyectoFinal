@@ -26,12 +26,13 @@ function OrdersPage() {
     return (
         <>
             <div className="search-bar">
-                <input
+                <h2>Buscar <input
                     type="text"
                     placeholder="Buscar por nombre"
                     value={searchQuery}
                     onChange={handleSearchChange}
-                />
+                /></h2>
+                
             </div>
 
             <h2 className="title-order">Lista de Órdenes</h2>
