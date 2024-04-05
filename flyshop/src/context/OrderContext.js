@@ -34,7 +34,7 @@ export const OrderProvider = ({ children }) => {
     const updatePaymentStatus = async (orderId, paymentStatus) => {
         try {
             await updatePaymentStatus(orderId, paymentStatus);
-            // Actualizar la lista de órdenes después de cambiar el estado de pago
+            alert('se actualizó el estado de pago')
             fetchOrders();
         } catch (error) {
             console.error('Error al actualizar el estado de pago de la orden:', error);
@@ -42,14 +42,14 @@ export const OrderProvider = ({ children }) => {
     };
 
     const deleteOrder = async (orderId) => {
-      try {
-          await deleteOrder(orderId);
-          // Actualizar la lista de órdenes después de eliminar una orden
-          fetchOrders();
-      } catch (error) {
-          console.error('Error al eliminar la orden:', error);
-      }
-  };
+        try {
+            await deleteOrder(orderId);
+            alert('orden eliminada')
+            fetchOrders();
+        } catch (error) {
+            console.error('Error al eliminar la orden:', error);
+        }
+    };
 
     const value = {
         orders,
