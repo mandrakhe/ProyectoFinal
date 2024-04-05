@@ -29,6 +29,7 @@ export const CartProvider = ({ children }) => {
     const addProductToCart = async (_id) => {
         try {
             await addToCart(_id);
+            alert('agregado al producto')
             fetchCart();
         } catch (error) {
             setError(error);
@@ -53,9 +54,9 @@ export const CartProvider = ({ children }) => {
         }
     };
 
-    const increaseQuantity = async (_id) => {
+    const increaseQuantity = async (_id, quantity) => {
         try {
-            const updatedCart = await updateCartItem(_id, 1);
+            const updatedCart = await updateCartItem(_id, quantity++);
             setCart(updatedCart);
         } catch (error) {
             console.error("Error al aumentar la cantidad del producto:", error);

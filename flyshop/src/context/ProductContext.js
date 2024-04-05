@@ -55,6 +55,7 @@ export const ProductProvider = ({ children }) => {
     const updateProduct = async (_id, formData) => {
         try {
             await editProduct(formData, _id); // Cambiar el orden de los parámetros
+            alert('Producto actualizado')
             await fetchProducts();
         } catch (error) {
             setError(error);
