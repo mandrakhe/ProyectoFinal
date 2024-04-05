@@ -15,6 +15,10 @@ const OrderSchema = new Schema({
     metodoPago: String,
     direccionEnvio: String,
     total: String,
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
     cart: [
         {
             product: { type: mongoose.Schema.Types.ObjectId, 
