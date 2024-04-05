@@ -50,10 +50,6 @@ const ProductPage = () => {
                 }
 
               />
-
-<Link to="/checkout">
-      <button>Añadir al carrito</button>
-    </Link>
             <Link id='arrorw' to="/"><FaArrowLeft /></Link>
 
             </div>

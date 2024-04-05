@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 import { ProductContext } from '../../../../context/ProductContext';
 import '../adminCSS/editProduct.css';
 
@@ -72,7 +73,7 @@ const EditProduct = () => {
                 <input  type="text" name="brand" placeholder="Brand" value={formData.brand} onChange={handleChange} required />
                 <input  type="text" name="description" placeholder="Description" value={formData.description} onChange={handleChange} required />
                 <input  type="text" name="size" placeholder="Size" value={formData.size} onChange={handleChange} required />
-                <input  type="file" name="image" onChange={handleImageChange} />
+                <input  type="file" name="image" onChange={handleImageChange} required />
                 <button  type="submit">Actualizar producto</button>
             </form>
         </div>

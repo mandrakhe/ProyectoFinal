@@ -61,9 +61,6 @@ export const ProductProvider = ({ children }) => {
         }
     };
     
-    
-    
-
     const value = {
         products,
         loading,

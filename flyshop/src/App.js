@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import Rout from './routes/rout.js';
-import Nav from './components/common/nav.js';
-import { ProductContext } from './context/ProductContext.js';
-import addProduct from './components/pages/admin/products/addProduct.js';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Nav from './components/common/nav.js';
+import addProduct from './components/pages/admin/products/addProduct.js';
+import { AuthProvider } from './context/AuthContext';
+import { ProductContext } from './context/ProductContext.js';
+import Rout from './routes/rout.js';
 
 const App = () => {
   const [favorite, setFavorite] = useState([]);

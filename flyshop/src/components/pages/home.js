@@ -221,17 +221,14 @@ const Home = ({ detail, view, close, setClose, addtocart, addtofavorite }) => {
                     >
                       Añadir al carrito
                     </button>
-                    <div className='icons-detail'>
-                    </div>
+
                   </div>
                 </div>
               )
             })
           }
-
         </div>
       </div>
-      {/* <Spline scene="https://prod.spline.design/ZJeZC8OSKmaFHxZt/scene.splinecode" /> */}
       
       <Footer />
     </>

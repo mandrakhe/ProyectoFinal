@@ -132,3 +132,55 @@ input {
 .divider {
     border: 1px solid #c9c9c9;
 }
+
+
+
+@media (max-width: 500px) {
+    .container-signup {
+        padding: 10px;
+    }
+
+    .container-signup h2 {
+        font-size: 1.2rem;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .container-signup button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .divider {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 1235px) {
+    .register {
+        clip-path: none;
+        justify-content: center;
+        height: 100vh;
+        background: #000;
+    }
+    
+    .container-signup {
+        border: var(--color-gris) 1px solid;
+        margin: 5em 0;
+        width: 50%;
+        
+        height: auto;
+    }
+
+    .container-signup .title {
+        color: #007bff;
+    }
+
+    .register img[alt="Imagen-principal-signup"] {
+       display: none;
+    }
+
+    .divider {
+        width: 90%;
+    }
+}

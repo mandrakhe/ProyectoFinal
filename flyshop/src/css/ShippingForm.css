@@ -135,3 +135,32 @@
 .total-price span {
     float: left;
 }
+
+@media (max-width: 768px) {
+    .shipping-Form form {
+        width: 90%;
+        margin: 2rem auto;
+    }
+
+    .shipping-Form input {
+        width: 100%;
+    }
+
+    .shipping-Form .checkoutMenu select {
+        width: 100%;
+    }
+}
+@media (max-width: 500px) {
+    .cart-item_shipping {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .img_box {
+        margin-bottom: 10px;
+    }
+
+    .info_box {
+        width: 100%;
+    }
+}

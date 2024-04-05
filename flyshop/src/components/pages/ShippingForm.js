@@ -74,7 +74,7 @@ function ShippingForm() {
                 {cart.map((item) => {
                     const product = item.product; // Acceder al objeto de producto dentro del item del carrito
                     return (
-                        <div className='cart-item_shipping' key={item._id}>
+                        <div className='cart-item_shi' key={item._id}>
                             <div className='img_box'>
                             {product.images ? (
                                     <img src={product.images[0]} alt={product.title} />

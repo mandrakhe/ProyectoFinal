@@ -135,7 +135,7 @@ img[alt="Imagen principal"] {
     .login {
         clip-path: none;
         justify-content: center;
-        height: 80%;
+        height: 100vh;
     }
     
     .container-login {

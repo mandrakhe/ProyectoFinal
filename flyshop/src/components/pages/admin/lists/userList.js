@@ -1,8 +1,10 @@
-import React, { useState, useContext } from 'react';
-import { ExportToExcel } from '../util/ExportToExcel';
-import { ExportToPDF } from '../util/ExportToPDF'
-import '../adminCSS/lists.css'
+import React, { useContext, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { UserContext } from '../../../../context/UserContext';
+import '../adminCSS/lists.css';
+import { ExportToExcel } from '../util/ExportToExcel';
+import { ExportToPDF } from '../util/ExportToPDF';
 
 function UserList() {
     const { users, loading, error, handleDeleteUser, handleEditUser } = useContext(UserContext);
@@ -20,8 +22,24 @@ function UserList() {
             await handleEditUser(editingUserId, editedUserData);
             setEditingUserId(null);
             setEditedUserData({});
+            // Muestra la notificación de éxito
+            toast.success('Usuario actualizado correctamente', {
+               
+                autoClose: 2000, // Cierra automáticamente después de 2 segundos
+            });
         } catch (error) {
             console.error(error);
+        }
+    };
+
+    const handleDeleteUserWithAlert = (userId) => {
+        if (window.confirm('¿Estás seguro de que quieres eliminar el usuario?')) {
+            handleDeleteUser(userId);
+            // Muestra la notificación de éxito
+            toast.success('Usuario eliminado correctamente', {
+            
+                autoClose: 2000, // Cierra automáticamente después de 2 segundos
+            });
         }
     };
 
@@ -46,13 +64,13 @@ function UserList() {
                                     <h2>Nombre: {object.username}</h2>
                                 </div>
                                 <div className='actions actions_effects'>
-                                    <button onClick={() => handleDeleteUser(object._id)}>Eliminar</button>
+                                    <button onClick={() => handleDeleteUserWithAlert(object._id)}>Eliminar</button>
                                     {editingUserId === object._id ? (
                                         <>
                                             <input
                                                 type="text"
                                                 value={editedUserData.username || ''}
-                                                onChange={(e) => setEditedUserData({ ...editedUserData, username: e.target.value })}
+                                                onChange={(e) => setEditedUserData({...editedUserData, username: e.target.value })}
                                             />
                                             <button onClick={handleSaveEdit}>Guardar</button>
                                         </>
@@ -67,6 +85,7 @@ function UserList() {
                     <p>No users found</p>
                 )}
             </div>
+            <ToastContainer />
         </>
     );
 }
