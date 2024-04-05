@@ -15,6 +15,10 @@ const OrderSchema = new Schema({
     metodoPago: String,
     direccionEnvio: String,
     total: String,
+    estadoPago: {
+        type: Boolean,
+        default: false
+    },
     createdAt: {
         type: Date,
         default: Date.now

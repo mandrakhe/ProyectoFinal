@@ -44,20 +44,21 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
           <CartProvider>
             <OrderProvider>
             <Routes>
-              <Route path="/product/:id" element={<ProductPage />} />
-              {/* Register, Login, Home,Contactanos y ruta alterna */}
+              {/* Register, Login, Home,Contactanos, ruta alterna y vista detallada */}
               <Route path='/register' element={<Signup />} />
               <Route path='/login' element={<Login />} />
               <Route path='/' element={<Home detail={detail} view={view} close={close} setClose={setClose} addtocart={addtocart} addtofavorite={addtofavorite} />} />
               <Route path='*' element={<Home />} />
+              <Route path="/product/:id" element={<ProductPage />} />
+
+              
               <Route path='/detailProduct' element={<DetailProduct />} />
 
               {/* Metodos y funciones de los productos */}
               <Route path='/product' element={<Product product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addtofavorite={addtofavorite} />} />
               <Route path='/about' element={<Contact />} />
 
-              
-              <Route path='/checkout' element={<ShippingForm />} />
+
               {/* Funciones del administrador */}
               <Route element={<AdminRoute />}>
                 <Route path='/admin' element={<Admin/>} />
@@ -74,6 +75,7 @@ const Rout = ({ product, setProduct, detail, view, close, setClose, cart, setCar
               <Route element={<ProtectedRoute />}>
                 <Route path='/favorite' element={<Favorite favorite={favorite} setFavorite={setFavorite} />} />
                 <Route path='/cart' element={<Cart cart={cart} />} />
+                <Route path='/checkout' element={<ShippingForm />} />
               </Route>
 
             </Routes>

@@ -46,3 +46,32 @@ export const getAllOrders = async (req, res) => {
         res.status(500).json({ error: 'Error interno del servidor' });
     }
 };
+
+export const updatePaymentStatus = async (req, res) => {
+    try {
+        if (!req.user || !req.user.id) {
+            return res.status(401).json({ message: "No se proporcionó un usuario válido." });
+        }
+
+        const orderId = req.params.id;
+        const { estadoPago } = req.body;
+
+        await Order.findByIdAndUpdate(orderId, { estadoPago }, { new: true });
+
+        res.status(200).json({ message: 'Estado de pago actualizado exitosamente' });
+    } catch (error) {
+        console.error('Error al actualizar el estado de pago de la orden:', error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+};
+
+export const deleteOrder = async (req, res) => {
+    try {
+        const orderId = req.params.id;
+        await Order.findByIdAndDelete(orderId);
+        res.status(200).json({ message: 'Orden eliminada exitosamente' });
+    } catch (error) {
+        console.error('Error al eliminar la orden:', error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+};
